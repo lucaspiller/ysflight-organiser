@@ -1,8 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7CDD2BA7-5412-43D2-90B6-A7448DC243C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{F86F81DB-D537-4EE9-9806-8396218EBAD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Src\Core\Core.csproj", "{10D53F8B-EBC1-494D-9A4A-99139434E40B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Tests\Core\Core.csproj", "{FB573771-540D-44AA-B2D2-05EE565A2124}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10D53F8B-EBC1-494D-9A4A-99139434E40B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10D53F8B-EBC1-494D-9A4A-99139434E40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10D53F8B-EBC1-494D-9A4A-99139434E40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10D53F8B-EBC1-494D-9A4A-99139434E40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB573771-540D-44AA-B2D2-05EE565A2124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB573771-540D-44AA-B2D2-05EE565A2124}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB573771-540D-44AA-B2D2-05EE565A2124} = {7CDD2BA7-5412-43D2-90B6-A7448DC243C5}
+		{10D53F8B-EBC1-494D-9A4A-99139434E40B} = {F86F81DB-D537-4EE9-9806-8396218EBAD1}
 	EndGlobalSection
 EndGlobal
