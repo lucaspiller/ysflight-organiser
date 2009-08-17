@@ -7,14 +7,17 @@ namespace Ysfo.Core.Loader
 {
     public class LstLoader : ILoader
     {
-        public LstLoader()
-        {
+        public String YsPath { get; set; }
+        public String LstPath { get; set; }
 
+        public LstLoader() : this(null, null)
+        {
         }
 
         public LstLoader(String ysPath, String lstPath)
         {
-
+            YsPath = ysPath;
+            LstPath = lstPath;
         }
 
         #region ILoader Members

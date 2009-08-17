@@ -18,7 +18,23 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorTakesYsPathAndLstPathAsArguments()
         {
-            var loader = new Ysfo.Core.Loader.LstLoader("TestYsPath", "TestLstPath");
+            var loader = new Ysfo.Core.Loader.LstLoader("Test", "Test");
+        }
+
+        [Test]
+        public void ConstructorMustAssignYsPath()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader("Test", null);
+
+            Assert.AreEqual("Test", loader.YsPath);
+        }
+
+        [Test]
+        public void ConstructorMustAssignLstPath()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(null, "Test");
+
+            Assert.AreEqual("Test", loader.LstPath);
         }
     }
 }
