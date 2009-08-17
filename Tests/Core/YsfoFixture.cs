@@ -31,5 +31,21 @@ namespace Ysfo.Tests.Core
                 var aircraft = ysfo.GetAircraftCollection();
             }
         }
+
+        [Test]
+        public void ItMustReturnAnAircraftCollectionWhichIsIteratable()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = ysPath;
+
+                var aircraft = ysfo.GetAircraftCollection();
+
+                foreach (var a in aircraft)
+                {
+
+                }
+            }
+        }
     }
 }
