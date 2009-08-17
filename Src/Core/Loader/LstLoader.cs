@@ -6,27 +6,12 @@ using System.IO;
 
 namespace Ysfo.Core.Loader
 {
-    public class LstLoader : ILoader
+    public static class LstLoader
     {
-        public String YsPath { get; set; }
-        public String LstPath { get; set; }
-
-        public LstLoader() : this(null, null)
-        {
-        }
-
-        public LstLoader(String ysPath, String lstPath)
-        {
-            YsPath = ysPath;
-            LstPath = lstPath;
-        }
-
-        #region ILoader Members
-
-        public ICollection<Addons.Aircraft> Load()
+        public static ICollection<Addons.Aircraft> Load(String ysPath, String lstPath)
         {
             // get path
-            String path = GetFullPath();
+            String path = GetFullPath(ysPath, lstPath);
 
             // initialize collection
             ICollection<Addons.Aircraft> aircraft = new List<Addons.Aircraft>();
@@ -48,14 +33,7 @@ namespace Ysfo.Core.Loader
             return aircraft;
         }
 
-        public void Save(ICollection<Addons.Aircraft> collection)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        protected static IEnumerable<String> LineReader(String fileName)
+        private static IEnumerable<String> LineReader(String fileName)
         {
             String line;
             using (var file = System.IO.File.OpenText(fileName))
@@ -69,28 +47,28 @@ namespace Ysfo.Core.Loader
             }
         }
 
-        protected String GetFullPath()
+        private static String GetFullPath(String ysPath, String lstPath)
         {
-            if (YsPath == null)
+            if (ysPath == null)
             {
-                throw new ArgumentException("YsPath is null; set before calling Load or Save methods.");
+                throw new ArgumentException("ysPath is null.");
             }
 
-            if (LstPath == null)
+            if (lstPath == null)
             {
-                throw new ArgumentException("LstPath is null; set before calling Load or Save methods.");
+                throw new ArgumentException("lstPath is null.");
             }
 
-            if (!Directory.Exists(YsPath))
+            if (!Directory.Exists(ysPath))
             {
-                throw new ArgumentException("Invalid YsPath; directory does not exist.");
+                throw new ArgumentException("Invalid ysPath; directory does not exist.");
             }
 
-            String lstFullPath = Path.Combine(YsPath, LstPath);
+            String lstFullPath = Path.Combine(ysPath, lstPath);
 
             if (!File.Exists(lstFullPath))
             {
-                throw new ArgumentException("Invalid LstPath; file does not exist.");
+                throw new ArgumentException("Invalid lstPath; file does not exist.");
             }
 
             return lstFullPath;
