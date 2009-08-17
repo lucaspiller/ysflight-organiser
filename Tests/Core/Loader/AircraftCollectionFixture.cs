@@ -44,5 +44,13 @@ namespace Ysfo.Tests.Core.Loader
 
             Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
         }
+
+        [Test]
+        public void ConstructorMustAssignDefaultLstPathWhenPassedNull()
+        {
+            var aircraft = new Ysfo.Core.Loader.AircraftCollection(YsfoFixture.ysPath, null);
+
+            Assert.AreEqual(Ysfo.Core.Loader.AircraftCollection.DefaultLstPath, aircraft.LstPath);
+        }
     }
 }
