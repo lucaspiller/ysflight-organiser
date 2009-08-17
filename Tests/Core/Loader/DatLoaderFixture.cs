@@ -24,7 +24,7 @@ namespace Ysfo.Tests.Core.Loader
             String identify = null;
 
             Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate>() {
-                { new Regex("IDENTIFY (.*)"), delegate(String value) { identify = value; } }
+                { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
             };
 
             Ysfo.Core.Loader.DatLoader.Load(validYsPath, "test.dat", regexes);
@@ -39,7 +39,7 @@ namespace Ysfo.Tests.Core.Loader
             String test = null;
 
             Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate>() {
-                { new Regex("IDENTIFY (.*)"), delegate(String value) { identify = value; } },
+                { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
                 { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
             };
 
