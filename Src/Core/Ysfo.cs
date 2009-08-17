@@ -19,7 +19,7 @@ namespace Ysfo.Core
 
         public Loader.AircraftCollection GetAircraftCollection()
         {
-            throw new NotImplementedException();
+            return new Loader.AircraftCollection();
         }
     }
 }
