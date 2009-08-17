@@ -29,5 +29,15 @@ namespace Ysfo.Core.Loader
                 LstPath = lstPath;
             }
         }
+
+        public void Load()
+        {
+            // load aircraft
+            ICollection<Addons.Aircraft> aircraft = LstLoader.Load(YsPath, LstPath);
+
+            // clear and add aircraft
+            Clear();
+            AddRange(aircraft);
+        }
     }
 }
