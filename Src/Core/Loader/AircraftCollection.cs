@@ -41,12 +41,17 @@ namespace Ysfo.Core.Loader
                 _lstPath = lstPath;
             }
         }
-        
-#if DEBUG
+
+        #region Debug Methods
+        #if DEBUG
+
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public String Debug_GetYsPath()
         {
             return _ysPath;
         }
-#endif
+
+        #endif
+        #endregion
     }
 }
