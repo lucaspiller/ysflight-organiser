@@ -25,14 +25,46 @@ namespace Ysfo.Core.Loader
 
         public ICollection<Addons.Aircraft> Load()
         {
+            // get path
             String path = GetFullPath();
 
-            return null;
+            // initialize collection
+            ICollection<Addons.Aircraft> aircraft = new List<Addons.Aircraft>();
+
+            // read from file
+            var query =
+                from line in LineReader(path)
+                where line.Length > 0
+                select line;
+
+            // add to collection
+            query.ForEach(l =>
+            {
+                aircraft.Add(null);
+            });
+
+            return aircraft;
         }
 
         public void Save(ICollection<Addons.Aircraft> collection)
         {
             throw new NotImplementedException();
+        }
+
+        #endregion
+
+        protected static IEnumerable<String> LineReader(String fileName)
+        {
+            String line;
+            using (var file = System.IO.File.OpenText(fileName))
+            {
+                // read each line, ensuring not null (EOF)
+                while ((line = file.ReadLine()) != null)
+                {
+                    // return trimmed line
+                    yield return line.Trim();
+                }
+            }
         }
 
         protected String GetFullPath()
@@ -53,7 +85,7 @@ namespace Ysfo.Core.Loader
             }
 
             String lstFullPath = Path.Combine(YsPath, LstPath);
-            
+
             if (!File.Exists(lstFullPath))
             {
                 throw new ArgumentException("Invalid LstPath; file does not exist.");
@@ -61,7 +93,5 @@ namespace Ysfo.Core.Loader
 
             return lstFullPath;
         }
-
-        #endregion
     }
 }

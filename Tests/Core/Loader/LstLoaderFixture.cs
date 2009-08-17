@@ -72,5 +72,15 @@ namespace Ysfo.Tests.Core.Loader
 
             loader.Load();
         }
+
+        [Test]
+        public void LoadMustReturnOneAircraftForEachValidLineInLstFile()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(validYsPath, validLstPath);
+
+            var aircraft = loader.Load();
+
+            Assert.AreEqual(1, aircraft.Count);
+        }
     }
 }
