@@ -9,7 +9,13 @@ namespace Ysfo.Tests.Core
     [TestFixture]
     public class YsfoFixture
     {
-        public const string ysPath = @"C:\dev\ysflight\20090502";
+        String ysPath;
+
+        [SetUp]
+        public void Setup()
+        {
+            ysPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        }
 
         [Test]
         public void ItMustEnableThePathToBeSet()
@@ -27,7 +33,7 @@ namespace Ysfo.Tests.Core
             {
                 ysfo.Path = ysPath;
 
-                var aircraft = ysfo.GetAircraftCollection();
+                var aircraft = ysfo.GetAircraftCollection("test.lst");
             }
         }
 
@@ -38,11 +44,10 @@ namespace Ysfo.Tests.Core
             {
                 ysfo.Path = ysPath;
 
-                var aircraft = ysfo.GetAircraftCollection();
+                var aircraft = ysfo.GetAircraftCollection("test.lst");
 
                 foreach (var a in aircraft)
                 {
-
                 }
             }
         }
@@ -54,7 +59,7 @@ namespace Ysfo.Tests.Core
             {
                 ysfo.Path = ysPath;
 
-                var aircraft = ysfo.GetAircraftCollection();
+                var aircraft = ysfo.GetAircraftCollection("test.lst");
 
                 foreach (var a in aircraft)
                 {
