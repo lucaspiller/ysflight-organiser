@@ -9,6 +9,16 @@ namespace Ysfo.Tests.Core.Loader
     [TestFixture]
     class LstLoaderFixture
     {
+        String validYsPath;
+        String validLstPath;
+
+        [SetUp]
+        public void Setup()
+        {
+            validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            validLstPath = "test.lst";
+        }
+
         [Test]
         public void ConstructorCanTakeNoArguments()
         {
@@ -35,6 +45,32 @@ namespace Ysfo.Tests.Core.Loader
             var loader = new Ysfo.Core.Loader.LstLoader(null, "Test");
 
             Assert.AreEqual("Test", loader.LstPath);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfYsPathIsInvalid()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(null, null);
+
+            loader.Load();
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfLstPathIsInvalid()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(validYsPath, null);
+
+            loader.Load();
+        }
+
+        [Test]
+        public void LoadDoesNotThrowExceptionIfYsPathAndLstPathAreValid()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(validYsPath, validLstPath);
+
+            loader.Load();
         }
     }
 }
