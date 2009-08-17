@@ -14,5 +14,11 @@ namespace Ysfo.Tests.Core.Loader
         {
             var aircraft = new Ysfo.Core.Loader.AircraftCollection(YsfoFixture.ysPath);
         }
+
+        [Test]
+        public void ItMustAcceptLstPathInConstructor()
+        {
+            var aircraft = new Ysfo.Core.Loader.AircraftCollection(YsfoFixture.ysPath, "aircraft/aircraft.lst");
+        }
     }
 }

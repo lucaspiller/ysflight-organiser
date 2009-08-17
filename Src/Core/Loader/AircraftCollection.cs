@@ -13,5 +13,9 @@ namespace Ysfo.Core.Loader
         {
             _ysPath = ysPath;
         }
+
+        public AircraftCollection(String ysPath, String lstPath)
+        {
+        }
     }
 }
