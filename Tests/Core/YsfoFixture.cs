@@ -20,7 +20,6 @@ namespace Ysfo.Tests.Core
             }
         }
 
-
         [Test]
         public void ItMustReturnAnAircraftCollection()
         {
