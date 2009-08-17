@@ -22,7 +22,6 @@ Global
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB573771-540D-44AA-B2D2-05EE565A2124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

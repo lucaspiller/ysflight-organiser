@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Addons\Aircraft.cs" />
     <Compile Include="Loader\AircraftCollection.cs" />
+    <Compile Include="Loader\ILoader.cs" />
+    <Compile Include="Loader\LstLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ysfo.cs" />
   </ItemGroup>
