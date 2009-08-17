@@ -16,5 +16,10 @@ namespace Ysfo.Core
         }
 
         #endregion
+
+        public object GetAircraftCollection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

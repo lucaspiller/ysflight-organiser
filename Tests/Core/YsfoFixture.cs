@@ -19,5 +19,17 @@ namespace Ysfo.Tests.Core
                 ysfo.Path = ysPath;
             }
         }
+
+
+        [Test]
+        public void ItMustReturnAnAircraftCollection()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = ysPath;
+
+                var aircraft = ysfo.GetAircraftCollection();
+            }
+        }
     }
 }
