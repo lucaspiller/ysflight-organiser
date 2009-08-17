@@ -7,15 +7,46 @@ namespace Ysfo.Core.Loader
 {
     public class AircraftCollection : List<Addons.Aircraft>
     {
-        protected String _ysPath;
+        public const String DefaultLstPath = "aircraft/aircraft.lst";
 
-        public AircraftCollection(String ysPath)
+        protected String _ysPath;
+        protected String _lstPath;
+
+        public String LstPath {
+            get
+            {
+                return _lstPath;    
+            }
+            
+            protected set
+            {
+                _lstPath = value;
+            }
+        }
+
+        public AircraftCollection(String ysPath) : this(ysPath, null)
         {
-            _ysPath = ysPath;
         }
 
         public AircraftCollection(String ysPath, String lstPath)
         {
+            _ysPath = ysPath;
+
+            if (lstPath == null)
+            {
+                _lstPath = DefaultLstPath;
+            }
+            else
+            {
+                _lstPath = lstPath;
+            }
         }
+        
+#if DEBUG
+        public String Debug_GetYsPath()
+        {
+            return _ysPath;
+        }
+#endif
     }
 }
