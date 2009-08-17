@@ -10,11 +10,13 @@ namespace Ysfo.Tests.Core.Addons
     class AircraftFixture
     {
         [Test]
-        public void ItMustSetNameInConstructor()
+        public void ItMustSetLstEntryInConstructor()
         {
-            var aircraft = new Ysfo.Core.Addons.Aircraft("Test");
+            String testEntry = "TEST.DAT TEST.DNM TEST.SRF";
 
-            Assert.AreEqual("Test", aircraft.Name);
+            var aircraft = new Ysfo.Core.Addons.Aircraft(testEntry);
+
+            Assert.AreEqual(testEntry, aircraft.LstEntry);
         }
     }
 }
