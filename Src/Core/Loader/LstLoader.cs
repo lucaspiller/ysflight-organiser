@@ -25,7 +25,9 @@ namespace Ysfo.Core.Loader
             // add to collection
             query.ForEach(line =>
             {
+                // load aircraft
                 Addons.Aircraft addon = new Addons.Aircraft(line);
+                addon.Load(ysPath);
 
                 aircraft.Add(addon);
             });
