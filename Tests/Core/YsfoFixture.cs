@@ -7,9 +7,9 @@ using NUnit.Framework;
 namespace Ysfo.Tests.Core
 {
     [TestFixture]
-    class YsfoFixture
+    public class YsfoFixture
     {
-        protected const string ysPath = @"C:\dev\ysflight\20090502";
+        public const string ysPath = @"C:\dev\ysflight\20090502";
 
         [Test]
         public void ItMustEnableThePathToBeSet()

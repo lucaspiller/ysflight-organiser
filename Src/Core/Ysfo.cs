@@ -19,7 +19,7 @@ namespace Ysfo.Core
 
         public Loader.AircraftCollection GetAircraftCollection()
         {
-            return new Loader.AircraftCollection();
+            return new Loader.AircraftCollection(Path);
         }
     }
 }

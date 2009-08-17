@@ -7,5 +7,11 @@ namespace Ysfo.Core.Loader
 {
     public class AircraftCollection : List<Addons.Aircraft>
     {
+        protected String _ysPath;
+
+        public AircraftCollection(String ysPath)
+        {
+            _ysPath = ysPath;
+        }
     }
 }
