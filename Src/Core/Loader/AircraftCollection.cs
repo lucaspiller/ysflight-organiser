@@ -9,20 +9,8 @@ namespace Ysfo.Core.Loader
     {
         public const String DefaultLstPath = "aircraft/aircraft.lst";
 
-        protected String _ysPath;
-        protected String _lstPath;
-
-        public String LstPath {
-            get
-            {
-                return _lstPath;    
-            }
-            
-            protected set
-            {
-                _lstPath = value;
-            }
-        }
+        public string YsPath { get; protected set; }
+        public string LstPath { get; protected set; }
 
         public AircraftCollection(String ysPath) : this(ysPath, null)
         {
@@ -30,28 +18,16 @@ namespace Ysfo.Core.Loader
 
         public AircraftCollection(String ysPath, String lstPath)
         {
-            _ysPath = ysPath;
+            YsPath = ysPath;
 
             if (lstPath == null)
             {
-                _lstPath = DefaultLstPath;
+                LstPath = DefaultLstPath;
             }
             else
             {
-                _lstPath = lstPath;
+                LstPath = lstPath;
             }
         }
-
-        #region Debug Methods
-        #if DEBUG
-
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public String Debug_GetYsPath()
-        {
-            return _ysPath;
-        }
-
-        #endif
-        #endregion
     }
 }

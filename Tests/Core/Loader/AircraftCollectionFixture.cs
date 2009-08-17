@@ -26,11 +26,11 @@ namespace Ysfo.Tests.Core.Loader
         {
             var aircraft = new Ysfo.Core.Loader.AircraftCollection(YsfoFixture.ysPath);
 
-            Assert.AreEqual(YsfoFixture.ysPath, aircraft.Debug_GetYsPath());
+            Assert.AreEqual(YsfoFixture.ysPath, aircraft.YsPath);
 
             aircraft = new Ysfo.Core.Loader.AircraftCollection(YsfoFixture.ysPath, "aircraft/aircraft.lst");
 
-            Assert.AreEqual(YsfoFixture.ysPath, aircraft.Debug_GetYsPath());
+            Assert.AreEqual(YsfoFixture.ysPath, aircraft.YsPath);
         }
 
         [Test]
