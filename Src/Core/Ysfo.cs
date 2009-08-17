@@ -17,7 +17,7 @@ namespace Ysfo.Core
 
         #endregion
 
-        public ICollection<object> GetAircraftCollection()
+        public ICollection<Addons.Aircraft> GetAircraftCollection()
         {
             throw new NotImplementedException();
         }

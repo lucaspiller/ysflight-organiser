@@ -47,5 +47,21 @@ namespace Ysfo.Tests.Core
                 }
             }
         }
+
+        [Test]
+        public void ItMustReturnAnAircraftCollectionOfAircraftWithAName()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = ysPath;
+
+                var aircraft = ysfo.GetAircraftCollection();
+
+                foreach (var a in aircraft)
+                {
+                    Console.WriteLine(a.Name);
+                }
+            }
+        }
     }
 }
