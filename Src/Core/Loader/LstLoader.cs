@@ -38,9 +38,11 @@ namespace Ysfo.Core.Loader
                 select line;
 
             // add to collection
-            query.ForEach(l =>
+            query.ForEach(line =>
             {
-                aircraft.Add(null);
+                Addons.Aircraft addon = new Addons.Aircraft(line);
+
+                aircraft.Add(addon);
             });
 
             return aircraft;

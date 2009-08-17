@@ -82,5 +82,18 @@ namespace Ysfo.Tests.Core.Loader
 
             Assert.AreEqual(1, aircraft.Count);
         }
+
+        [Test]
+        public void LoadMustReturnValidAircraft()
+        {
+            var loader = new Ysfo.Core.Loader.LstLoader(validYsPath, validLstPath);
+
+            var aircraft = loader.Load();
+
+            foreach (var a in aircraft)
+            {
+                Assert.AreEqual(typeof(Ysfo.Core.Addons.Aircraft), a.GetType());
+            }
+        }
     }
 }
