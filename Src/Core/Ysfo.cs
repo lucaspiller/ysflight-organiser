@@ -35,5 +35,18 @@ namespace Ysfo.Core
 
             return collection;
         }
+
+        public SceneryCollection GetSceneryCollection()
+        {
+            return GetSceneryCollection(null);
+        }
+
+        public SceneryCollection GetSceneryCollection(String lstPath)
+        {
+            SceneryCollection collection = new SceneryCollection(Path, lstPath);
+            collection.Load();
+
+            return collection;
+        }
     }
 }

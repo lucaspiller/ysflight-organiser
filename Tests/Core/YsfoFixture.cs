@@ -54,5 +54,21 @@ namespace Ysfo.Tests.Core
                 }
             }
         }
+
+        [Test]
+        public void ItMustReturnAnSceneryCollectionOfValidScenery()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                var scenery = ysfo.GetSceneryCollection("scenery.lst");
+
+                foreach (var a in scenery)
+                {
+                    Console.WriteLine(a.Name);
+                }
+            }
+        }
     }
 }
