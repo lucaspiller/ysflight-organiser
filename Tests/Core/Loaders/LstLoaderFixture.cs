@@ -36,13 +36,6 @@ namespace Ysfo.Tests.Core.Loaders
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
-        public void LoadThrowsExceptionIfLstPathIsInvalid()
-        {
-            LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, "invalid.lst");
-        }
-
-        [Test]
         public void LoadDoesNotThrowExceptionIfYsPathAndLstPathAreValid()
         {
             LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, _validLstPath);

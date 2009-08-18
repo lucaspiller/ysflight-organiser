@@ -16,21 +16,25 @@ namespace Ysfo.Core.Loaders
             // initialize collection
             ICollection<T> addons = new List<T>();
 
-            // read from file
-            var query =
-                from line in LineReader(path)
-                where line.Length > 0
-                select line;
-
-            // add to collection
-            query.ForEach(line =>
+            // only load if file exists
+            if (File.Exists(path))
             {
-                // load aircraft
-                T addon = new T {LstEntry = line};
-                addon.Load(ysPath);
+                // read from file
+                var query =
+                    from line in LineReader(path)
+                    where line.Length > 0
+                    select line;
 
-                addons.Add(addon);
-            });
+                // add to collection
+                query.ForEach(line =>
+                {
+                    // load aircraft
+                    T addon = new T {LstEntry = line};
+                    addon.Load(ysPath);
+
+                    addons.Add(addon);
+                });
+            }
 
             return addons;
         }
@@ -51,11 +55,6 @@ namespace Ysfo.Core.Loaders
 
         private static String GetFullPath(String ysPath, String lstPath)
         {
-            return GetFullPath(ysPath, lstPath, true);
-        }
-
-        private static String GetFullPath(String ysPath, String lstPath, bool lstMustExist)
-        {
             if (ysPath == null)
             {
                 throw new ArgumentException("ysPath is null.");
@@ -71,20 +70,13 @@ namespace Ysfo.Core.Loaders
                 throw new ArgumentException("Invalid ysPath; directory `" + ysPath + "' does not exist.");
             }
 
-            String lstFullPath = Path.Combine(ysPath, lstPath);
-
-            if (lstMustExist && !File.Exists(lstFullPath))
-            {
-                throw new ArgumentException("Invalid lstPath; file `" + lstFullPath + "'does not exist.");
-            }
-
-            return lstFullPath;
+            return Path.Combine(ysPath, lstPath);
         }
 
         public static void Save<T>(String ysPath, String lstPath, ICollection<T> addons) where T: Addon, new()
         {
             // get path
-            String path = GetFullPath(ysPath, lstPath, false);
+            String path = GetFullPath(ysPath, lstPath);
 
             // open file
             using (var file = new StreamWriter(path))
