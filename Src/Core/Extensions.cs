@@ -24,8 +24,8 @@ namespace Ysfo.Core
                 return null;
             }
 
-            // convert non characters to spaces
-            input = Regex.Replace(input, "([^a-zA-Z0-9]+)", " ");
+            // convert other characters to spaces
+            input = Regex.Replace(input, "([^a-zA-Z0-9-]+)", " ");
 
             // uppercase first character of each word
             input = Regex.Replace(input.ToLower(), @"(^|\W).", m => m.Value.ToUpper());
