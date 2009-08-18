@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Ysfo.Core.Internal
 {
-    public class AddonCollection<T> : List<T> where T: Internal.Addon, new()
+    public class AddonCollection<T> : List<T> where T: Addon, new()
     {
         public string YsPath { get; protected set; }
         public string LstPath { get; protected set; }
@@ -17,15 +15,7 @@ namespace Ysfo.Core.Internal
         public AddonCollection(String ysPath, String lstPath)
         {
             YsPath = ysPath;
-
-            if (lstPath == null)
-            {
-                LstPath = DefaultLstPath();
-            }
-            else
-            {
-                LstPath = lstPath;
-            }
+            LstPath = lstPath ?? DefaultLstPath();
         }
 
         public void Load()
@@ -38,16 +28,15 @@ namespace Ysfo.Core.Internal
             AddRange(addons);
         }
 
-        private String DefaultLstPath()
+        private static String DefaultLstPath()
         {
             if (typeof(T) == typeof(Aircraft))
             {
                 return "aircraft/aircraft.lst";
             }
-            else
-            {
-                throw new ArgumentException("Unknown type " + typeof(T).Name);
-            }
+            
+            // eek
+            throw new ArgumentException("Unknown type " + typeof(T).Name);
         }
     }
 }

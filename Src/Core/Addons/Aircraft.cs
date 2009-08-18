@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Ysfo.Core
@@ -10,7 +8,8 @@ namespace Ysfo.Core
     {
         public override void Load(String ysPath)
         {
-            Dictionary<Regex, Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Internal.DatLoader.StringSetDelegate>() {
+            var regexes = new Dictionary<Regex, Internal.DatLoader.StringSetDelegate>
+            {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { Name = value; } }
             };
 

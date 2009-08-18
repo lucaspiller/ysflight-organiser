@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 
 namespace Ysfo.Core.Internal
 {
     public static class LstLoader
     {
-        public static ICollection<T> Load<T>(String ysPath, String lstPath) where T: Internal.Addon, new()
+        public static ICollection<T> Load<T>(String ysPath, String lstPath) where T: Addon, new()
         {
             // get path
             String path = GetFullPath(ysPath, lstPath);
@@ -26,8 +25,7 @@ namespace Ysfo.Core.Internal
             query.ForEach(line =>
             {
                 // load aircraft
-                T addon = new T();
-                addon.LstEntry = line;
+                T addon = new T {LstEntry = line};
                 addon.Load(ysPath);
 
                 addons.Add(addon);
@@ -39,7 +37,7 @@ namespace Ysfo.Core.Internal
         private static IEnumerable<String> LineReader(String fileName)
         {
             String line;
-            using (var file = System.IO.File.OpenText(fileName))
+            using (var file = File.OpenText(fileName))
             {
                 // read each line, ensuring not null (EOF)
                 while ((line = file.ReadLine()) != null)
