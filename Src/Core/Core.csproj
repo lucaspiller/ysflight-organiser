@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Addons\Addon.cs" />
     <Compile Include="Addons\Aircraft.cs" />
+    <Compile Include="Addons\Ground.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Loader\AddonCollection.cs" />
     <Compile Include="Loader\AircraftCollection.cs" />

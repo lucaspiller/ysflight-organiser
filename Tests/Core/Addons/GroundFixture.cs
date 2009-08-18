@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Ysfo.Tests.Core.Addons
 {
     [TestFixture]
-    class AircraftFixture
+    class GroundFixture
     {
         String _validYsPath;
 
@@ -17,10 +17,10 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var addon = new Ysfo.Core.Aircraft {LstEntry = "aircraft.dat"};
+            var addon = new Ysfo.Core.Ground { LstEntry = "ground.dat" };
             addon.Load(_validYsPath);
 
-            Assert.AreEqual("TEST_AIRCRAFT", addon.Name);
+            Assert.AreEqual("TEST_GROUND", addon.Name);
         }
     }
 }

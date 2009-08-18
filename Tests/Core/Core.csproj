@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Addons\AircraftFixture.cs" />
+    <Compile Include="Addons\GroundFixture.cs" />
     <Compile Include="Addons\MockAddon.cs" />
     <Compile Include="Addons\MockAddonFixture.cs" />
     <Compile Include="Loader\AircraftCollectionFixture.cs" />
@@ -71,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="aircraft.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ground.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
