@@ -98,7 +98,7 @@ namespace Ysfo.Tests.Core.Loaders
             Assert.IsFalse(File.Exists(outputFile), "test.lst file already exists!");
 
             // save
-            LstLoader.Save<Ysfo.Core.AircraftAddon>(_validYsPath, "test.lst", new List<Ysfo.Core.AircraftAddon>());
+            LstLoader.Save(_validYsPath, "test.lst", new List<Ysfo.Core.AircraftAddon>());
 
             // make sure file created
             Assert.IsTrue(File.Exists(outputFile));

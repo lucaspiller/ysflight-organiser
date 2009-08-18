@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using NUnit.Framework;
 using Ysfo.Core.Collections;
 
@@ -55,7 +56,7 @@ namespace Ysfo.Tests.Core.Collections
         }
 
         [Test]
-        public void LoadMustLoadground()
+        public void LoadMustLoadGround()
         {
             var ground = new GroundCollection(_validYsPath, _validLstPath);
 
@@ -64,6 +65,26 @@ namespace Ysfo.Tests.Core.Collections
             ground.Load();
 
             Assert.AreEqual(1, ground.Count);
+        }
+
+        [Test]
+        public void SaveMustWriteFile()
+        {
+            // get output file path and ensure it doesn't exist
+            String outputFile = Path.Combine(_validYsPath, "test.lst");
+            Assert.IsFalse(File.Exists(outputFile), "test.lst file already exists!");
+
+            // create collection
+            var addons = new GroundCollection(_validYsPath, "test.lst");
+
+            // save
+            addons.Save();
+
+            // make sure file created
+            Assert.IsTrue(File.Exists(outputFile));
+
+            // cleanup
+            File.Delete(outputFile);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using NUnit.Framework;
 using Ysfo.Core.Collections;
 
@@ -64,6 +65,26 @@ namespace Ysfo.Tests.Core.Collections
             aircraft.Load();
 
             Assert.AreEqual(1, aircraft.Count);
+        }
+
+        [Test]
+        public void SaveMustWriteFile()
+        {
+            // get output file path and ensure it doesn't exist
+            String outputFile = Path.Combine(_validYsPath, "test.lst");
+            Assert.IsFalse(File.Exists(outputFile), "test.lst file already exists!");
+
+            // create collection
+            var addons = new AircraftCollection(_validYsPath, "test.lst");
+
+            // save
+            addons.Save();
+
+            // make sure file created
+            Assert.IsTrue(File.Exists(outputFile));
+
+            // cleanup
+            File.Delete(outputFile);
         }
     }
 }

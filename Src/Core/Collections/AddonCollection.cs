@@ -22,12 +22,18 @@ namespace Ysfo.Core.Collections
 
         public void Load()
         {
-            // load aircraft
+            // load
             ICollection<T> addons = LstLoader.Load<T>(YsPath, LstPath);
 
             // clear and add addons
             Clear();
             AddRange(addons);
+        }
+
+        public void Save()
+        {
+            // save
+            LstLoader.Save(YsPath, LstPath, this);
         }
 
         private static String DefaultLstPath()
