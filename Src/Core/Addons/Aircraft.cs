@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Ysfo.Core.Addons
+namespace Ysfo.Core
 {
-    public class Aircraft : Addon
+    public class Aircraft : Internal.Addon
     {
         public override void Load(String ysPath)
         {
-            Dictionary<Regex, Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Loader.DatLoader.StringSetDelegate>() {
+            Dictionary<Regex, Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Internal.DatLoader.StringSetDelegate>() {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { Name = value; } }
             };
 
-            Loader.DatLoader.Load(ysPath, LstEntry, regexes);
+            Internal.DatLoader.Load(ysPath, LstEntry, regexes);
         }
     }
 }

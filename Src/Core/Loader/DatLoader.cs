@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace Ysfo.Core.Loader
+namespace Ysfo.Core.Internal
 {
     public static class DatLoader
     {

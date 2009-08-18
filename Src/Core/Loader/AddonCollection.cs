@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ysfo.Core.Loader
+namespace Ysfo.Core.Internal
 {
-    public class AddonCollection<T> : List<T> where T: Addons.Addon, new()
+    public class AddonCollection<T> : List<T> where T: Internal.Addon, new()
     {
         public string YsPath { get; protected set; }
         public string LstPath { get; protected set; }
@@ -40,7 +40,7 @@ namespace Ysfo.Core.Loader
 
         private String DefaultLstPath()
         {
-            if (typeof(T) == typeof(Addons.Aircraft))
+            if (typeof(T) == typeof(Aircraft))
             {
                 return "aircraft/aircraft.lst";
             }

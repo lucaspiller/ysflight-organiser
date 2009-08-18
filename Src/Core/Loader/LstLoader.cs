@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace Ysfo.Core.Loader
+namespace Ysfo.Core.Internal
 {
     public static class LstLoader
     {
-        public static ICollection<T> Load<T>(String ysPath, String lstPath) where T: Addons.Addon, new()
+        public static ICollection<T> Load<T>(String ysPath, String lstPath) where T: Internal.Addon, new()
         {
             // get path
             String path = GetFullPath(ysPath, lstPath);

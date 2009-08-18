@@ -17,14 +17,14 @@ namespace Ysfo.Core
 
         #endregion
 
-        public Loader.AircraftCollection GetAircraftCollection()
+        public AircraftCollection GetAircraftCollection()
         {
             return GetAircraftCollection(null);
         }
 
-        public Loader.AircraftCollection GetAircraftCollection(String lstPath)
+        public AircraftCollection GetAircraftCollection(String lstPath)
         {
-            Loader.AircraftCollection collection = new Loader.AircraftCollection(Path, lstPath);
+            AircraftCollection collection = new AircraftCollection(Path, lstPath);
             collection.Load();
 
             return collection;

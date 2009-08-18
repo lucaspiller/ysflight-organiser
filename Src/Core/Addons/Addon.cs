@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ysfo.Core.Addons
+namespace Ysfo.Core.Internal
 {
     public abstract class Addon
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ysfo.Tests.Core.Addons
 {
-    class MockAddon : Ysfo.Core.Addons.Addon
+    class MockAddon : Ysfo.Core.Internal.Addon
     {
         public override void Load(string ysPath)
         {

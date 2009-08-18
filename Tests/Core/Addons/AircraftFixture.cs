@@ -20,7 +20,7 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var aircraft = new Ysfo.Core.Addons.Aircraft();
+            var aircraft = new Ysfo.Core.Aircraft();
             aircraft.LstEntry = "test.dat";
 
             aircraft.Load(validYsPath);

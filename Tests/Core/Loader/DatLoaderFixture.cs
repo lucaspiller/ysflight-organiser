@@ -23,11 +23,11 @@ namespace Ysfo.Tests.Core.Loader
         {
             String identify = null;
 
-            Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate>() {
+            Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>() {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
             };
 
-            Ysfo.Core.Loader.DatLoader.Load(validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "test.dat", regexes);
 
             Assert.AreEqual("TEST_ADDON", identify);
         }
@@ -38,12 +38,12 @@ namespace Ysfo.Tests.Core.Loader
             String identify = null;
             String test = null;
 
-            Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Loader.DatLoader.StringSetDelegate>() {
+            Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>() {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
                 { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
             };
 
-            Ysfo.Core.Loader.DatLoader.Load(validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "test.dat", regexes);
 
             Assert.AreEqual("TEST_ADDON", identify);
             Assert.AreEqual("TRUE", test);
@@ -52,13 +52,13 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsInvalid()
         {
-            Ysfo.Core.Loader.DatLoader.Load(validYsPath, "invalid", null);
+            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "invalid", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheBaseDirIsInvalid()
         {
-            Ysfo.Core.Loader.DatLoader.Load(null, "test.dat", null);
+            Ysfo.Core.Internal.DatLoader.Load(null, "test.dat", null);
         }
 
         [Test]
@@ -66,7 +66,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             String lstEntry = "aircraft/aircraft.dat aircraft/aircraft.dnm";
 
-            String result = Ysfo.Core.Loader.DatLoader.GetDatFileFromLstEntry(lstEntry);
+            String result = Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
 
             Assert.AreEqual("aircraft/aircraft.dat", result);
         }
@@ -76,7 +76,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             String lstEntry = "aircraft/aircraft.dnm";
 
-            Ysfo.Core.Loader.DatLoader.GetDatFileFromLstEntry(lstEntry);
+            Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
         }
     }
 }

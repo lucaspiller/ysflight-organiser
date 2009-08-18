@@ -13,7 +13,7 @@ namespace Ysfo.Tests.Core.Addons
         [ExpectedException(typeof(ArgumentException))]
         public void AddonCollectionMustNotUnderstandMockAddon()
         {
-            var addon = new Ysfo.Core.Loader.AddonCollection<MockAddon>("test");
+            var addon = new Ysfo.Core.Internal.AddonCollection<MockAddon>("test");
         }
     }
 }

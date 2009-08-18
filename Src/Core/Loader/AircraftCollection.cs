@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ysfo.Core.Loader
+namespace Ysfo.Core
 {
-    public class AircraftCollection : AddonCollection<Addons.Aircraft>
+    public class AircraftCollection : Internal.AddonCollection<Aircraft>
     {
         public AircraftCollection(String ysPath) : base(ysPath)
         {
