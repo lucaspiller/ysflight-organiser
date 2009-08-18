@@ -9,13 +9,7 @@ namespace Ysfo.Tests.Core.Loaders
     [TestFixture]
     class DatLoaderFixture
     {
-        String _validYsPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        }
+        readonly String _validYsPath = AppDomain.CurrentDomain.BaseDirectory;
 
         [Test]
         public void ItShouldLoadTheAddonName()

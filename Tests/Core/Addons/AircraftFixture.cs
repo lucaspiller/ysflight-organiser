@@ -6,13 +6,7 @@ namespace Ysfo.Tests.Core.Addons
     [TestFixture]
     class AircraftFixture
     {
-        String _validYsPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        }
+        readonly String _validYsPath = AppDomain.CurrentDomain.BaseDirectory;
 
         [Test]
         public void LoadMustLoadName()

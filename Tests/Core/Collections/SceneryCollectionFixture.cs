@@ -7,15 +7,8 @@ namespace Ysfo.Tests.Core.Collections
     [TestFixture]
     class SceneryCollectionFixture
     {
-        String _validYsPath;
-        String _validLstPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            _validLstPath = "scenery.lst";
-        }
+        readonly String _validYsPath = AppDomain.CurrentDomain.BaseDirectory;
+        const String _validLstPath = "aircraft.lst";
 
         [Test]
         public void ItMustAcceptYsPathInConstructor()

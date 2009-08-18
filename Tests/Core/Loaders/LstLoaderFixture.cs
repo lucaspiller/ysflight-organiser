@@ -7,15 +7,8 @@ namespace Ysfo.Tests.Core.Loaders
     [TestFixture]
     class LstLoaderFixture
     {
-        String _validYsPath;
-        String _validLstPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            _validLstPath = "aircraft.lst";
-        }
+        readonly String _validYsPath = AppDomain.CurrentDomain.BaseDirectory;
+        const String _validLstPath = "aircraft.lst";
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]

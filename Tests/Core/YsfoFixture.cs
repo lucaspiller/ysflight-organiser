@@ -6,13 +6,7 @@ namespace Ysfo.Tests.Core
     [TestFixture]
     public class YsfoFixture
     {
-        String _ysPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            _ysPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        }
+        readonly String _ysPath = AppDomain.CurrentDomain.BaseDirectory;
 
         [Test]
         public void ItMustEnableThePathToBeSet()
