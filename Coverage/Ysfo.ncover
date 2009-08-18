@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<NCover3ProjectSetting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="307">
+  <CoverageDataURL>C:\dev\Ysfo\Coverage\Report\coverage.xml</CoverageDataURL>
+  <ShowExcludedNodes>false</ShowExcludedNodes>
+  <DefaultViewSetting SatisfactoryBranchThreshold="95" SatisfactoryCoverageThreshold="95" SatisfactoryCyclomaticComplexityThreshold="20" SatisfactoryFunctionThreshold="80" SatisfactoryUnvisitedSequencePoints="0" WidgetType="TreeView" FilterStyle="None" ReportStyle="SequencePointCoveragePercentage" SortStyle="Name">
+    <DelayFilters>false</DelayFilters>
+    <filters />
+  </DefaultViewSetting>
+  <NCoverRunSettings>
+    <AutoExclude>true</AutoExclude>
+    <CommandLineArgs>"Ysfo.Tests.Core.dll"</CommandLineArgs>
+    <CommandLineExe>C:\Program Files\NUnit 2.5.2\bin\net-2.0\nunit-console.exe</CommandLineExe>
+    <CoverageHtmlPath>C:\dev\Ysfo\Coverage\Report</CoverageHtmlPath>
+    <CoverageTrend>C:\dev\Ysfo\Coverage\Report\trend.trend</CoverageTrend>
+    <CoverageType>Symbol Branch CyclomaticComplexity MethodVisits</CoverageType>
+    <CoverageXml>C:\dev\Ysfo\Coverage\Report\coverage.xml</CoverageXml>
+    <LogFile>C:\dev\Ysfo\Coverage\Report\coverage.log</LogFile>
+    <LoggingLevel>None</LoggingLevel>
+    <NCoverExe>C:\Program Files\NCover\ncover.console.exe</NCoverExe>
+    <ProfileIIS>false</ProfileIIS>
+    <ProfileWindowsApplication>true</ProfileWindowsApplication>
+    <ProfileWindowsService>false</ProfileWindowsService>
+    <ProjectName>Ysfo</ProjectName>
+    <RegisterForUser>false</RegisterForUser>
+    <ServiceTimeout>0</ServiceTimeout>
+    <SymbolSearchPolicy>15</SymbolSearchPolicy>
+    <VersionNumber>310</VersionNumber>
+    <WaitForAppLoad>1</WaitForAppLoad>
+    <WorkingDirectory>C:\dev\Ysfo\Tests\Core\bin\Debug</WorkingDirectory>
+  </NCoverRunSettings>
+  <ProjectGuid>ac985788-f337-4002-94cb-5bc197275a18</ProjectGuid>
+  <ProjectName>Ysfo</ProjectName>
+  <RebasedPaths />
+  <ReportPath />
+  <SyncPathWithWorkingDirectory>false</SyncPathWithWorkingDirectory>
+</NCover3ProjectSetting>
