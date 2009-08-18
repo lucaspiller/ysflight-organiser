@@ -38,5 +38,21 @@ namespace Ysfo.Tests.Core
                 }
             }
         }
+
+        [Test]
+        public void ItMustReturnAnGroundCollectionOfValidGround()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                var ground = ysfo.GetGroundCollection("ground.lst");
+
+                foreach (var a in ground)
+                {
+                    Console.WriteLine(a.Name);
+                }
+            }
+        }
     }
 }

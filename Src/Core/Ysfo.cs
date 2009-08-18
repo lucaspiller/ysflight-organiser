@@ -22,5 +22,18 @@ namespace Ysfo.Core
 
             return collection;
         }
+
+        public GroundCollection GetGroundCollection()
+        {
+            return GetGroundCollection(null);
+        }
+
+        public GroundCollection GetGroundCollection(String lstPath)
+        {
+            GroundCollection collection = new GroundCollection(Path, lstPath);
+            collection.Load();
+
+            return collection;
+        }
     }
 }
