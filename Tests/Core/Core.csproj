@@ -58,6 +58,7 @@
     <Compile Include="Loader\DatLoaderFixture.cs" />
     <Compile Include="Loader\GroundCollectionFixture.cs" />
     <Compile Include="Loader\LstLoaderFixture.cs" />
+    <Compile Include="Loader\SceneryCollectionFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YsfoFixture.cs" />
   </ItemGroup>
@@ -80,6 +81,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ground.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="scenery.lst">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -55,6 +55,7 @@
     <Compile Include="Loader\DatLoader.cs" />
     <Compile Include="Loader\GroundCollection.cs" />
     <Compile Include="Loader\LstLoader.cs" />
+    <Compile Include="Loader\SceneryCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ysfo.cs" />
   </ItemGroup>

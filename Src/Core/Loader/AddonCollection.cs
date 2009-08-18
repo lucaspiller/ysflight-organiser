@@ -39,9 +39,14 @@ namespace Ysfo.Core.Internal
             {
                 return "ground/ground.lst";
             }
+
+            if (typeof(T) == typeof(Scenery))
+            {
+                return "scenery/scenery.lst";
+            }
             
             // eek
-            throw new ArgumentException("Unknown type " + typeof(T).Name);
+            throw new ArgumentException("Unknown addon type " + typeof(T).Name);
         }
     }
 }
