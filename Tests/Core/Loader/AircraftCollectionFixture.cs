@@ -13,7 +13,7 @@ namespace Ysfo.Tests.Core.Loader
         public void Setup()
         {
             _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            _validLstPath = "test.lst";
+            _validLstPath = "aircraft.lst";
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ItMustAcceptLstPathInConstructor()
         {
-            new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
+            new Ysfo.Core.AircraftCollection(_validYsPath, "aircraft.lst");
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace Ysfo.Tests.Core.Loader
 
             Assert.AreEqual(_validYsPath, aircraft.YsPath);
 
-            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
+            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "aircraft.lst");
 
             Assert.AreEqual(_validYsPath, aircraft.YsPath);
         }
@@ -47,9 +47,9 @@ namespace Ysfo.Tests.Core.Loader
 
             Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
 
-            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
+            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "aircraft.lst");
 
-            Assert.AreEqual("test.lst", aircraft.LstPath);
+            Assert.AreEqual("aircraft.lst", aircraft.LstPath);
         }
 
         [Test]

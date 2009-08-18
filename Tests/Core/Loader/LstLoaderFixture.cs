@@ -13,7 +13,7 @@ namespace Ysfo.Tests.Core.Loader
         public void Setup()
         {
             _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            _validLstPath = "test.lst";
+            _validLstPath = "aircraft.lst";
         }
 
         [Test]

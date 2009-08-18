@@ -24,24 +24,13 @@ namespace Ysfo.Tests.Core
         }
 
         [Test]
-        public void ItMustReturnAnAircraftCollection()
+        public void ItMustReturnAnAircraftCollectionOfValidAircraft()
         {
             using (var ysfo = new Ysfo.Core.Ysfo())
             {
                 ysfo.Path = _ysPath;
 
-                ysfo.GetAircraftCollection("test.lst");
-            }
-        }
-
-        [Test]
-        public void ItMustReturnAnAircraftCollectionOfAircraftWithAName()
-        {
-            using (var ysfo = new Ysfo.Core.Ysfo())
-            {
-                ysfo.Path = _ysPath;
-
-                var aircraft = ysfo.GetAircraftCollection("test.lst");
+                var aircraft = ysfo.GetAircraftCollection("aircraft.lst");
 
                 foreach (var a in aircraft)
                 {
