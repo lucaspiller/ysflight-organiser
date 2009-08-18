@@ -8,13 +8,13 @@ namespace Ysfo.Core.Loader
 {
     public static class LstLoader
     {
-        public static ICollection<Addons.Aircraft> Load(String ysPath, String lstPath)
+        public static ICollection<T> Load<T>(String ysPath, String lstPath) where T: Addons.Addon, new()
         {
             // get path
             String path = GetFullPath(ysPath, lstPath);
 
             // initialize collection
-            ICollection<Addons.Aircraft> aircraft = new List<Addons.Aircraft>();
+            ICollection<T> addons = new List<T>();
 
             // read from file
             var query =
@@ -26,14 +26,14 @@ namespace Ysfo.Core.Loader
             query.ForEach(line =>
             {
                 // load aircraft
-                Addons.Aircraft addon = new Addons.Aircraft();
+                T addon = new T();
                 addon.LstEntry = line;
                 addon.Load(ysPath);
 
-                aircraft.Add(addon);
+                addons.Add(addon);
             });
 
-            return aircraft;
+            return addons;
         }
 
         private static IEnumerable<String> LineReader(String fileName)

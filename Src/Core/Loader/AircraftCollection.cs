@@ -33,7 +33,7 @@ namespace Ysfo.Core.Loader
         public void Load()
         {
             // load aircraft
-            ICollection<Addons.Aircraft> aircraft = LstLoader.Load(YsPath, LstPath);
+            ICollection<Addons.Aircraft> aircraft = LstLoader.Load<Addons.Aircraft>(YsPath, LstPath);
 
             // clear and add aircraft
             Clear();
