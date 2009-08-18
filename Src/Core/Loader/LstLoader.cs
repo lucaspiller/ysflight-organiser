@@ -26,7 +26,8 @@ namespace Ysfo.Core.Loader
             query.ForEach(line =>
             {
                 // load aircraft
-                Addons.Aircraft addon = new Addons.Aircraft(line);
+                Addons.Aircraft addon = new Addons.Aircraft();
+                addon.LstEntry = line;
                 addon.Load(ysPath);
 
                 aircraft.Add(addon);

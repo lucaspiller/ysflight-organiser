@@ -8,10 +8,6 @@ namespace Ysfo.Core.Addons
 {
     public class Aircraft : Addon
     {
-        public Aircraft(String lstEntry) : base(lstEntry)
-        {
-        }
-
         public override void Load(String ysPath)
         {
             Dictionary<Regex, Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Loader.DatLoader.StringSetDelegate>() {

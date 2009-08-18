@@ -9,14 +9,5 @@ namespace Ysfo.Tests.Core.Addons
     [TestFixture]
     class MockAddonFixture
     {
-        [Test]
-        public void ItMustSetLstEntryInConstructor()
-        {
-            String testEntry = "TEST.DAT TEST.DNM TEST.SRF";
-
-            var aircraft = new Ysfo.Core.Addons.Aircraft(testEntry);
-
-            Assert.AreEqual(testEntry, aircraft.LstEntry);
-        }
     }
 }

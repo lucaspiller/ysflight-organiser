@@ -18,19 +18,10 @@ namespace Ysfo.Tests.Core.Addons
         }
 
         [Test]
-        public void ItMustSetLstEntryInConstructor()
-        {
-            String testEntry = "TEST.DAT TEST.DNM TEST.SRF";
-
-            var aircraft = new Ysfo.Core.Addons.Aircraft(testEntry);
-
-            Assert.AreEqual(testEntry, aircraft.LstEntry);
-        }
-
-        [Test]
         public void LoadMustLoadName()
         {
-            var aircraft = new Ysfo.Core.Addons.Aircraft("test.dat");
+            var aircraft = new Ysfo.Core.Addons.Aircraft();
+            aircraft.LstEntry = "test.dat";
 
             aircraft.Load(validYsPath);
 
