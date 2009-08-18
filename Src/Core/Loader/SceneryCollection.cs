@@ -2,7 +2,7 @@
 
 namespace Ysfo.Core
 {
-    public class SceneryCollection : Internal.AddonCollection<Scenery>
+    public class SceneryCollection : Internal.AddonCollection<SceneryAddon>
     {
         public SceneryCollection(String ysPath) : base(ysPath)
         {

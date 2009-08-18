@@ -2,7 +2,7 @@
 
 namespace Ysfo.Core
 {
-    public class Scenery : Internal.Addon
+    public class SceneryAddon : Internal.Addon
     {
         public override void Load(String ysPath)
         {

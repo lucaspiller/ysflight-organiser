@@ -2,7 +2,7 @@
 
 namespace Ysfo.Core
 {
-    public class AircraftCollection : Internal.AddonCollection<Aircraft>
+    public class AircraftCollection : Internal.AddonCollection<AircraftAddon>
     {
         public AircraftCollection(String ysPath) : base(ysPath)
         {

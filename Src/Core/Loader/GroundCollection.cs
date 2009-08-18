@@ -2,7 +2,7 @@
 
 namespace Ysfo.Core
 {
-    public class GroundCollection : Internal.AddonCollection<Ground>
+    public class GroundCollection : Internal.AddonCollection<GroundAddon>
     {
         public GroundCollection(String ysPath) : base(ysPath)
         {

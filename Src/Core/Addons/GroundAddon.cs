@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace Ysfo.Core
 {
-    public class Aircraft : Internal.Addon
+    public class GroundAddon : Internal.Addon
     {
         public override void Load(String ysPath)
         {
             var regexes = new Dictionary<Regex, Internal.DatLoader.StringSetDelegate>
             {
-                { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { Name = value; } }
+                { new Regex("IDENTIFY (.*)"), delegate(String value) { Name = value; } }
             };
 
             Internal.DatLoader.Load(ysPath, LstEntry, regexes);

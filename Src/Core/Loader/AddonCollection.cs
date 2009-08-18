@@ -30,17 +30,17 @@ namespace Ysfo.Core.Internal
 
         private static String DefaultLstPath()
         {
-            if (typeof(T) == typeof(Aircraft))
+            if (typeof(T) == typeof(AircraftAddon))
             {
                 return "aircraft/aircraft.lst";
             }
             
-            if (typeof(T) == typeof(Ground))
+            if (typeof(T) == typeof(GroundAddon))
             {
                 return "ground/ground.lst";
             }
 
-            if (typeof(T) == typeof(Scenery))
+            if (typeof(T) == typeof(SceneryAddon))
             {
                 return "scenery/scenery.lst";
             }

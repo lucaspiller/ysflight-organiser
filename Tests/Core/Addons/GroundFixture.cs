@@ -17,7 +17,7 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var addon = new Ysfo.Core.Ground { LstEntry = "ground.dat" };
+            var addon = new Ysfo.Core.GroundAddon { LstEntry = "ground.dat" };
             addon.Load(_validYsPath);
 
             Assert.AreEqual("TEST_GROUND", addon.Name);

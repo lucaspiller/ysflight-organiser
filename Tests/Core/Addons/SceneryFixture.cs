@@ -17,7 +17,7 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var addon = new Ysfo.Core.Scenery { LstEntry = "TEST_SCENERY test.srf" };
+            var addon = new Ysfo.Core.SceneryAddon { LstEntry = "TEST_SCENERY test.srf" };
             addon.Load(_validYsPath);
 
             Assert.AreEqual("TEST_SCENERY", addon.Name);

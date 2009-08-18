@@ -17,7 +17,7 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var addon = new Ysfo.Core.Aircraft {LstEntry = "aircraft.dat"};
+            var addon = new Ysfo.Core.AircraftAddon {LstEntry = "aircraft.dat"};
             addon.Load(_validYsPath);
 
             Assert.AreEqual("TEST_AIRCRAFT", addon.Name);
