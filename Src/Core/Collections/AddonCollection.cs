@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ysfo.Core.Addons;
+using Ysfo.Core.Loaders;
 
-namespace Ysfo.Core.Internal
+namespace Ysfo.Core.Collections
 {
     public class AddonCollection<T> : List<T> where T: Addon, new()
     {

@@ -54,11 +54,11 @@
     <Compile Include="Addons\MockAddon.cs" />
     <Compile Include="Addons\MockAddonFixture.cs" />
     <Compile Include="Addons\SceneryFixture.cs" />
-    <Compile Include="Loader\AircraftCollectionFixture.cs" />
-    <Compile Include="Loader\DatLoaderFixture.cs" />
-    <Compile Include="Loader\GroundCollectionFixture.cs" />
-    <Compile Include="Loader\LstLoaderFixture.cs" />
-    <Compile Include="Loader\SceneryCollectionFixture.cs" />
+    <Compile Include="Collections\AircraftCollectionFixture.cs" />
+    <Compile Include="Loaders\DatLoaderFixture.cs" />
+    <Compile Include="Collections\GroundCollectionFixture.cs" />
+    <Compile Include="Loaders\LstLoaderFixture.cs" />
+    <Compile Include="Collections\SceneryCollectionFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YsfoFixture.cs" />
   </ItemGroup>

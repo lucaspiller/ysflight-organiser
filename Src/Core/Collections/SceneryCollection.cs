@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Ysfo.Core
+namespace Ysfo.Core.Collections
 {
-    public class SceneryCollection : Internal.AddonCollection<SceneryAddon>
+    public class SceneryCollection : AddonCollection<SceneryAddon>
     {
         public SceneryCollection(String ysPath) : base(ysPath)
         {

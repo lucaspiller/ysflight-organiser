@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Ysfo.Core
+namespace Ysfo.Core.Collections
 {
-    public class AircraftCollection : Internal.AddonCollection<AircraftAddon>
+    public class AircraftCollection : AddonCollection<AircraftAddon>
     {
         public AircraftCollection(String ysPath) : base(ysPath)
         {

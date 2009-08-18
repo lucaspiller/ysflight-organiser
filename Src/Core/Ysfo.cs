@@ -1,4 +1,5 @@
 ﻿using System;
+using Ysfo.Core.Collections;
 
 namespace Ysfo.Core
 {

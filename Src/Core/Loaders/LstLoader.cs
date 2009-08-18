@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using Ysfo.Core.Addons;
 
-namespace Ysfo.Core.Internal
+namespace Ysfo.Core.Loaders
 {
     public static class LstLoader
     {
@@ -23,13 +24,13 @@ namespace Ysfo.Core.Internal
 
             // add to collection
             query.ForEach(line =>
-            {
-                // load aircraft
-                T addon = new T {LstEntry = line};
-                addon.Load(ysPath);
+                              {
+                                  // load aircraft
+                                  T addon = new T {LstEntry = line};
+                                  addon.Load(ysPath);
 
-                addons.Add(addon);
-            });
+                                  addons.Add(addon);
+                              });
 
             return addons;
         }

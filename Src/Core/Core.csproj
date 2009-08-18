@@ -50,12 +50,12 @@
     <Compile Include="Addons\GroundAddon.cs" />
     <Compile Include="Addons\SceneryAddon.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Loader\AddonCollection.cs" />
-    <Compile Include="Loader\AircraftCollection.cs" />
-    <Compile Include="Loader\DatLoader.cs" />
-    <Compile Include="Loader\GroundCollection.cs" />
-    <Compile Include="Loader\LstLoader.cs" />
-    <Compile Include="Loader\SceneryCollection.cs" />
+    <Compile Include="Collections\AddonCollection.cs" />
+    <Compile Include="Collections\AircraftCollection.cs" />
+    <Compile Include="Loaders\DatLoader.cs" />
+    <Compile Include="Collections\GroundCollection.cs" />
+    <Compile Include="Loaders\LstLoader.cs" />
+    <Compile Include="Collections\SceneryCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ysfo.cs" />
   </ItemGroup>

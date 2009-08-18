@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ysfo.Core.Internal
+namespace Ysfo.Core.Addons
 {
     public abstract class Addon
     {

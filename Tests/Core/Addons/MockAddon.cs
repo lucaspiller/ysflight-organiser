@@ -1,8 +1,9 @@
-﻿using System;
+using System;
+using Ysfo.Core.Addons;
 
 namespace Ysfo.Tests.Core.Addons
 {
-    class MockAddon : Ysfo.Core.Internal.Addon
+    class MockAddon : Addon
     {
         public override void Load(string ysPath)
         {

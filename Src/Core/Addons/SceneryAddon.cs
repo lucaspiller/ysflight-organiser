@@ -1,8 +1,9 @@
 ﻿using System;
+using Ysfo.Core.Addons;
 
 namespace Ysfo.Core
 {
-    public class SceneryAddon : Internal.Addon
+    public class SceneryAddon : Addon
     {
         public override void Load(String ysPath)
         {

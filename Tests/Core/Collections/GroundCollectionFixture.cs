@@ -1,7 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
+using Ysfo.Core.Collections;
 
-namespace Ysfo.Tests.Core.Loader
+namespace Ysfo.Tests.Core.Collections
 {
     [TestFixture]
     class GroundCollectionFixture
@@ -19,23 +20,23 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ItMustAcceptYsPathInConstructor()
         {
-            new Ysfo.Core.GroundCollection(_validYsPath);
+            new GroundCollection(_validYsPath);
         }
 
         [Test]
         public void ItMustAcceptLstPathInConstructor()
         {
-            new Ysfo.Core.GroundCollection(_validYsPath, "ground.lst");
+            new GroundCollection(_validYsPath, "ground.lst");
         }
 
         [Test]
         public void ConstructorMustAssignYsPath()
         {
-            var ground = new Ysfo.Core.GroundCollection(_validYsPath);
+            var ground = new GroundCollection(_validYsPath);
 
             Assert.AreEqual(_validYsPath, ground.YsPath);
 
-            ground = new Ysfo.Core.GroundCollection(_validYsPath, "ground.lst");
+            ground = new GroundCollection(_validYsPath, "ground.lst");
 
             Assert.AreEqual(_validYsPath, ground.YsPath);
         }
@@ -43,11 +44,11 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorMustAssignLstPath()
         {
-            var ground = new Ysfo.Core.GroundCollection(_validYsPath);
+            var ground = new GroundCollection(_validYsPath);
 
             Assert.AreEqual("ground/ground.lst", ground.LstPath);
 
-            ground = new Ysfo.Core.GroundCollection(_validYsPath, "ground.lst");
+            ground = new GroundCollection(_validYsPath, "ground.lst");
 
             Assert.AreEqual("ground.lst", ground.LstPath);
         }
@@ -55,7 +56,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorMustAssignDefaultLstPathWhenPassedNull()
         {
-            var ground = new Ysfo.Core.GroundCollection(_validYsPath, null);
+            var ground = new GroundCollection(_validYsPath, null);
 
             Assert.AreEqual("ground/ground.lst", ground.LstPath);
         }
@@ -63,7 +64,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void LoadMustLoadground()
         {
-            var ground = new Ysfo.Core.GroundCollection(_validYsPath, _validLstPath);
+            var ground = new GroundCollection(_validYsPath, _validLstPath);
 
             Assert.AreEqual(0, ground.Count);
 

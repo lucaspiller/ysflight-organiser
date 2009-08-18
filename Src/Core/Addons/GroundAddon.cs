@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Ysfo.Core.Addons;
+using Ysfo.Core.Loaders;
 
 namespace Ysfo.Core
 {
-    public class GroundAddon : Internal.Addon
+    public class GroundAddon : Addon
     {
         public override void Load(String ysPath)
         {
-            var regexes = new Dictionary<Regex, Internal.DatLoader.StringSetDelegate>
+            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
             {
                 { new Regex("IDENTIFY (.*)"), delegate(String value) { Name = value; } }
             };
 
-            Internal.DatLoader.Load(ysPath, LstEntry, regexes);
+            DatLoader.Load(ysPath, LstEntry, regexes);
         }
     }
 }

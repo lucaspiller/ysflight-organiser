@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace Ysfo.Core.Internal
+namespace Ysfo.Core.Loaders
 {
     public static class DatLoader
     {
@@ -35,15 +35,15 @@ namespace Ysfo.Core.Internal
                 {
                     // for each regex
                     regexes.Keys.ForEach(r =>
-                    {
-                        // check if matches
-                        Match m = r.Match(line);
-                        if (m.Success)
-                        {
-                            // if so call delegate with result
-                            regexes[r](m.Groups[1].Value);
-                        }
-                    });
+                                             {
+                                                 // check if matches
+                                                 Match m = r.Match(line);
+                                                 if (m.Success)
+                                                 {
+                                                     // if so call delegate with result
+                                                     regexes[r](m.Groups[1].Value);
+                                                 }
+                                             });
                 }
             }
         }

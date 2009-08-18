@@ -1,7 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
+using Ysfo.Core.Collections;
 
-namespace Ysfo.Tests.Core.Loader
+namespace Ysfo.Tests.Core.Collections
 {
     [TestFixture]
     class SceneryCollectionFixture
@@ -19,23 +20,23 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ItMustAcceptYsPathInConstructor()
         {
-            new Ysfo.Core.SceneryCollection(_validYsPath);
+            new SceneryCollection(_validYsPath);
         }
 
         [Test]
         public void ItMustAcceptLstPathInConstructor()
         {
-            new Ysfo.Core.SceneryCollection(_validYsPath, "scenery.lst");
+            new SceneryCollection(_validYsPath, "scenery.lst");
         }
 
         [Test]
         public void ConstructorMustAssignYsPath()
         {
-            var scenery = new Ysfo.Core.SceneryCollection(_validYsPath);
+            var scenery = new SceneryCollection(_validYsPath);
 
             Assert.AreEqual(_validYsPath, scenery.YsPath);
 
-            scenery = new Ysfo.Core.SceneryCollection(_validYsPath, "scenery.lst");
+            scenery = new SceneryCollection(_validYsPath, "scenery.lst");
 
             Assert.AreEqual(_validYsPath, scenery.YsPath);
         }
@@ -43,11 +44,11 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorMustAssignLstPath()
         {
-            var scenery = new Ysfo.Core.SceneryCollection(_validYsPath);
+            var scenery = new SceneryCollection(_validYsPath);
 
             Assert.AreEqual("scenery/scenery.lst", scenery.LstPath);
 
-            scenery = new Ysfo.Core.SceneryCollection(_validYsPath, "scenery.lst");
+            scenery = new SceneryCollection(_validYsPath, "scenery.lst");
 
             Assert.AreEqual("scenery.lst", scenery.LstPath);
         }
@@ -55,7 +56,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorMustAssignDefaultLstPathWhenPassedNull()
         {
-            var scenery = new Ysfo.Core.SceneryCollection(_validYsPath, null);
+            var scenery = new SceneryCollection(_validYsPath, null);
 
             Assert.AreEqual("scenery/scenery.lst", scenery.LstPath);
         }
@@ -63,7 +64,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void LoadMustLoadscenery()
         {
-            var scenery = new Ysfo.Core.SceneryCollection(_validYsPath, _validLstPath);
+            var scenery = new SceneryCollection(_validYsPath, _validLstPath);
 
             Assert.AreEqual(0, scenery.Count);
 

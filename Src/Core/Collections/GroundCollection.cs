@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Ysfo.Core
+namespace Ysfo.Core.Collections
 {
-    public class GroundCollection : Internal.AddonCollection<GroundAddon>
+    public class GroundCollection : AddonCollection<GroundAddon>
     {
         public GroundCollection(String ysPath) : base(ysPath)
         {

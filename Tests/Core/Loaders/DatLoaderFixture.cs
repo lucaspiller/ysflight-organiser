@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
+using Ysfo.Core.Loaders;
 
-namespace Ysfo.Tests.Core.Loader
+namespace Ysfo.Tests.Core.Loaders
 {
     [TestFixture]
     class DatLoaderFixture
@@ -21,12 +22,12 @@ namespace Ysfo.Tests.Core.Loader
         {
             String identify = null;
 
-            var regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>
-            {
-                { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
-            };
+            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
+                              {
+                                  { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
+                              };
 
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
+            DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
 
             Assert.AreEqual("TEST_AIRCRAFT", identify);
         }
@@ -37,13 +38,13 @@ namespace Ysfo.Tests.Core.Loader
             String identify = null;
             String test = null;
 
-            var regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>
-            {
-                { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
-                { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
-            };
+            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
+                              {
+                                  { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
+                                  { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
+                              };
 
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
+            DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
 
             Assert.AreEqual("TEST_AIRCRAFT", identify);
             Assert.AreEqual("TRUE", test);
@@ -52,19 +53,19 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsNull()
         {
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, null, null);
+            DatLoader.Load(_validYsPath, null, null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsInvalid()
         {
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "invalid.lst", null);
+            DatLoader.Load(_validYsPath, "invalid.lst", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheBaseDirIsNull()
         {
-            Ysfo.Core.Internal.DatLoader.Load(null, "aircraft.dat", null);
+            DatLoader.Load(null, "aircraft.dat", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -72,7 +73,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
 
-            Ysfo.Core.Internal.DatLoader.Load(invalidYsPath, "aircraft.dat", null);
+            DatLoader.Load(invalidYsPath, "aircraft.dat", null);
         }
 
         [Test]
@@ -80,7 +81,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             const string lstEntry = "aircraft/aircraft.dat aircraft/aircraft.dnm";
 
-            String result = Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
+            String result = DatLoader.GetDatFileFromLstEntry(lstEntry);
 
             Assert.AreEqual("aircraft/aircraft.dat", result);
         }
@@ -90,7 +91,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             const string lstEntry = "aircraft/aircraft.dnm";
 
-            Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
+            DatLoader.GetDatFileFromLstEntry(lstEntry);
         }
     }
 }
