@@ -3,11 +3,16 @@ using Ysfo.Core.Addons;
 
 namespace Ysfo.Tests.Core.Addons
 {
-    class MockAddon : Addon
+    public class MockAddon : Addon
     {
-        public override void Load(string ysPath)
+        public override void Load(String ysPath)
         {
             throw new NotImplementedException();
+        }
+
+        public void SetName(String name)
+        {
+            Name = name;
         }
     }
 }
