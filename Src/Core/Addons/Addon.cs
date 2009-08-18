@@ -8,5 +8,10 @@ namespace Ysfo.Core.Addons
         public String LstEntry { get; set; }
 
         public abstract void Load(String ysPath);
+
+        public override string ToString()
+        {
+            return Name ?? "-- Addon --";
+        }
     }
 }
