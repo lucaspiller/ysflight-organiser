@@ -45,5 +45,15 @@ namespace Ysfo.Tests.Core.Addons
             Assert.AreEqual("Test Addon", addon.GetPrettyName());
         }
 
+        [Test]
+        public void NamePrettyMustReturnNameInTitleCase()
+        {
+            var addon = new MockAddon();
+
+            addon.SetName("TEST_ADDON");
+
+            Assert.AreEqual("TEST_ADDON", addon.Name);
+            Assert.AreEqual("Test Addon", addon.NamePretty);
+        }
     }
 }

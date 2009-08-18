@@ -5,6 +5,7 @@ namespace Ysfo.Core.Addons
     public abstract class Addon
     {
         public String Name { get; protected set; }
+        public String NamePretty { get { return Name.ToTitleCase(); } }
         public String LstEntry { get; set; }
 
         public abstract void Load(String ysPath);

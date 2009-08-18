@@ -9,6 +9,7 @@ namespace Ysfo.Core
     public class AircraftAddon : Addon
     {
         public String Category { get; protected set; }
+        public String CategoryPretty { get { return Category.ToTitleCase(); } }
 
         public override void Load(String ysPath)
         {
