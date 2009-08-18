@@ -35,6 +35,11 @@ namespace Ysfo.Core.Internal
                 return "aircraft/aircraft.lst";
             }
             
+            if (typeof(T) == typeof(Ground))
+            {
+                return "ground/ground.lst";
+            }
+            
             // eek
             throw new ArgumentException("Unknown type " + typeof(T).Name);
         }
