@@ -16,5 +16,14 @@ namespace Ysfo.Tests.Core.Addons
 
             Assert.AreEqual("TEST_AIRCRAFT", addon.Name);
         }
+
+        [Test]
+        public void LoadMustLoadCategory()
+        {
+            var addon = new Ysfo.Core.AircraftAddon { LstEntry = "aircraft.dat" };
+            addon.Load(_validYsPath);
+
+            Assert.AreEqual("TEST_CATEGORY", addon.Category);            
+        }
     }
 }
