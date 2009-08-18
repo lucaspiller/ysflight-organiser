@@ -35,5 +35,15 @@ namespace SampleGUILister
                 lbxScenery.Items.AddRange(scenery.ToArray());
             }
         }
+
+        private void lbxAircraft_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon) lbxAircraft.SelectedItem;
+
+            if (aircraft != null)
+            {
+                new AircraftDetailsForm(aircraft).Show();
+            }
+        }
     }
 }

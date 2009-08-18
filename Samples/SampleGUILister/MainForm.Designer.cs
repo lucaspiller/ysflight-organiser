@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.gbxPath = new System.Windows.Forms.GroupBox();
-            this.tbxPath = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.tbxPath = new System.Windows.Forms.TextBox();
             this.gbxAircraft = new System.Windows.Forms.GroupBox();
             this.lbxAircraft = new System.Windows.Forms.ListBox();
             this.gbxGround = new System.Windows.Forms.GroupBox();
@@ -64,16 +64,6 @@
             this.gbxPath.TabStop = false;
             this.gbxPath.Text = "YsFlight Directory";
             // 
-            // tbxPath
-            // 
-            this.tbxPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxPath.Location = new System.Drawing.Point(6, 22);
-            this.tbxPath.Name = "tbxPath";
-            this.tbxPath.Size = new System.Drawing.Size(475, 20);
-            this.tbxPath.TabIndex = 0;
-            this.tbxPath.Text = "C:\\dev\\ysflight\\20090502";
-            // 
             // btnLoad
             // 
             this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -84,6 +74,16 @@
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // tbxPath
+            // 
+            this.tbxPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxPath.Location = new System.Drawing.Point(6, 22);
+            this.tbxPath.Name = "tbxPath";
+            this.tbxPath.Size = new System.Drawing.Size(475, 20);
+            this.tbxPath.TabIndex = 0;
+            this.tbxPath.Text = "C:\\dev\\ysflight\\20090502";
             // 
             // gbxAircraft
             // 
@@ -104,6 +104,7 @@
             this.lbxAircraft.Name = "lbxAircraft";
             this.lbxAircraft.Size = new System.Drawing.Size(183, 199);
             this.lbxAircraft.TabIndex = 0;
+            this.lbxAircraft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAircraft_MouseDoubleClick);
             // 
             // gbxGround
             // 
