@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 
@@ -10,12 +8,12 @@ namespace Ysfo.Tests.Core.Loader
     [TestFixture]
     class DatLoaderFixture
     {
-        String validYsPath;
+        String _validYsPath;
 
         [SetUp]
         public void Setup()
         {
-            validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
         [Test]
@@ -23,11 +21,12 @@ namespace Ysfo.Tests.Core.Loader
         {
             String identify = null;
 
-            Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>() {
+            var regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>
+            {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
             };
 
-            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "test.dat", regexes);
 
             Assert.AreEqual("TEST_ADDON", identify);
         }
@@ -38,12 +37,13 @@ namespace Ysfo.Tests.Core.Loader
             String identify = null;
             String test = null;
 
-            Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>() {
+            var regexes = new Dictionary<Regex, Ysfo.Core.Internal.DatLoader.StringSetDelegate>
+            {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
                 { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
             };
 
-            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "test.dat", regexes);
 
             Assert.AreEqual("TEST_ADDON", identify);
             Assert.AreEqual("TRUE", test);
@@ -52,13 +52,13 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsNull()
         {
-            Ysfo.Core.Internal.DatLoader.Load(validYsPath, null, null);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, null, null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsInvalid()
         {
-            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "invalid.lst", null);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "invalid.lst", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -70,7 +70,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheBaseDirIsInvalid()
         {
-            String invalidYsPath = System.IO.Path.Combine(validYsPath, "invaliddir");
+            String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
 
             Ysfo.Core.Internal.DatLoader.Load(invalidYsPath, "test.dat", null);
         }
@@ -78,7 +78,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void Extractor_ItShouldReturnDatFileFromLstEntry()
         {
-            String lstEntry = "aircraft/aircraft.dat aircraft/aircraft.dnm";
+            const string lstEntry = "aircraft/aircraft.dat aircraft/aircraft.dnm";
 
             String result = Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
 
@@ -88,7 +88,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void Extractor_ItShouldThrowAnExceptionWhenADatFileCannotBeFound()
         {
-            String lstEntry = "aircraft/aircraft.dnm";
+            const string lstEntry = "aircraft/aircraft.dnm";
 
             Ysfo.Core.Internal.DatLoader.GetDatFileFromLstEntry(lstEntry);
         }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Ysfo.Tests.Core.Addons
@@ -9,21 +6,19 @@ namespace Ysfo.Tests.Core.Addons
     [TestFixture]
     class AircraftFixture
     {
-        String validYsPath;
+        String _validYsPath;
 
         [SetUp]
         public void Setup()
         {
-            validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
         [Test]
         public void LoadMustLoadName()
         {
-            var aircraft = new Ysfo.Core.Aircraft();
-            aircraft.LstEntry = "test.dat";
-
-            aircraft.Load(validYsPath);
+            var aircraft = new Ysfo.Core.Aircraft {LstEntry = "test.dat"};
+            aircraft.Load(_validYsPath);
 
             Assert.AreEqual("TEST_ADDON", aircraft.Name);
         }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Ysfo.Tests.Core.Loader
@@ -9,48 +6,48 @@ namespace Ysfo.Tests.Core.Loader
     [TestFixture]
     class AircraftCollectionFixture
     {
-        String validYsPath;
-        String validLstPath;
+        String _validYsPath;
+        String _validLstPath;
 
         [SetUp]
         public void Setup()
         {
-            validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            validLstPath = "test.lst";
+            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            _validLstPath = "test.lst";
         }
 
         [Test]
         public void ItMustAcceptYsPathInConstructor()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath);
+            new Ysfo.Core.AircraftCollection(_validYsPath);
         }
 
         [Test]
         public void ItMustAcceptLstPathInConstructor()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath, "test.lst");
+            new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
         }
 
         [Test]
         public void ConstructorMustAssignYsPath()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath);
+            var aircraft = new Ysfo.Core.AircraftCollection(_validYsPath);
 
-            Assert.AreEqual(validYsPath, aircraft.YsPath);
+            Assert.AreEqual(_validYsPath, aircraft.YsPath);
 
-            aircraft = new Ysfo.Core.AircraftCollection(validYsPath, "test.lst");
+            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
 
-            Assert.AreEqual(validYsPath, aircraft.YsPath);
+            Assert.AreEqual(_validYsPath, aircraft.YsPath);
         }
 
         [Test]
         public void ConstructorMustAssignLstPath()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath);
+            var aircraft = new Ysfo.Core.AircraftCollection(_validYsPath);
 
             Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
 
-            aircraft = new Ysfo.Core.AircraftCollection(validYsPath, "test.lst");
+            aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, "test.lst");
 
             Assert.AreEqual("test.lst", aircraft.LstPath);
         }
@@ -58,7 +55,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void ConstructorMustAssignDefaultLstPathWhenPassedNull()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath, null);
+            var aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, null);
 
             Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
         }
@@ -66,7 +63,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void LoadMustLoadAircraft()
         {
-            var aircraft = new Ysfo.Core.AircraftCollection(validYsPath, validLstPath);
+            var aircraft = new Ysfo.Core.AircraftCollection(_validYsPath, _validLstPath);
 
             Assert.AreEqual(0, aircraft.Count);
 

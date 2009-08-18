@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Ysfo.Tests.Core.Loader
@@ -9,14 +6,14 @@ namespace Ysfo.Tests.Core.Loader
     [TestFixture]
     class LstLoaderFixture
     {
-        String validYsPath;
-        String validLstPath;
+        String _validYsPath;
+        String _validLstPath;
 
         [SetUp]
         public void Setup()
         {
-            validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            validLstPath = "test.lst";
+            _validYsPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            _validLstPath = "test.lst";
         }
 
         [Test]
@@ -30,35 +27,35 @@ namespace Ysfo.Tests.Core.Loader
         [ExpectedException(typeof(ArgumentException))]
         public void LoadThrowsExceptionIfLstPathIsNull()
         {
-            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, null);
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(_validYsPath, null);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void LoadThrowsExceptionIfYsPathIsInvalid()
         {
-            String invalidYsPath = System.IO.Path.Combine(validYsPath, "invaliddir");
+            String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
 
-            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(invalidYsPath, validLstPath);
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(invalidYsPath, _validLstPath);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void LoadThrowsExceptionIfLstPathIsInvalid()
         {
-            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, "invalid.lst");
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(_validYsPath, "invalid.lst");
         }
 
         [Test]
         public void LoadDoesNotThrowExceptionIfYsPathAndLstPathAreValid()
         {
-            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, validLstPath);
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(_validYsPath, _validLstPath);
         }
 
         [Test]
         public void LoadMustReturnOneAircraftForEachValidLineInLstFile()
         {
-            var aircraft = Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, validLstPath);
+            var aircraft = Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(_validYsPath, _validLstPath);
 
             Assert.AreEqual(1, aircraft.Count);
         }
@@ -66,7 +63,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test]
         public void LoadMustReturnValidAircraft()
         {
-            var aircraft = Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, validLstPath);
+            var aircraft = Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(_validYsPath, _validLstPath);
 
             foreach (var a in aircraft)
             {

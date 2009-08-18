@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Ysfo.Tests.Core.Addons
@@ -13,7 +10,7 @@ namespace Ysfo.Tests.Core.Addons
         [ExpectedException(typeof(ArgumentException))]
         public void AddonCollectionMustNotUnderstandMockAddon()
         {
-            var addon = new Ysfo.Core.Internal.AddonCollection<MockAddon>("test");
+            new Ysfo.Core.Internal.AddonCollection<MockAddon>("test");
         }
     }
 }

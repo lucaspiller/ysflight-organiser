@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Ysfo.Tests.Core
@@ -9,12 +6,12 @@ namespace Ysfo.Tests.Core
     [TestFixture]
     public class YsfoFixture
     {
-        String ysPath;
+        String _ysPath;
 
         [SetUp]
         public void Setup()
         {
-            ysPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            _ysPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
         [Test]
@@ -22,7 +19,7 @@ namespace Ysfo.Tests.Core
         {
             using (var ysfo = new Ysfo.Core.Ysfo())
             {
-                ysfo.Path = ysPath;
+                ysfo.Path = _ysPath;
             }
         }
 
@@ -31,24 +28,9 @@ namespace Ysfo.Tests.Core
         {
             using (var ysfo = new Ysfo.Core.Ysfo())
             {
-                ysfo.Path = ysPath;
+                ysfo.Path = _ysPath;
 
-                var aircraft = ysfo.GetAircraftCollection("test.lst");
-            }
-        }
-
-        [Test]
-        public void ItMustReturnAnAircraftCollectionWhichIsIteratable()
-        {
-            using (var ysfo = new Ysfo.Core.Ysfo())
-            {
-                ysfo.Path = ysPath;
-
-                var aircraft = ysfo.GetAircraftCollection("test.lst");
-
-                foreach (var a in aircraft)
-                {
-                }
+                ysfo.GetAircraftCollection("test.lst");
             }
         }
 
@@ -57,7 +39,7 @@ namespace Ysfo.Tests.Core
         {
             using (var ysfo = new Ysfo.Core.Ysfo())
             {
-                ysfo.Path = ysPath;
+                ysfo.Path = _ysPath;
 
                 var aircraft = ysfo.GetAircraftCollection("test.lst");
 
