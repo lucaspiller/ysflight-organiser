@@ -15,34 +15,34 @@ namespace Ysfo.Tests.Core.Addons
         }
 
         [Test]
-        public void ToStringMustReturnNamePretty()
+        public void ToStringMustReturnPrettyName()
         {
             var addon = new MockAddon();
 
             addon.SetName("TEST_ADDON");
 
             Assert.AreEqual("TEST_ADDON", addon.Name);
-            Assert.AreEqual(addon.NamePretty(), addon.ToString());
+            Assert.AreEqual(addon.GetPrettyName(), addon.ToString());
         }
 
         [Test]
-        public void NamePrettyMustNotReturnNullIfNameIsNull()
+        public void PrettyNameMustNotReturnNullIfNameIsNull()
         {
             var addon = new MockAddon();
 
             Assert.IsNull(addon.Name);
-            Assert.IsNotNull(addon.NamePretty());
+            Assert.IsNotNull(addon.GetPrettyName());
         }
 
         [Test]
-        public void NamePrettyMustReturnPrettyName()
+        public void PrettyNameMustReturnTitleCaseName()
         {
             var addon = new MockAddon();
 
             addon.SetName("TEST_ADDON");
 
             Assert.AreEqual("TEST_ADDON", addon.Name);
-            Assert.AreEqual("Test Addon", addon.NamePretty());
+            Assert.AreEqual("Test Addon", addon.GetPrettyName());
         }
 
     }

@@ -11,10 +11,10 @@ namespace Ysfo.Core.Addons
 
         public override string ToString()
         {
-            return NamePretty();
+            return PrettyName();
         }
 
-        public String NamePretty()
+        protected String PrettyName()
         {
             return Name.ToTitleCase() ?? "-- Addon --";
         }
