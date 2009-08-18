@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Src\Core\Core.cspro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsCore", "Tests\Core\TestsCore.csproj", "{FB573771-540D-44AA-B2D2-05EE565A2124}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{1C90B500-4954-4855-8505-7AF4B5058FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleGUILister", "Samples\SampleGUILister\SampleGUILister.csproj", "{1C5DF20E-193D-4957-A2F4-F5119CBD825F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,10 @@ Global
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB573771-540D-44AA-B2D2-05EE565A2124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5DF20E-193D-4957-A2F4-F5119CBD825F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5DF20E-193D-4957-A2F4-F5119CBD825F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5DF20E-193D-4957-A2F4-F5119CBD825F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5DF20E-193D-4957-A2F4-F5119CBD825F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,5 +37,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FB573771-540D-44AA-B2D2-05EE565A2124} = {7CDD2BA7-5412-43D2-90B6-A7448DC243C5}
 		{10D53F8B-EBC1-494D-9A4A-99139434E40B} = {F86F81DB-D537-4EE9-9806-8396218EBAD1}
+		{1C5DF20E-193D-4957-A2F4-F5119CBD825F} = {1C90B500-4954-4855-8505-7AF4B5058FD2}
 	EndGlobalSection
 EndGlobal
