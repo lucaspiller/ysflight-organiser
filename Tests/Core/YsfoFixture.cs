@@ -32,10 +32,8 @@ namespace Ysfo.Tests.Core
 
                 var aircraft = ysfo.GetAircraftCollection("aircraft.lst");
 
-                foreach (var a in aircraft)
-                {
-                    Console.WriteLine(a.Name);
-                }
+                Assert.AreEqual(1, aircraft.Count);
+                Assert.AreEqual("TEST_AIRCRAFT", aircraft[0].Name);
             }
         }
 
@@ -48,10 +46,8 @@ namespace Ysfo.Tests.Core
 
                 var ground = ysfo.GetGroundCollection("ground.lst");
 
-                foreach (var a in ground)
-                {
-                    Console.WriteLine(a.Name);
-                }
+                Assert.AreEqual(1, ground.Count);
+                Assert.AreEqual("TEST_GROUND", ground[0].Name);
             }
         }
 
@@ -64,10 +60,8 @@ namespace Ysfo.Tests.Core
 
                 var scenery = ysfo.GetSceneryCollection("scenery.lst");
 
-                foreach (var a in scenery)
-                {
-                    Console.WriteLine(a.Name);
-                }
+                Assert.AreEqual(1, scenery.Count);
+                Assert.AreEqual("TEST_SCENERY", scenery[0].Name);
             }
         }
     }
