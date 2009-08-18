@@ -24,13 +24,13 @@ namespace Ysfo.Core.Loaders
 
             // add to collection
             query.ForEach(line =>
-                              {
-                                  // load aircraft
-                                  T addon = new T {LstEntry = line};
-                                  addon.Load(ysPath);
+            {
+                // load aircraft
+                T addon = new T {LstEntry = line};
+                addon.Load(ysPath);
 
-                                  addons.Add(addon);
-                              });
+                addons.Add(addon);
+            });
 
             return addons;
         }
@@ -51,6 +51,11 @@ namespace Ysfo.Core.Loaders
 
         private static String GetFullPath(String ysPath, String lstPath)
         {
+            return GetFullPath(ysPath, lstPath, true);
+        }
+
+        private static String GetFullPath(String ysPath, String lstPath, bool lstMustExist)
+        {
             if (ysPath == null)
             {
                 throw new ArgumentException("ysPath is null.");
@@ -68,12 +73,29 @@ namespace Ysfo.Core.Loaders
 
             String lstFullPath = Path.Combine(ysPath, lstPath);
 
-            if (!File.Exists(lstFullPath))
+            if (lstMustExist && !File.Exists(lstFullPath))
             {
                 throw new ArgumentException("Invalid lstPath; file `" + lstFullPath + "'does not exist.");
             }
 
             return lstFullPath;
+        }
+
+        public static void Save<T>(String ysPath, String lstPath, ICollection<T> addons) where T: Addon, new()
+        {
+            // get path
+            String path = GetFullPath(ysPath, lstPath, false);
+
+            // open file
+            using (var file = new StreamWriter(path))
+            {
+                // for each addon
+                addons.ForEach(addon =>
+                {
+                    // write lstentry to file
+                    file.WriteLine(addon.LstEntry);
+                });
+            }
         }
     }
 }

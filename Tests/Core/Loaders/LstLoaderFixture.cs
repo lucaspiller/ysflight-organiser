@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 using Ysfo.Core.Loaders;
 
@@ -63,6 +65,46 @@ namespace Ysfo.Tests.Core.Loaders
             {
                 Assert.AreEqual(typeof(Ysfo.Core.AircraftAddon), a.GetType());
             }
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void SaveThrowsExceptionIfYsPathIsNull()
+        {
+            LstLoader.Save<Ysfo.Core.AircraftAddon>(null, null, null);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void SaveThrowsExceptionIfLstPathIsNull()
+        {
+            LstLoader.Save<Ysfo.Core.AircraftAddon>(_validYsPath, null, null);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void SaveThrowsExceptionIfYsPathIsInvalid()
+        {
+            String invalidYsPath = Path.Combine(_validYsPath, "invaliddir");
+
+            LstLoader.Save<Ysfo.Core.AircraftAddon>(invalidYsPath, "test.lst", null);
+        }
+
+        [Test]
+        public void SaveWritesFile()
+        {
+            // get output file path and ensure it doesn't exist
+            String outputFile = Path.Combine(_validYsPath, "test.lst");
+            Assert.IsFalse(File.Exists(outputFile), "test.lst file already exists!");
+
+            // save
+            LstLoader.Save<Ysfo.Core.AircraftAddon>(_validYsPath, "test.lst", new List<Ysfo.Core.AircraftAddon>());
+
+            // make sure file created
+            Assert.IsTrue(File.Exists(outputFile));
+
+            // cleanup
+            File.Delete(outputFile);
         }
     }
 }
