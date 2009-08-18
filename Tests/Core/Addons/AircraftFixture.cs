@@ -17,10 +17,10 @@ namespace Ysfo.Tests.Core.Addons
         [Test]
         public void LoadMustLoadName()
         {
-            var aircraft = new Ysfo.Core.Aircraft {LstEntry = "test.dat"};
+            var aircraft = new Ysfo.Core.Aircraft {LstEntry = "aircraft.dat"};
             aircraft.Load(_validYsPath);
 
-            Assert.AreEqual("TEST_ADDON", aircraft.Name);
+            Assert.AreEqual("TEST_AIRCRAFT", aircraft.Name);
         }
     }
 }

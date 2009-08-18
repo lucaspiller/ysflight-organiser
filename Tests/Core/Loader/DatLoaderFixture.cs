@@ -26,9 +26,9 @@ namespace Ysfo.Tests.Core.Loader
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
             };
 
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
 
-            Assert.AreEqual("TEST_ADDON", identify);
+            Assert.AreEqual("TEST_AIRCRAFT", identify);
         }
 
         [Test]
@@ -43,9 +43,9 @@ namespace Ysfo.Tests.Core.Loader
                 { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
             };
 
-            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "test.dat", regexes);
+            Ysfo.Core.Internal.DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
 
-            Assert.AreEqual("TEST_ADDON", identify);
+            Assert.AreEqual("TEST_AIRCRAFT", identify);
             Assert.AreEqual("TRUE", test);
         }
 
@@ -64,7 +64,7 @@ namespace Ysfo.Tests.Core.Loader
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheBaseDirIsNull()
         {
-            Ysfo.Core.Internal.DatLoader.Load(null, "test.dat", null);
+            Ysfo.Core.Internal.DatLoader.Load(null, "aircraft.dat", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -72,7 +72,7 @@ namespace Ysfo.Tests.Core.Loader
         {
             String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
 
-            Ysfo.Core.Internal.DatLoader.Load(invalidYsPath, "test.dat", null);
+            Ysfo.Core.Internal.DatLoader.Load(invalidYsPath, "aircraft.dat", null);
         }
 
         [Test]
