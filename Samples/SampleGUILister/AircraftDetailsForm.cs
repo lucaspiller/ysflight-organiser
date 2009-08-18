@@ -17,7 +17,8 @@ namespace SampleGUILister
 
             // set details
             tbxLstEntry.Text = aircraft.LstEntry;
-            tbxName.Text = aircraft.Name;
+            tbxName.Text = aircraft.NamePretty;
+            tbxCategory.Text = aircraft.CategoryPretty;
         }
     }
 }

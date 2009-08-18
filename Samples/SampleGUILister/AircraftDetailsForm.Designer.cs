@@ -32,6 +32,8 @@
             this.tbxLstEntry = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxName = new System.Windows.Forms.TextBox();
+            this.tbxCategory = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -70,11 +72,31 @@
             this.tbxName.Size = new System.Drawing.Size(362, 20);
             this.tbxName.TabIndex = 3;
             // 
+            // tbxCategory
+            // 
+            this.tbxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxCategory.Location = new System.Drawing.Point(88, 64);
+            this.tbxCategory.Name = "tbxCategory";
+            this.tbxCategory.Size = new System.Drawing.Size(362, 20);
+            this.tbxCategory.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Category";
+            // 
             // AircraftDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 64);
+            this.ClientSize = new System.Drawing.Size(462, 93);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbxCategory);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxLstEntry);
@@ -92,5 +114,7 @@
         private System.Windows.Forms.TextBox tbxLstEntry;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.TextBox tbxCategory;
+        private System.Windows.Forms.Label label3;
     }
 }
