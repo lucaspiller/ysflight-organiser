@@ -21,16 +21,32 @@ namespace Ysfo.Tests.Core.Loader
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
-        public void LoadThrowsExceptionIfYsPathIsInvalid()
+        public void LoadThrowsExceptionIfYsPathIsNull()
         {
             Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(null, null);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
-        public void LoadThrowsExceptionIfLstPathIsInvalid()
+        public void LoadThrowsExceptionIfLstPathIsNull()
         {
             Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, null);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfYsPathIsInvalid()
+        {
+            String invalidYsPath = System.IO.Path.Combine(validYsPath, "invaliddir");
+
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(invalidYsPath, validLstPath);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfLstPathIsInvalid()
+        {
+            Ysfo.Core.Internal.LstLoader.Load<Ysfo.Core.Aircraft>(validYsPath, "invalid.lst");
         }
 
         [Test]

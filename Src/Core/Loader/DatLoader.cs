@@ -54,6 +54,12 @@ namespace Ysfo.Core.Internal
 
         public static String GetDatFileFromLstEntry(String lstEntry)
         {
+            if (lstEntry == null)
+            {
+                // no match
+                throw new ArgumentException("lstEntry is null.");
+            }
+
             // split lst
             String[] split = lstEntry.Split(' ');
 

@@ -50,15 +50,29 @@ namespace Ysfo.Tests.Core.Loader
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
+        public void ItShouldThrowAnExceptionIfTheLstEntryIsNull()
+        {
+            Ysfo.Core.Internal.DatLoader.Load(validYsPath, null, null);
+        }
+
+        [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheLstEntryIsInvalid()
         {
-            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "invalid", null);
+            Ysfo.Core.Internal.DatLoader.Load(validYsPath, "invalid.lst", null);
+        }
+
+        [Test, ExpectedException(typeof(ArgumentException))]
+        public void ItShouldThrowAnExceptionIfTheBaseDirIsNull()
+        {
+            Ysfo.Core.Internal.DatLoader.Load(null, "test.dat", null);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void ItShouldThrowAnExceptionIfTheBaseDirIsInvalid()
         {
-            Ysfo.Core.Internal.DatLoader.Load(null, "test.dat", null);
+            String invalidYsPath = System.IO.Path.Combine(validYsPath, "invaliddir");
+
+            Ysfo.Core.Internal.DatLoader.Load(invalidYsPath, "test.dat", null);
         }
 
         [Test]
