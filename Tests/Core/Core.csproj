@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Addons\AircraftFixture.cs" />
+    <Compile Include="Addons\MockAddon.cs" />
+    <Compile Include="Addons\MockAddonFixture.cs" />
     <Compile Include="Loader\AircraftCollectionFixture.cs" />
     <Compile Include="Loader\DatLoaderFixture.cs" />
     <Compile Include="Loader\LstLoaderFixture.cs" />

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addons\Addon.cs" />
     <Compile Include="Addons\Aircraft.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Loader\AircraftCollection.cs" />

@@ -6,17 +6,13 @@ using System.Text.RegularExpressions;
 
 namespace Ysfo.Core.Addons
 {
-    public class Aircraft
+    public class Aircraft : Addon
     {
-        public String Name { get; protected set; }
-        public String LstEntry { get; protected set; }
-
-        public Aircraft(String lstEntry)
+        public Aircraft(String lstEntry) : base(lstEntry)
         {
-            LstEntry = lstEntry;
         }
 
-        public void Load(String ysPath)
+        public override void Load(String ysPath)
         {
             Dictionary<Regex, Loader.DatLoader.StringSetDelegate> regexes = new Dictionary<Regex, Loader.DatLoader.StringSetDelegate>() {
                 { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { Name = value; } }
