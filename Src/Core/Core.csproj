@@ -48,7 +48,7 @@
     <Compile Include="Addons\Addon.cs" />
     <Compile Include="Addons\Aircraft.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Loader\AircraftCollection.cs" />
+    <Compile Include="Loader\AddonCollection.cs" />
     <Compile Include="Loader\DatLoader.cs" />
     <Compile Include="Loader\LstLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

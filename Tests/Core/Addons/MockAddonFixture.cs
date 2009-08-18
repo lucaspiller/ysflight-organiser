@@ -9,5 +9,11 @@ namespace Ysfo.Tests.Core.Addons
     [TestFixture]
     class MockAddonFixture
     {
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void AddonCollectionMustNotUnderstandMockAddon()
+        {
+            var addon = new Ysfo.Core.Loader.AddonCollection<MockAddon>("test");
+        }
     }
 }
