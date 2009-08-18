@@ -53,6 +53,7 @@
     <Compile Include="Addons\GroundFixture.cs" />
     <Compile Include="Addons\MockAddon.cs" />
     <Compile Include="Addons\MockAddonFixture.cs" />
+    <Compile Include="Addons\SceneryFixture.cs" />
     <Compile Include="Loader\AircraftCollectionFixture.cs" />
     <Compile Include="Loader\DatLoaderFixture.cs" />
     <Compile Include="Loader\GroundCollectionFixture.cs" />
