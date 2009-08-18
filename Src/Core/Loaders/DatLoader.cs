@@ -20,7 +20,7 @@ namespace Ysfo.Core.Loaders
 
             if (!Directory.Exists(ysPath))
             {
-                throw new ArgumentException("Invalid ysPath; directory does not exist.");
+                throw new ArgumentException("Invalid ysPath; directory `" + ysPath + "' does not exist.");
             }
 
             // combine dat file with base dir to get full path
@@ -72,7 +72,7 @@ namespace Ysfo.Core.Loaders
             }
 
             // no match
-            throw new ArgumentException("No dat file found in lstEntry.");
+            throw new ArgumentException("No dat file found in lstEntry `" + lstEntry + "'.");
         }
     }
 }

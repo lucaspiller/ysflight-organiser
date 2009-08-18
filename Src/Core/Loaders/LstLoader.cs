@@ -63,14 +63,14 @@ namespace Ysfo.Core.Loaders
 
             if (!Directory.Exists(ysPath))
             {
-                throw new ArgumentException("Invalid ysPath; directory does not exist.");
+                throw new ArgumentException("Invalid ysPath; directory `" + ysPath + "' does not exist.");
             }
 
             String lstFullPath = Path.Combine(ysPath, lstPath);
 
             if (!File.Exists(lstFullPath))
             {
-                throw new ArgumentException("Invalid lstPath; file does not exist.");
+                throw new ArgumentException("Invalid lstPath; file `" + lstFullPath + "'does not exist.");
             }
 
             return lstFullPath;
