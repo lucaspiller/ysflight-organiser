@@ -78,6 +78,58 @@ namespace SampleGUIUnloader
             }
         }
 
+        public void MoveUp(AircraftAddon aircraft)
+        {
+            if (LoadedAircraft.Contains(aircraft))
+            {
+                int index = LoadedAircraft.IndexOf(aircraft);
+
+                if (index > 0)
+                {
+                    LoadedAircraft.Swap(index, index - 1);
+                }
+            }
+
+            if (UnloadedAircraft.Contains(aircraft))
+            {
+                int index = UnloadedAircraft.IndexOf(aircraft);
+
+                if (index > 0)
+                {
+                    UnloadedAircraft.Swap(index, index - 1);
+                }
+            }
+
+            // update lists
+            AircraftListsChange(this, null);
+        }
+
+        public void MoveDown(AircraftAddon aircraft)
+        {
+            if (LoadedAircraft.Contains(aircraft))
+            {
+                int index = LoadedAircraft.IndexOf(aircraft);
+
+                if (index < LoadedAircraft.Count)
+                {
+                    LoadedAircraft.Swap(index, index + 1);
+                }
+            }
+
+            if (UnloadedAircraft.Contains(aircraft))
+            {
+                int index = UnloadedAircraft.IndexOf(aircraft);
+
+                if (index < UnloadedAircraft.Count)
+                {
+                    UnloadedAircraft.Swap(index, index + 1);
+                }
+            }
+
+            // update lists
+            AircraftListsChange(this, null);
+        }
+
         // events
         public event EventHandler AircraftListsChange;
     }

@@ -92,5 +92,69 @@ namespace SampleGUIUnloader
             if (ysfo.UnloadedAircraft != null)
                 lbxUnloaded.Items.AddRange(ysfo.UnloadedAircraft.ToArray());
         }
+
+        private void lbxUnloaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxUnloaded.SelectedItem != null)
+            {
+                // clear selection
+                lbxLoaded.ClearSelected();
+            }
+        }
+
+        private void lbxLoaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxLoaded.SelectedItem != null)
+            {
+                // clear selection
+                lbxUnloaded.ClearSelected();
+            }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (lbxLoaded.SelectedItem != null)
+            {
+                var selected = (Ysfo.Core.AircraftAddon) lbxLoaded.SelectedItem;
+                int selectedIndex = lbxLoaded.SelectedIndex;
+
+                ysfo.MoveUp(selected);
+
+                lbxLoaded.SelectedIndex = selectedIndex - 1;
+            }
+
+            if (lbxUnloaded.SelectedItem != null)
+            {
+                var selected = (Ysfo.Core.AircraftAddon)lbxUnloaded.SelectedItem;
+                int selectedIndex = lbxUnloaded.SelectedIndex;
+
+                ysfo.MoveUp(selected);
+
+                lbxUnloaded.SelectedIndex = selectedIndex - 1;
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (lbxLoaded.SelectedItem != null)
+            {
+                var selected = (Ysfo.Core.AircraftAddon)lbxLoaded.SelectedItem;
+                int selectedIndex = lbxLoaded.SelectedIndex;
+
+                ysfo.MoveDown(selected);
+
+                lbxLoaded.SelectedIndex = selectedIndex + 1;
+            }
+
+            if (lbxUnloaded.SelectedItem != null)
+            {
+                var selected = (Ysfo.Core.AircraftAddon)lbxUnloaded.SelectedItem;
+                int selectedIndex = lbxUnloaded.SelectedIndex;
+
+                ysfo.MoveDown(selected);
+
+                lbxUnloaded.SelectedIndex = selectedIndex + 1;
+            }
+        }
     }
 }
