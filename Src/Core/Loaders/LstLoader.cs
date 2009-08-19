@@ -28,6 +28,9 @@ namespace Ysfo.Core.Loaders
                 // add to collection
                 query.ForEach(line =>
                 {
+                    // convert dir seperators
+                    line = ConvertToNative(line);
+
                     // load aircraft
                     T addon = new T {LstEntry = line};
                     addon.Load(ysPath);
@@ -71,6 +74,24 @@ namespace Ysfo.Core.Loaders
             }
 
             return Path.Combine(ysPath, lstPath);
+        }
+
+        private static String ConvertToNative(String line)
+        {
+            // on Linux, so convert \ to /
+            if (Path.DirectorySeparatorChar == '/')
+            {
+                return line.Replace(@"\", "/");
+            }
+            
+            // on Windows, so convert / to \
+            if (Path.DirectorySeparatorChar == '\\')
+            {
+                return line.Replace("/", @"\");
+            }
+
+            // some arcane platform....
+            throw new ArgumentException("Unknown DirectorySeperatorChat `" + Path.DirectorySeparatorChar + "'.");
         }
 
         public static void Save<T>(String ysPath, String lstPath, ICollection<T> addons) where T: Addon, new()
