@@ -80,7 +80,7 @@
     <Compile Include="YsfoWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Src\Core\Core.csproj">
+    <ProjectReference Include="..\..\Src\Core\Core.csproj">
       <Project>{10D53F8B-EBC1-494D-9A4A-99139434E40B}</Project>
       <Name>Core</Name>
     </ProjectReference>
