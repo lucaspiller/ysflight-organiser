@@ -77,6 +77,9 @@ namespace Ysfo.Tests.Core.Collections
             // create collection
             var addons = new GroundCollection(_validYsPath, "test.lst");
 
+            // add test addon
+            addons.Add(new Ysfo.Core.GroundAddon { LstEntry = "TEST.DAT TEST.SRF" });
+
             // save
             addons.Save();
 

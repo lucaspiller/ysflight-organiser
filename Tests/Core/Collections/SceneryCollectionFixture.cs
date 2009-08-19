@@ -77,6 +77,9 @@ namespace Ysfo.Tests.Core.Collections
             // create collection
             var addons = new SceneryCollection(_validYsPath, "test.lst");
 
+            // add test addon
+            addons.Add(new Ysfo.Core.SceneryAddon { LstEntry = "TEST TEST.SRF" });
+
             // save
             addons.Save();
 

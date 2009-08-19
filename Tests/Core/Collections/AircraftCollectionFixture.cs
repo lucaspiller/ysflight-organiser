@@ -77,6 +77,9 @@ namespace Ysfo.Tests.Core.Collections
             // create collection
             var addons = new AircraftCollection(_validYsPath, "test.lst");
 
+            // add test addon
+            addons.Add(new Ysfo.Core.AircraftAddon { LstEntry = "TEST.DAT TEST.SRF" });
+
             // save
             addons.Save();
 

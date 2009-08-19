@@ -58,5 +58,38 @@ namespace Ysfo.Tests.Core
                 Assert.AreEqual("TEST_SCENERY", scenery[0].Name);
             }
         }
+
+        [Test]
+        public void ItMustReturnAnAircraftCollectionWhenLstFileDoesntExist()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                ysfo.GetAircraftCollection();
+            }
+        }
+
+        [Test]
+        public void ItMustReturnAnGroundCollectionWhenLstFileDoesntExist()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                ysfo.GetGroundCollection();
+            }
+        }
+
+        [Test]
+        public void ItMustReturnAnSceneryCollectionWhenLstFileDoesntExist()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                ysfo.GetSceneryCollection();
+            }
+        }
     }
 }
