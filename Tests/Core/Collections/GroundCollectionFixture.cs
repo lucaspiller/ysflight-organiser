@@ -40,7 +40,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var ground = new GroundCollection(_validYsPath);
 
-            Assert.AreEqual("ground/ground.lst", ground.LstPath);
+            Assert.AreEqual(@"ground\ground.lst", ground.LstPath);
 
             ground = new GroundCollection(_validYsPath, "ground.lst");
 
@@ -52,7 +52,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var ground = new GroundCollection(_validYsPath, null);
 
-            Assert.AreEqual("ground/ground.lst", ground.LstPath);
+            Assert.AreEqual(@"ground\ground.lst", ground.LstPath);
         }
 
         [Test]

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Ysfo.Core.Collections;
 
 namespace Ysfo.Core
@@ -15,6 +16,37 @@ namespace Ysfo.Core
 
         public void Dispose()
         {
+        }
+
+        /// <summary>
+        /// Checks whether Path is a valid ysflight directory.
+        /// </summary>
+        /// <returns>true is Path is valid.</returns>
+        public Boolean IsPathValid()
+        {
+            // check path is not null
+            if (Path == null)
+            {
+                return false;
+            }
+
+            // check directory
+            if (!Directory.Exists(Path))
+            {
+                return false;
+            }
+
+            String windowsYsFlight = "ysflight.exe";
+            String linuxYsFlight = "ysflight";
+
+            // check ysflight exectutable
+            if (!File.Exists(System.IO.Path.Combine(Path, windowsYsFlight)) || !File.Exists(System.IO.Path.Combine(Path, linuxYsFlight)))
+            {
+                return false;
+            }
+
+            // yay
+            return true;
         }
 
         /// <summary>

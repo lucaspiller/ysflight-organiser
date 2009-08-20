@@ -40,7 +40,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var scenery = new SceneryCollection(_validYsPath);
 
-            Assert.AreEqual("scenery/scenery.lst", scenery.LstPath);
+            Assert.AreEqual(@"scenery\scenery.lst", scenery.LstPath);
 
             scenery = new SceneryCollection(_validYsPath, "scenery.lst");
 
@@ -52,7 +52,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var scenery = new SceneryCollection(_validYsPath, null);
 
-            Assert.AreEqual("scenery/scenery.lst", scenery.LstPath);
+            Assert.AreEqual(@"scenery\scenery.lst", scenery.LstPath);
         }
 
         [Test]

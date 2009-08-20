@@ -91,5 +91,38 @@ namespace Ysfo.Tests.Core
                 ysfo.GetSceneryCollection();
             }
         }
+
+        [Test]
+        public void IsPathValidReturnsFalseIfNull()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = null;
+
+                Assert.IsFalse(ysfo.IsPathValid());
+            }
+        }
+
+        [Test]
+        public void IsPathValidReturnsFalseIfNotADirectory()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = @"C:\invalid_dir";
+
+                Assert.IsFalse(ysfo.IsPathValid());
+            }
+        }
+
+        [Test]
+        public void IsPathValidReturnsFalseIfDoesntContainYsExecutable()
+        {
+            using (var ysfo = new Ysfo.Core.Ysfo())
+            {
+                ysfo.Path = _ysPath;
+
+                Assert.IsFalse(ysfo.IsPathValid());
+            }
+        }
     }
 }

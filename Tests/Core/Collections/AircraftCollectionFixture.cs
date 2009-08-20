@@ -40,7 +40,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var aircraft = new AircraftCollection(_validYsPath);
 
-            Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
+            Assert.AreEqual(@"aircraft\aircraft.lst", aircraft.LstPath);
 
             aircraft = new AircraftCollection(_validYsPath, "aircraft.lst");
 
@@ -52,7 +52,7 @@ namespace Ysfo.Tests.Core.Collections
         {
             var aircraft = new AircraftCollection(_validYsPath, null);
 
-            Assert.AreEqual("aircraft/aircraft.lst", aircraft.LstPath);
+            Assert.AreEqual(@"aircraft\aircraft.lst", aircraft.LstPath);
         }
 
         [Test]
