@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace App
+namespace Ysfo.App
 {
     public partial class MainForm : Form
     {
@@ -20,6 +20,11 @@ namespace App
         {
             // close form
             Close();
+        }
+
+        private void btnSettingsBrowse_Click(object sender, EventArgs e)
+        {
+            diaSettingsBrowseYsPath.ShowDialog();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace App
+namespace Ysfo.App
 {
     static class Program
     {
