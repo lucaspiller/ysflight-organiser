@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Ysfo.Core.Addons;
 using Ysfo.Core.Loaders;
 
@@ -68,17 +69,17 @@ namespace Ysfo.Core.Collections
         {
             if (typeof(T) == typeof(AircraftAddon))
             {
-                return "aircraft/aircraft.lst";
+                return Path.Combine("aircraft", "aircraft.lst");
             }
             
             if (typeof(T) == typeof(GroundAddon))
             {
-                return "ground/ground.lst";
+                return Path.Combine("ground", "ground.lst");
             }
 
             if (typeof(T) == typeof(SceneryAddon))
             {
-                return "scenery/scenery.lst";
+                return Path.Combine("scenery", "scenery.lst");
             }
             
             // eek
