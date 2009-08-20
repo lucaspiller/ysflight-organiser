@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Configuration;
+using Ysfo.Core.Collections;
 
 namespace Ysfo.App
 {
@@ -27,6 +24,10 @@ namespace Ysfo.App
             }
         }
 
+        // collections
+        public AircraftCollection LoadedAircraft { get; protected set; }
+        public AircraftCollection UnloadedAircraft { get; protected set; }
+
         public YsfoWrapper()
         {
             _ysfo = new Core.Ysfo();
@@ -40,6 +41,10 @@ namespace Ysfo.App
             {
                 throw new YsfoPathInvalidException();
             }
+
+            // aircraft
+            LoadedAircraft = _ysfo.GetAircraftCollection();
+            UnloadedAircraft = _ysfo.GetAircraftCollection(System.IO.Path.Combine("aircraft", "unloaded_aircraft.lst"));
         }
 
         public void Dispose()

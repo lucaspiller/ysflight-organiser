@@ -81,6 +81,10 @@ namespace Ysfo.App
                 tpgAircraft.Enabled = true;
                 tpgObjects.Enabled = true;
                 tpgMaps.Enabled = true;
+
+                // reset bindings
+                lbxAircraftLoaded.DataSource = new BindingSource(_ysfo, "LoadedAircraft");
+                lbxAircraftUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedAircraft");
             }
             catch (YsfoWrapper.YsfoPathInvalidException)
             {
