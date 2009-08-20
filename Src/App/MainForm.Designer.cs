@@ -114,7 +114,7 @@
             this.mitFile});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(392, 24);
+            this.menuStrip.Size = new System.Drawing.Size(390, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -137,16 +137,20 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 351);
+            this.statusStrip.Location = new System.Drawing.Point(0, 349);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(392, 22);
+            this.statusStrip.Size = new System.Drawing.Size(390, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
             // lblStatus
             // 
+            this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.lblStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblStatus.Size = new System.Drawing.Size(344, 17);
+            this.lblStatus.Spring = true;
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabControl
             // 
@@ -159,7 +163,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(392, 327);
+            this.tabControl.Size = new System.Drawing.Size(390, 325);
             this.tabControl.TabIndex = 2;
             // 
             // tpgAircraft
@@ -167,7 +171,7 @@
             this.tpgAircraft.Controls.Add(this.splitContainer1);
             this.tpgAircraft.Location = new System.Drawing.Point(4, 25);
             this.tpgAircraft.Name = "tpgAircraft";
-            this.tpgAircraft.Size = new System.Drawing.Size(384, 298);
+            this.tpgAircraft.Size = new System.Drawing.Size(382, 296);
             this.tpgAircraft.TabIndex = 0;
             this.tpgAircraft.Text = "Aircraft";
             this.tpgAircraft.UseVisualStyleBackColor = true;
@@ -185,8 +189,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(384, 298);
-            this.splitContainer1.SplitterDistance = 156;
+            this.splitContainer1.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer1.SplitterDistance = 155;
             this.splitContainer1.TabIndex = 2;
             // 
             // gbxAircraftLoaded
@@ -195,7 +199,7 @@
             this.gbxAircraftLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxAircraftLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxAircraftLoaded.Name = "gbxAircraftLoaded";
-            this.gbxAircraftLoaded.Size = new System.Drawing.Size(156, 298);
+            this.gbxAircraftLoaded.Size = new System.Drawing.Size(155, 296);
             this.gbxAircraftLoaded.TabIndex = 0;
             this.gbxAircraftLoaded.TabStop = false;
             this.gbxAircraftLoaded.Text = "Loaded Aircraft";
@@ -207,7 +211,7 @@
             this.lbxAircraftLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftLoaded.Name = "lbxAircraftLoaded";
             this.lbxAircraftLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxAircraftLoaded.Size = new System.Drawing.Size(150, 277);
+            this.lbxAircraftLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxAircraftLoaded.TabIndex = 0;
             this.lbxAircraftLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftLoaded_SelectedIndexChanged);
             // 
@@ -228,7 +232,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbxAircraftUnloaded);
-            this.splitContainer2.Size = new System.Drawing.Size(224, 298);
+            this.splitContainer2.Size = new System.Drawing.Size(223, 296);
             this.splitContainer2.SplitterDistance = 60;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -248,7 +252,7 @@
             // 
             this.btnAircraftUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAircraftUnload.Location = new System.Drawing.Point(3, 206);
+            this.btnAircraftUnload.Location = new System.Drawing.Point(3, 204);
             this.btnAircraftUnload.Name = "btnAircraftUnload";
             this.btnAircraftUnload.Size = new System.Drawing.Size(54, 23);
             this.btnAircraftUnload.TabIndex = 2;
@@ -260,7 +264,7 @@
             // 
             this.btnAircraftDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAircraftDown.Location = new System.Drawing.Point(3, 245);
+            this.btnAircraftDown.Location = new System.Drawing.Point(3, 243);
             this.btnAircraftDown.Name = "btnAircraftDown";
             this.btnAircraftDown.Size = new System.Drawing.Size(54, 23);
             this.btnAircraftDown.TabIndex = 1;
@@ -286,7 +290,7 @@
             this.gbxAircraftUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxAircraftUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxAircraftUnloaded.Name = "gbxAircraftUnloaded";
-            this.gbxAircraftUnloaded.Size = new System.Drawing.Size(160, 298);
+            this.gbxAircraftUnloaded.Size = new System.Drawing.Size(159, 296);
             this.gbxAircraftUnloaded.TabIndex = 2;
             this.gbxAircraftUnloaded.TabStop = false;
             this.gbxAircraftUnloaded.Text = "Unloaded Aircraft";
@@ -298,7 +302,7 @@
             this.lbxAircraftUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftUnloaded.Name = "lbxAircraftUnloaded";
             this.lbxAircraftUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxAircraftUnloaded.Size = new System.Drawing.Size(154, 277);
+            this.lbxAircraftUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxAircraftUnloaded.TabIndex = 0;
             this.lbxAircraftUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftUnloaded_SelectedIndexChanged);
             // 
@@ -641,7 +645,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 373);
+            this.ClientSize = new System.Drawing.Size(390, 371);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

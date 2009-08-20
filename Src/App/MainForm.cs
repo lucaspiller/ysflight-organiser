@@ -52,6 +52,8 @@ namespace Ysfo.App
 
         private void lbxAircraftUnloaded_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblStatus.Text = "";
+
             if (lbxAircraftUnloaded.SelectedItem != null)
             {
                 lbxAircraftLoaded.ClearSelected();
@@ -59,11 +61,25 @@ namespace Ysfo.App
                 // buttons
                 btnAircraftLoad.Enabled = true;
                 btnAircraftUnload.Enabled = false;
+
+                // status
+                if (lbxAircraftUnloaded.SelectedItems.Count == 1)
+                {
+                    var aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
+
+                    lblStatus.Text = aircraft.NamePretty + " - Category: " + aircraft.CategoryPretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxAircraftUnloaded.SelectedItems.Count + " items selected";
+                }
             }
         }
 
         private void lbxAircraftLoaded_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblStatus.Text = "";
+
             if (lbxAircraftLoaded.SelectedItem != null)
             {
                 lbxAircraftUnloaded.ClearSelected();
@@ -71,6 +87,18 @@ namespace Ysfo.App
                 // buttons
                 btnAircraftLoad.Enabled = false;
                 btnAircraftUnload.Enabled = true;
+
+                // status
+                if (lbxAircraftLoaded.SelectedItems.Count == 1)
+                {
+                    var aircraft = (Ysfo.Core.AircraftAddon) lbxAircraftLoaded.SelectedItem;
+
+                    lblStatus.Text = aircraft.NamePretty + " - Category: " + aircraft.CategoryPretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxAircraftLoaded.SelectedItems.Count + " items selected";
+                }
             }
         }
 
