@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Ysfo.Core.Addons;
 using Ysfo.Core.Loaders;
+using System.ComponentModel;
 
 namespace Ysfo.Core.Collections
 {
@@ -10,7 +11,7 @@ namespace Ysfo.Core.Collections
     /// Represents a collection of addon objects which are used by YsFlight.
     /// </summary>
     /// <typeparam name="T">A type of Addon.</typeparam>
-    public class AddonCollection<T> : List<T> where T: Addon, new()
+    public class AddonCollection<T> : BindingList<T> where T: Addon, new()
     {
         /// <summary>
         /// The path to the YsFlight base directory.
@@ -52,7 +53,8 @@ namespace Ysfo.Core.Collections
 
             // clear and add addons
             Clear();
-            AddRange(addons);
+            addons.ForEach(a => Add(a));
+            //AddRange(addons);
         }
 
         /// <summary>
