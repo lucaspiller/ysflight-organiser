@@ -309,6 +309,80 @@ namespace Ysfo.App
             }
         }
 
+        private void btnGroundUp_Click(object sender, EventArgs e)
+        {
+            if (lbxGroundLoaded.SelectedItems.Count > 0)
+            {
+                // loaded
+                for (int i = 1; i < lbxGroundLoaded.Items.Count; i++)
+                {
+                    // if selected
+                    if (lbxGroundLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedGround.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxGroundLoaded.SetSelected(i - 1, true);
+                        lbxGroundLoaded.SetSelected(i, false);
+                    }
+                }
+            }
+
+            if (lbxGroundUnloaded.SelectedItems.Count > 0)
+            {
+                // unloaded
+                for (int i = 1; i < lbxGroundUnloaded.Items.Count; i++)
+                {
+                    // if selected
+                    if (lbxGroundUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedGround.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxGroundUnloaded.SetSelected(i - 1, true);
+                        lbxGroundUnloaded.SetSelected(i, false);
+                    }
+                }
+            }
+        }
+
+        private void btnGroundDown_Click(object sender, EventArgs e)
+        {
+            if (lbxGroundLoaded.SelectedItems.Count > 0)
+            {
+                // loaded
+                for (int i = lbxGroundLoaded.Items.Count - 1; i > 1; i--)
+                {
+                    // if selected
+                    if (lbxGroundLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedGround.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxGroundLoaded.SetSelected(i + 1, true);
+                        lbxGroundLoaded.SetSelected(i, false);
+                    }
+                }
+            }
+
+            if (lbxGroundUnloaded.SelectedItems.Count > 0)
+            {
+                // unloaded
+                for (int i = lbxGroundUnloaded.Items.Count - 2; i >= 0; i--)
+                {
+                    // if selected
+                    if (lbxGroundUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedGround.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxGroundUnloaded.SetSelected(i + 1, true);
+                        lbxGroundUnloaded.SetSelected(i, false);
+                    }
+                }
+            }
+        }
+
         private void btnGroundLoad_Click(object sender, EventArgs e)
         {
             BeginGroundTransaction();

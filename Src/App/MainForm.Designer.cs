@@ -410,6 +410,7 @@
             this.btnGroundDown.TabIndex = 1;
             this.btnGroundDown.Text = "Down";
             this.btnGroundDown.UseVisualStyleBackColor = true;
+            this.btnGroundDown.Click += new System.EventHandler(this.btnGroundDown_Click);
             // 
             // btnGroundUp
             // 
@@ -421,6 +422,7 @@
             this.btnGroundUp.TabIndex = 0;
             this.btnGroundUp.Text = "Up";
             this.btnGroundUp.UseVisualStyleBackColor = true;
+            this.btnGroundUp.Click += new System.EventHandler(this.btnGroundUp_Click);
             // 
             // gbxGroundUnloaded
             // 
