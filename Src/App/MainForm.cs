@@ -24,6 +24,11 @@ namespace Ysfo.App
             {
                 _ysfo.Setup();
 
+                // counts
+                lblSettingsAircraftCount.Text = (_ysfo.LoadedAircraft.Count + _ysfo.UnloadedAircraft.Count).ToString();
+                lblSettingsGroundCount.Text = (_ysfo.LoadedGround.Count + _ysfo.UnloadedGround.Count).ToString();
+                lblSettingsSceneryCount.Text = (_ysfo.LoadedScenery.Count + _ysfo.UnloadedScenery.Count).ToString();
+
                 // enable tabs
                 tpgAircraft.Enabled = true;
                 tpgGround.Enabled = true;

@@ -68,12 +68,19 @@
             this.gbxSceneryUnloaded = new System.Windows.Forms.GroupBox();
             this.lbxSceneryUnloaded = new System.Windows.Forms.ListBox();
             this.tpgSettings = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxYsPath = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxSettingsPath = new System.Windows.Forms.TextBox();
             this.btnSettingsBrowse = new System.Windows.Forms.Button();
             this.btnSettingsSave = new System.Windows.Forms.Button();
             this.diaSettingsBrowseYsPath = new System.Windows.Forms.FolderBrowserDialog();
+            this.gbxSettingsStats = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSettingsAircraftCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSettingsGroundCount = new System.Windows.Forms.Label();
+            this.lblSettingsSceneryCount = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -105,7 +112,8 @@
             this.splitContainer6.SuspendLayout();
             this.gbxSceneryUnloaded.SuspendLayout();
             this.tpgSettings.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbxYsPath.SuspendLayout();
+            this.gbxSettingsStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -154,16 +162,18 @@
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl.Controls.Add(this.tpgAircraft);
             this.tabControl.Controls.Add(this.tpgGround);
             this.tabControl.Controls.Add(this.tpgScenery);
             this.tabControl.Controls.Add(this.tpgSettings);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
+            this.tabControl.Location = new System.Drawing.Point(0, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(390, 325);
+            this.tabControl.Size = new System.Drawing.Size(390, 321);
             this.tabControl.TabIndex = 2;
             // 
             // tpgAircraft
@@ -588,7 +598,8 @@
             // 
             // tpgSettings
             // 
-            this.tpgSettings.Controls.Add(this.groupBox1);
+            this.tpgSettings.Controls.Add(this.gbxSettingsStats);
+            this.tpgSettings.Controls.Add(this.gbxYsPath);
             this.tpgSettings.Controls.Add(this.btnSettingsSave);
             this.tpgSettings.Location = new System.Drawing.Point(4, 25);
             this.tpgSettings.Name = "tpgSettings";
@@ -598,24 +609,24 @@
             this.tpgSettings.UseVisualStyleBackColor = true;
             this.tpgSettings.Enter += new System.EventHandler(this.tpgSettings_Enter);
             // 
-            // groupBox1
+            // gbxYsPath
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbxYsPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tbxSettingsPath);
-            this.groupBox1.Controls.Add(this.btnSettingsBrowse);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(368, 60);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "YsFlight Settings";
+            this.gbxYsPath.Controls.Add(this.label1);
+            this.gbxYsPath.Controls.Add(this.tbxSettingsPath);
+            this.gbxYsPath.Controls.Add(this.btnSettingsBrowse);
+            this.gbxYsPath.Location = new System.Drawing.Point(8, 3);
+            this.gbxYsPath.Name = "gbxYsPath";
+            this.gbxYsPath.Size = new System.Drawing.Size(368, 64);
+            this.gbxYsPath.TabIndex = 4;
+            this.gbxYsPath.TabStop = false;
+            this.gbxYsPath.Text = "YsFlight Settings";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 0;
@@ -625,7 +636,7 @@
             // 
             this.tbxSettingsPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSettingsPath.Location = new System.Drawing.Point(9, 32);
+            this.tbxSettingsPath.Location = new System.Drawing.Point(9, 34);
             this.tbxSettingsPath.Name = "tbxSettingsPath";
             this.tbxSettingsPath.Size = new System.Drawing.Size(272, 20);
             this.tbxSettingsPath.TabIndex = 1;
@@ -633,7 +644,7 @@
             // btnSettingsBrowse
             // 
             this.btnSettingsBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSettingsBrowse.Location = new System.Drawing.Point(287, 30);
+            this.btnSettingsBrowse.Location = new System.Drawing.Point(287, 32);
             this.btnSettingsBrowse.Name = "btnSettingsBrowse";
             this.btnSettingsBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnSettingsBrowse.TabIndex = 2;
@@ -644,7 +655,7 @@
             // btnSettingsSave
             // 
             this.btnSettingsSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSettingsSave.Location = new System.Drawing.Point(301, 272);
+            this.btnSettingsSave.Location = new System.Drawing.Point(301, 268);
             this.btnSettingsSave.Name = "btnSettingsSave";
             this.btnSettingsSave.Size = new System.Drawing.Size(75, 23);
             this.btnSettingsSave.TabIndex = 3;
@@ -657,6 +668,77 @@
             this.diaSettingsBrowseYsPath.Description = "Select the root directory of your YsFlight installation.";
             this.diaSettingsBrowseYsPath.RootFolder = System.Environment.SpecialFolder.MyComputer;
             this.diaSettingsBrowseYsPath.ShowNewFolderButton = false;
+            // 
+            // gbxSettingsStats
+            // 
+            this.gbxSettingsStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsSceneryCount);
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsGroundCount);
+            this.gbxSettingsStats.Controls.Add(this.label4);
+            this.gbxSettingsStats.Controls.Add(this.label3);
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsAircraftCount);
+            this.gbxSettingsStats.Controls.Add(this.label2);
+            this.gbxSettingsStats.Location = new System.Drawing.Point(8, 73);
+            this.gbxSettingsStats.Name = "gbxSettingsStats";
+            this.gbxSettingsStats.Size = new System.Drawing.Size(368, 90);
+            this.gbxSettingsStats.TabIndex = 5;
+            this.gbxSettingsStats.TabStop = false;
+            this.gbxSettingsStats.Text = "Statistics";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(8, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Aircraft:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSettingsAircraftCount
+            // 
+            this.lblSettingsAircraftCount.Location = new System.Drawing.Point(84, 16);
+            this.lblSettingsAircraftCount.Name = "lblSettingsAircraftCount";
+            this.lblSettingsAircraftCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsAircraftCount.TabIndex = 1;
+            this.lblSettingsAircraftCount.Text = "0";
+            this.lblSettingsAircraftCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(8, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Objects:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(8, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Maps:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSettingsGroundCount
+            // 
+            this.lblSettingsGroundCount.Location = new System.Drawing.Point(84, 36);
+            this.lblSettingsGroundCount.Name = "lblSettingsGroundCount";
+            this.lblSettingsGroundCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsGroundCount.TabIndex = 4;
+            this.lblSettingsGroundCount.Text = "0";
+            this.lblSettingsGroundCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSettingsSceneryCount
+            // 
+            this.lblSettingsSceneryCount.Location = new System.Drawing.Point(84, 56);
+            this.lblSettingsSceneryCount.Name = "lblSettingsSceneryCount";
+            this.lblSettingsSceneryCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsSceneryCount.TabIndex = 5;
+            this.lblSettingsSceneryCount.Text = "0";
+            this.lblSettingsSceneryCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -706,8 +788,9 @@
             this.splitContainer6.ResumeLayout(false);
             this.gbxSceneryUnloaded.ResumeLayout(false);
             this.tpgSettings.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxYsPath.ResumeLayout(false);
+            this.gbxYsPath.PerformLayout();
+            this.gbxSettingsStats.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,7 +843,14 @@
         private System.Windows.Forms.TextBox tbxSettingsPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FolderBrowserDialog diaSettingsBrowseYsPath;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxYsPath;
+        private System.Windows.Forms.GroupBox gbxSettingsStats;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSettingsAircraftCount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSettingsSceneryCount;
+        private System.Windows.Forms.Label lblSettingsGroundCount;
     }
 }
 
