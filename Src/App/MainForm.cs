@@ -124,6 +124,40 @@ namespace Ysfo.App
             }
         }
 
+        private void btnAircraftLoad_Click(object sender, EventArgs e)
+        {
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
+
+            if (aircraft == null)
+                return;
+
+            // swap items
+            if (_ysfo.UnloadedAircraft.Remove(aircraft))
+            {
+                _ysfo.LoadedAircraft.Add(aircraft);
+            }
+
+            // clear selection
+            lbxAircraftLoaded.ClearSelected();
+        }
+
+        private void btnAircraftUnload_Click(object sender, EventArgs e)
+        {
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
+
+            if (aircraft == null)
+                return;
+
+            // swap items
+            if (_ysfo.LoadedAircraft.Remove(aircraft))
+            {
+                _ysfo.UnloadedAircraft.Add(aircraft);
+            }
+
+            // clear selection
+            lbxAircraftUnloaded.ClearSelected();
+        }
+
         #endregion
 
         #region Settings

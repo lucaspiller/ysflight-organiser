@@ -241,6 +241,7 @@
             this.btnAircraftLoad.TabIndex = 3;
             this.btnAircraftLoad.Text = "Load";
             this.btnAircraftLoad.UseVisualStyleBackColor = true;
+            this.btnAircraftLoad.Click += new System.EventHandler(this.btnAircraftLoad_Click);
             // 
             // btnAircraftUnload
             // 
@@ -252,6 +253,7 @@
             this.btnAircraftUnload.TabIndex = 2;
             this.btnAircraftUnload.Text = "Unload";
             this.btnAircraftUnload.UseVisualStyleBackColor = true;
+            this.btnAircraftUnload.Click += new System.EventHandler(this.btnAircraftUnload_Click);
             // 
             // btnAircraftDown
             // 
