@@ -5,8 +5,17 @@ using System.IO;
 
 namespace Ysfo.Core.Loaders
 {
+    /// <summary>
+    /// Provides methods for parsing a .dat file.
+    /// </summary>
     public static class DatLoader
     {
+        /// <summary>
+        /// Loads the details of a .dat file.
+        /// </summary>
+        /// <param name="ysPath">The path to the ysFlight base directory.</param>
+        /// <param name="lstEntry">The lst entry for this object.</param>
+        /// <param name="regexes">A list of regular expressions to search for, and callbacks to return the result to.</param>
         public static void Load(String ysPath, String lstEntry, Dictionary<Regex, StringSetDelegate> regexes)
         {
             // get dat file
@@ -50,6 +59,15 @@ namespace Ysfo.Core.Loaders
 
         public delegate void StringSetDelegate(String value);
 
+        /// <summary>
+        /// Parses a LstEntry to return the relative path to the .dat file.
+        /// </summary>
+        /// <param name="lstEntry">The entry in the .lst file for the object.</param>
+        /// <returns>The relative path to the .dat file from the YsFlight base directory.</returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when the .dat file cannot be detected in
+        /// the given lstEntry. See message for further details.
+        /// </exception>
         public static String GetDatFileFromLstEntry(String lstEntry)
         {
             if (lstEntry == null)

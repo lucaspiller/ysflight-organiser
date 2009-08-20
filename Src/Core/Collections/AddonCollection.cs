@@ -5,21 +5,45 @@ using Ysfo.Core.Loaders;
 
 namespace Ysfo.Core.Collections
 {
+    /// <summary>
+    /// Represents a collection of addon objects which are used by YsFlight.
+    /// </summary>
+    /// <typeparam name="T">A type of Addon.</typeparam>
     public class AddonCollection<T> : List<T> where T: Addon, new()
     {
+        /// <summary>
+        /// The path to the YsFlight base directory.
+        /// </summary>
         public string YsPath { get; protected set; }
+        
+        /// <summary>
+        /// The path to the .lst file in used.
+        /// </summary>
         public string LstPath { get; protected set; }
 
+        /// <summary>
+        /// Creates a new addon collection, using the default .lst file for that type of object.
+        /// </summary>
+        /// <param name="ysPath">The path to the YsFlight base directory.</param>
         public AddonCollection(String ysPath) : this(ysPath, null)
         {
         }
 
+        /// <summary>
+        /// Creates a new addon collection.
+        /// </summary>
+        /// <param name="ysPath">The path to the YsFlight base directory.</param>
+        /// <param name="lstPath">The relative path to the .lst file, from ysPath.</param>
         public AddonCollection(String ysPath, String lstPath)
         {
             YsPath = ysPath;
             LstPath = lstPath ?? DefaultLstPath();
         }
 
+        /// <summary>
+        /// Loads the addons, by parsing the .lst file. If the .lst file does not exist
+        /// an empty collection will be returned.
+        /// </summary>
         public void Load()
         {
             // load
@@ -30,6 +54,10 @@ namespace Ysfo.Core.Collections
             AddRange(addons);
         }
 
+        /// <summary>
+        /// Saves the addons to the .lst file. If the .lst file does not exist it
+        /// will be created.
+        /// </summary>
         public void Save()
         {
             // save
