@@ -18,6 +18,26 @@ namespace Ysfo.App
             InitializeComponent();
         }
 
+        #region Aircraft
+
+        private void lbxAircraftUnloaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxAircraftUnloaded.SelectedItem != null)
+            {
+                lbxAircraftLoaded.ClearSelected();
+            }
+        }
+
+        private void lbxAircraftLoaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxAircraftLoaded.SelectedItem != null)
+            {
+                lbxAircraftUnloaded.ClearSelected();
+            }
+        }
+
+        #endregion
+
         #region Settings
 
         private void btnSettingsBrowse_Click(object sender, EventArgs e)
@@ -84,7 +104,9 @@ namespace Ysfo.App
 
                 // reset bindings
                 lbxAircraftLoaded.DataSource = new BindingSource(_ysfo, "LoadedAircraft");
+                lbxAircraftLoaded.ClearSelected();
                 lbxAircraftUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedAircraft");
+                lbxAircraftUnloaded.ClearSelected();
             }
             catch (YsfoWrapper.YsfoPathInvalidException)
             {

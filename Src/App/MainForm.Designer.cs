@@ -208,6 +208,7 @@
             this.lbxAircraftLoaded.Name = "lbxAircraftLoaded";
             this.lbxAircraftLoaded.Size = new System.Drawing.Size(150, 277);
             this.lbxAircraftLoaded.TabIndex = 0;
+            this.lbxAircraftLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftLoaded_SelectedIndexChanged);
             // 
             // splitContainer2
             // 
@@ -293,6 +294,7 @@
             this.lbxAircraftUnloaded.Name = "lbxAircraftUnloaded";
             this.lbxAircraftUnloaded.Size = new System.Drawing.Size(154, 277);
             this.lbxAircraftUnloaded.TabIndex = 0;
+            this.lbxAircraftUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftUnloaded_SelectedIndexChanged);
             // 
             // tpgObjects
             // 
