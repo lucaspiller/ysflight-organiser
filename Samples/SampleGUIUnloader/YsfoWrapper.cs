@@ -20,9 +20,6 @@ namespace SampleGUIUnloader
             // load collections
             LoadedAircraft = _ysfo.GetAircraftCollection();
             UnloadedAircraft = _ysfo.GetAircraftCollection("aircraft/unloaded_aircraft.lst");
-
-            // update lists
-            AircraftListsChange(this, null);
         }
 
         public bool Loaded()
@@ -49,9 +46,6 @@ namespace SampleGUIUnloader
             LoadedAircraft = null;
             UnloadedAircraft = null;
             _ysfo = null;
-
-            // update aircraft lists
-            AircraftListsChange(this, null); 
         }
 
         public void UnloadAircraft(AircraftAddon aircraft)
@@ -60,9 +54,6 @@ namespace SampleGUIUnloader
             {
                 // only add if the aircraft was removed from loaded list
                 UnloadedAircraft.Add(aircraft);
-
-                // update lists
-                AircraftListsChange(this, null);
             }
         }
 
@@ -72,9 +63,6 @@ namespace SampleGUIUnloader
             {
                 // only add if the aircraft was removed from loaded list
                 LoadedAircraft.Add(aircraft);
-
-                // update lists
-                AircraftListsChange(this, null);
             }
         }
 
@@ -99,9 +87,6 @@ namespace SampleGUIUnloader
                     UnloadedAircraft.Swap(index, index - 1);
                 }
             }
-
-            // update lists
-            AircraftListsChange(this, null);
         }
 
         public void MoveDown(AircraftAddon aircraft)
@@ -125,12 +110,6 @@ namespace SampleGUIUnloader
                     UnloadedAircraft.Swap(index, index + 1);
                 }
             }
-
-            // update lists
-            AircraftListsChange(this, null);
         }
-
-        // events
-        public event EventHandler AircraftListsChange;
     }
 }

@@ -16,7 +16,6 @@ namespace SampleGUIUnloader
         public MainForm()
         {
             ysfo = new YsfoWrapper();
-            ysfo.AircraftListsChange += new EventHandler(Ysfo_AircraftListsChanged);
             InitializeComponent();
         }
 
@@ -51,6 +50,13 @@ namespace SampleGUIUnloader
             }
 
             ysfo.Setup(tbxPath.Text);
+
+            // bind to data
+            lbxLoaded.DataSource = new BindingSource(ysfo, "LoadedAircraft");
+            lbxUnloaded.DataSource = new BindingSource(ysfo, "UnloadedAircraft");
+
+            lbxLoaded.ClearSelected();
+            lbxUnloaded.ClearSelected();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -68,6 +74,8 @@ namespace SampleGUIUnloader
 
             Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon) lbxLoaded.SelectedItem;
             ysfo.UnloadAircraft(aircraft);
+
+            lbxUnloaded.ClearSelected();
         }
 
         private void btnLoadAddon_Click(object sender, EventArgs e)
@@ -77,20 +85,8 @@ namespace SampleGUIUnloader
 
             Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon) lbxUnloaded.SelectedItem;
             ysfo.LoadAircraft(aircraft);
-        }
 
-        private void Ysfo_AircraftListsChanged(object sender, EventArgs e)
-        {
-            // clear items
-            lbxLoaded.Items.Clear();
-            lbxUnloaded.Items.Clear();
-
-            // add new items
-            if (ysfo.LoadedAircraft != null)
-                lbxLoaded.Items.AddRange(ysfo.LoadedAircraft.ToArray());
-
-            if (ysfo.UnloadedAircraft != null)
-                lbxUnloaded.Items.AddRange(ysfo.UnloadedAircraft.ToArray());
+            lbxLoaded.ClearSelected();
         }
 
         private void lbxUnloaded_SelectedIndexChanged(object sender, EventArgs e)
