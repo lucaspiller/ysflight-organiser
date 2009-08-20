@@ -255,6 +255,62 @@ namespace Ysfo.App
 
         #endregion
 
+        #region Ground
+
+        private void lbxGroundUnloaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+
+            if (lbxGroundUnloaded.SelectedItem != null)
+            {
+                lbxGroundLoaded.ClearSelected();
+
+                // buttons
+                btnGroundLoad.Enabled = true;
+                btnGroundUnload.Enabled = false;
+
+                // status
+                if (lbxGroundUnloaded.SelectedItems.Count == 1)
+                {
+                    var ground = (Ysfo.Core.GroundAddon)lbxGroundUnloaded.SelectedItem;
+
+                    lblStatus.Text = ground.NamePretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxGroundUnloaded.SelectedItems.Count + " items selected";
+                }
+            }
+        }
+
+        private void lbxGroundLoaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+
+            if (lbxGroundLoaded.SelectedItem != null)
+            {
+                lbxGroundUnloaded.ClearSelected();
+
+                // buttons
+                btnGroundLoad.Enabled = false;
+                btnGroundUnload.Enabled = true;
+
+                // status
+                if (lbxGroundLoaded.SelectedItems.Count == 1)
+                {
+                    var ground = (Ysfo.Core.GroundAddon)lbxGroundLoaded.SelectedItem;
+
+                    lblStatus.Text = ground.NamePretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxGroundLoaded.SelectedItems.Count + " items selected";
+                }
+            }
+        }
+
+        #endregion
+
         #region Settings
 
         private void btnSettingsBrowse_Click(object sender, EventArgs e)

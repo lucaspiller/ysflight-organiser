@@ -353,6 +353,7 @@
             this.lbxGroundLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxGroundLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxGroundLoaded.TabIndex = 0;
+            this.lbxGroundLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxGroundLoaded_SelectedIndexChanged);
             // 
             // splitContainer4
             // 
@@ -439,6 +440,7 @@
             this.lbxGroundUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxGroundUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxGroundUnloaded.TabIndex = 0;
+            this.lbxGroundUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxGroundUnloaded_SelectedIndexChanged);
             // 
             // tpgMaps
             // 
