@@ -640,6 +640,8 @@
             this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "MainForm";
             this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
