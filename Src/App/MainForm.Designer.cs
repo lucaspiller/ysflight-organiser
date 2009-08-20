@@ -493,6 +493,7 @@
             this.lbxSceneryLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxSceneryLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxSceneryLoaded.TabIndex = 0;
+            this.lbxSceneryLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxSceneryLoaded_SelectedIndexChanged);
             // 
             // splitContainer6
             // 
@@ -579,6 +580,7 @@
             this.lbxSceneryUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxSceneryUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxSceneryUnloaded.TabIndex = 0;
+            this.lbxSceneryUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxSceneryUnloaded_SelectedIndexChanged);
             // 
             // tpgSettings
             // 

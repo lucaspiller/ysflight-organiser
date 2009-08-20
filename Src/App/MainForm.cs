@@ -463,6 +463,62 @@ namespace Ysfo.App
 
         #endregion
 
+        #region Scenery
+
+        private void lbxSceneryUnloaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+
+            if (lbxSceneryUnloaded.SelectedItem != null)
+            {
+                lbxSceneryLoaded.ClearSelected();
+
+                // buttons
+                btnSceneryLoad.Enabled = true;
+                btnSceneryUnload.Enabled = false;
+
+                // status
+                if (lbxSceneryUnloaded.SelectedItems.Count == 1)
+                {
+                    var scenery = (Ysfo.Core.SceneryAddon)lbxSceneryUnloaded.SelectedItem;
+
+                    lblStatus.Text = scenery.NamePretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxSceneryUnloaded.SelectedItems.Count + " items selected";
+                }
+            }
+        }
+
+        private void lbxSceneryLoaded_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+
+            if (lbxSceneryLoaded.SelectedItem != null)
+            {
+                lbxSceneryUnloaded.ClearSelected();
+
+                // buttons
+                btnSceneryLoad.Enabled = false;
+                btnSceneryUnload.Enabled = true;
+
+                // status
+                if (lbxSceneryLoaded.SelectedItems.Count == 1)
+                {
+                    var scenery = (Ysfo.Core.SceneryAddon)lbxSceneryLoaded.SelectedItem;
+
+                    lblStatus.Text = scenery.NamePretty;
+                }
+                else
+                {
+                    lblStatus.Text = lbxSceneryLoaded.SelectedItems.Count + " items selected";
+                }
+            }
+        }
+
+        #endregion
+
         #region Settings
 
         private void btnSettingsBrowse_Click(object sender, EventArgs e)
