@@ -36,6 +36,56 @@ namespace Ysfo.App
             }
         }
 
+        private void btnAircraftUp_Click(object sender, EventArgs e)
+        {
+            // loaded
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
+
+            if (aircraft != null)
+            {
+                if (_ysfo.LoadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Up))
+                {
+                    lbxAircraftLoaded.SelectedIndex -= 1;
+                }
+            }
+
+            // unloaded
+            aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
+
+            if (aircraft != null)
+            {
+                if (_ysfo.UnloadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Up))
+                {
+                    lbxAircraftUnloaded.SelectedIndex -= 1;
+                }
+            }
+        }
+
+        private void btnAircraftDown_Click(object sender, EventArgs e)
+        {
+            // loaded
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
+
+            if (aircraft != null)
+            {
+                if (_ysfo.LoadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Down))
+                {
+                    lbxAircraftLoaded.SelectedIndex += 1;
+                }
+            }
+
+            // unloaded
+            aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
+
+            if (aircraft != null)
+            {
+                if (_ysfo.UnloadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Down))
+                {
+                    lbxAircraftUnloaded.SelectedIndex += 1;
+                }
+            }
+        }
+
         #endregion
 
         #region Settings

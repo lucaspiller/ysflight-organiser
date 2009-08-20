@@ -263,6 +263,7 @@
             this.btnAircraftDown.TabIndex = 1;
             this.btnAircraftDown.Text = "Down";
             this.btnAircraftDown.UseVisualStyleBackColor = true;
+            this.btnAircraftDown.Click += new System.EventHandler(this.btnAircraftDown_Click);
             // 
             // btnAircraftUp
             // 
@@ -274,6 +275,7 @@
             this.btnAircraftUp.TabIndex = 0;
             this.btnAircraftUp.Text = "Up";
             this.btnAircraftUp.UseVisualStyleBackColor = true;
+            this.btnAircraftUp.Click += new System.EventHandler(this.btnAircraftUp_Click);
             // 
             // gbxAircraftUnloaded
             // 
