@@ -272,6 +272,11 @@ namespace Ysfo.App
             LoadData();
         }
 
+        private void tpgSettings_Enter(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+        }
+
         #endregion
 
         #region FormEvents

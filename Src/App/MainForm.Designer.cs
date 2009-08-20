@@ -148,7 +148,7 @@
             this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
             this.lblStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(344, 17);
+            this.lblStatus.Size = new System.Drawing.Size(375, 17);
             this.lblStatus.Spring = true;
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -311,7 +311,7 @@
             this.tpgObjects.Controls.Add(this.splitContainer3);
             this.tpgObjects.Location = new System.Drawing.Point(4, 25);
             this.tpgObjects.Name = "tpgObjects";
-            this.tpgObjects.Size = new System.Drawing.Size(384, 298);
+            this.tpgObjects.Size = new System.Drawing.Size(382, 296);
             this.tpgObjects.TabIndex = 1;
             this.tpgObjects.Text = "Objects";
             this.tpgObjects.UseVisualStyleBackColor = true;
@@ -329,8 +329,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(384, 298);
-            this.splitContainer3.SplitterDistance = 156;
+            this.splitContainer3.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer3.SplitterDistance = 155;
             this.splitContainer3.TabIndex = 3;
             // 
             // gbxObjectsLoaded
@@ -339,7 +339,7 @@
             this.gbxObjectsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxObjectsLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxObjectsLoaded.Name = "gbxObjectsLoaded";
-            this.gbxObjectsLoaded.Size = new System.Drawing.Size(156, 298);
+            this.gbxObjectsLoaded.Size = new System.Drawing.Size(155, 296);
             this.gbxObjectsLoaded.TabIndex = 0;
             this.gbxObjectsLoaded.TabStop = false;
             this.gbxObjectsLoaded.Text = "Loaded Objects";
@@ -350,7 +350,7 @@
             this.lbxObjectsLoaded.FormattingEnabled = true;
             this.lbxObjectsLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxObjectsLoaded.Name = "lbxObjectsLoaded";
-            this.lbxObjectsLoaded.Size = new System.Drawing.Size(150, 277);
+            this.lbxObjectsLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxObjectsLoaded.TabIndex = 0;
             // 
             // splitContainer4
@@ -370,7 +370,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.gbxObjectsUnloaded);
-            this.splitContainer4.Size = new System.Drawing.Size(224, 298);
+            this.splitContainer4.Size = new System.Drawing.Size(223, 296);
             this.splitContainer4.SplitterDistance = 60;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -389,7 +389,7 @@
             // 
             this.btnObjectsUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsUnload.Location = new System.Drawing.Point(3, 206);
+            this.btnObjectsUnload.Location = new System.Drawing.Point(3, 204);
             this.btnObjectsUnload.Name = "btnObjectsUnload";
             this.btnObjectsUnload.Size = new System.Drawing.Size(54, 23);
             this.btnObjectsUnload.TabIndex = 2;
@@ -400,7 +400,7 @@
             // 
             this.btnObjectsDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsDown.Location = new System.Drawing.Point(3, 245);
+            this.btnObjectsDown.Location = new System.Drawing.Point(3, 243);
             this.btnObjectsDown.Name = "btnObjectsDown";
             this.btnObjectsDown.Size = new System.Drawing.Size(54, 23);
             this.btnObjectsDown.TabIndex = 1;
@@ -424,7 +424,7 @@
             this.gbxObjectsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxObjectsUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxObjectsUnloaded.Name = "gbxObjectsUnloaded";
-            this.gbxObjectsUnloaded.Size = new System.Drawing.Size(160, 298);
+            this.gbxObjectsUnloaded.Size = new System.Drawing.Size(159, 296);
             this.gbxObjectsUnloaded.TabIndex = 2;
             this.gbxObjectsUnloaded.TabStop = false;
             this.gbxObjectsUnloaded.Text = "Unloaded Objects";
@@ -435,7 +435,7 @@
             this.lbxObjectsUnloaded.FormattingEnabled = true;
             this.lbxObjectsUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxObjectsUnloaded.Name = "lbxObjectsUnloaded";
-            this.lbxObjectsUnloaded.Size = new System.Drawing.Size(154, 277);
+            this.lbxObjectsUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxObjectsUnloaded.TabIndex = 0;
             // 
             // tpgMaps
@@ -443,7 +443,7 @@
             this.tpgMaps.Controls.Add(this.splitContainer5);
             this.tpgMaps.Location = new System.Drawing.Point(4, 25);
             this.tpgMaps.Name = "tpgMaps";
-            this.tpgMaps.Size = new System.Drawing.Size(384, 298);
+            this.tpgMaps.Size = new System.Drawing.Size(382, 296);
             this.tpgMaps.TabIndex = 4;
             this.tpgMaps.Text = "Maps";
             this.tpgMaps.UseVisualStyleBackColor = true;
@@ -461,8 +461,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(384, 298);
-            this.splitContainer5.SplitterDistance = 156;
+            this.splitContainer5.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer5.SplitterDistance = 155;
             this.splitContainer5.TabIndex = 4;
             // 
             // gbxMapsLoaded
@@ -471,7 +471,7 @@
             this.gbxMapsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxMapsLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxMapsLoaded.Name = "gbxMapsLoaded";
-            this.gbxMapsLoaded.Size = new System.Drawing.Size(156, 298);
+            this.gbxMapsLoaded.Size = new System.Drawing.Size(155, 296);
             this.gbxMapsLoaded.TabIndex = 0;
             this.gbxMapsLoaded.TabStop = false;
             this.gbxMapsLoaded.Text = "Loaded Maps";
@@ -482,7 +482,7 @@
             this.lbxMapsLoaded.FormattingEnabled = true;
             this.lbxMapsLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxMapsLoaded.Name = "lbxMapsLoaded";
-            this.lbxMapsLoaded.Size = new System.Drawing.Size(150, 277);
+            this.lbxMapsLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxMapsLoaded.TabIndex = 0;
             // 
             // splitContainer6
@@ -502,7 +502,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.gbxMapsUnloaded);
-            this.splitContainer6.Size = new System.Drawing.Size(224, 298);
+            this.splitContainer6.Size = new System.Drawing.Size(223, 296);
             this.splitContainer6.SplitterDistance = 60;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -521,7 +521,7 @@
             // 
             this.btnMapsUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsUnload.Location = new System.Drawing.Point(3, 206);
+            this.btnMapsUnload.Location = new System.Drawing.Point(3, 204);
             this.btnMapsUnload.Name = "btnMapsUnload";
             this.btnMapsUnload.Size = new System.Drawing.Size(54, 23);
             this.btnMapsUnload.TabIndex = 2;
@@ -532,7 +532,7 @@
             // 
             this.btnMapsDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsDown.Location = new System.Drawing.Point(3, 245);
+            this.btnMapsDown.Location = new System.Drawing.Point(3, 243);
             this.btnMapsDown.Name = "btnMapsDown";
             this.btnMapsDown.Size = new System.Drawing.Size(54, 23);
             this.btnMapsDown.TabIndex = 1;
@@ -556,7 +556,7 @@
             this.gbxMapsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxMapsUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxMapsUnloaded.Name = "gbxMapsUnloaded";
-            this.gbxMapsUnloaded.Size = new System.Drawing.Size(160, 298);
+            this.gbxMapsUnloaded.Size = new System.Drawing.Size(159, 296);
             this.gbxMapsUnloaded.TabIndex = 2;
             this.gbxMapsUnloaded.TabStop = false;
             this.gbxMapsUnloaded.Text = "Unloaded Maps";
@@ -567,7 +567,7 @@
             this.lbxMapsUnloaded.FormattingEnabled = true;
             this.lbxMapsUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxMapsUnloaded.Name = "lbxMapsUnloaded";
-            this.lbxMapsUnloaded.Size = new System.Drawing.Size(154, 277);
+            this.lbxMapsUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxMapsUnloaded.TabIndex = 0;
             // 
             // tpgSettings
@@ -576,10 +576,11 @@
             this.tpgSettings.Controls.Add(this.btnSettingsSave);
             this.tpgSettings.Location = new System.Drawing.Point(4, 25);
             this.tpgSettings.Name = "tpgSettings";
-            this.tpgSettings.Size = new System.Drawing.Size(384, 298);
+            this.tpgSettings.Size = new System.Drawing.Size(382, 296);
             this.tpgSettings.TabIndex = 3;
             this.tpgSettings.Text = "Settings";
             this.tpgSettings.UseVisualStyleBackColor = true;
+            this.tpgSettings.Enter += new System.EventHandler(this.tpgSettings_Enter);
             // 
             // groupBox1
             // 
