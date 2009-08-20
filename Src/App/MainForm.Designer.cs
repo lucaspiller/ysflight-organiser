@@ -45,17 +45,17 @@
             this.btnAircraftUp = new System.Windows.Forms.Button();
             this.gbxAircraftUnloaded = new System.Windows.Forms.GroupBox();
             this.lbxAircraftUnloaded = new System.Windows.Forms.ListBox();
-            this.tpgObjects = new System.Windows.Forms.TabPage();
+            this.tpgGround = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.gbxObjectsLoaded = new System.Windows.Forms.GroupBox();
-            this.lbxObjectsLoaded = new System.Windows.Forms.ListBox();
+            this.gbxGroundLoaded = new System.Windows.Forms.GroupBox();
+            this.lbxGroundLoaded = new System.Windows.Forms.ListBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.btnObjectsLoad = new System.Windows.Forms.Button();
-            this.btnObjectsUnload = new System.Windows.Forms.Button();
-            this.btnObjectsDown = new System.Windows.Forms.Button();
-            this.btnObjectsUp = new System.Windows.Forms.Button();
-            this.gbxObjectsUnloaded = new System.Windows.Forms.GroupBox();
-            this.lbxObjectsUnloaded = new System.Windows.Forms.ListBox();
+            this.btnGroundLoad = new System.Windows.Forms.Button();
+            this.btnGroundUnload = new System.Windows.Forms.Button();
+            this.btnGroundDown = new System.Windows.Forms.Button();
+            this.btnGroundUp = new System.Windows.Forms.Button();
+            this.gbxGroundUnloaded = new System.Windows.Forms.GroupBox();
+            this.lbxGroundUnloaded = new System.Windows.Forms.ListBox();
             this.tpgMaps = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.gbxMapsLoaded = new System.Windows.Forms.GroupBox();
@@ -86,15 +86,15 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.gbxAircraftUnloaded.SuspendLayout();
-            this.tpgObjects.SuspendLayout();
+            this.tpgGround.SuspendLayout();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            this.gbxObjectsLoaded.SuspendLayout();
+            this.gbxGroundLoaded.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            this.gbxObjectsUnloaded.SuspendLayout();
+            this.gbxGroundUnloaded.SuspendLayout();
             this.tpgMaps.SuspendLayout();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
@@ -156,7 +156,7 @@
             // 
             this.tabControl.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl.Controls.Add(this.tpgAircraft);
-            this.tabControl.Controls.Add(this.tpgObjects);
+            this.tabControl.Controls.Add(this.tpgGround);
             this.tabControl.Controls.Add(this.tpgMaps);
             this.tabControl.Controls.Add(this.tpgSettings);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -306,15 +306,15 @@
             this.lbxAircraftUnloaded.TabIndex = 0;
             this.lbxAircraftUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftUnloaded_SelectedIndexChanged);
             // 
-            // tpgObjects
+            // tpgGround
             // 
-            this.tpgObjects.Controls.Add(this.splitContainer3);
-            this.tpgObjects.Location = new System.Drawing.Point(4, 25);
-            this.tpgObjects.Name = "tpgObjects";
-            this.tpgObjects.Size = new System.Drawing.Size(382, 296);
-            this.tpgObjects.TabIndex = 1;
-            this.tpgObjects.Text = "Objects";
-            this.tpgObjects.UseVisualStyleBackColor = true;
+            this.tpgGround.Controls.Add(this.splitContainer3);
+            this.tpgGround.Location = new System.Drawing.Point(4, 25);
+            this.tpgGround.Name = "tpgGround";
+            this.tpgGround.Size = new System.Drawing.Size(382, 296);
+            this.tpgGround.TabIndex = 1;
+            this.tpgGround.Text = "Ground";
+            this.tpgGround.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
             // 
@@ -324,7 +324,7 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.gbxObjectsLoaded);
+            this.splitContainer3.Panel1.Controls.Add(this.gbxGroundLoaded);
             // 
             // splitContainer3.Panel2
             // 
@@ -333,25 +333,26 @@
             this.splitContainer3.SplitterDistance = 155;
             this.splitContainer3.TabIndex = 3;
             // 
-            // gbxObjectsLoaded
+            // gbxGroundLoaded
             // 
-            this.gbxObjectsLoaded.Controls.Add(this.lbxObjectsLoaded);
-            this.gbxObjectsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbxObjectsLoaded.Location = new System.Drawing.Point(0, 0);
-            this.gbxObjectsLoaded.Name = "gbxObjectsLoaded";
-            this.gbxObjectsLoaded.Size = new System.Drawing.Size(155, 296);
-            this.gbxObjectsLoaded.TabIndex = 0;
-            this.gbxObjectsLoaded.TabStop = false;
-            this.gbxObjectsLoaded.Text = "Loaded Objects";
+            this.gbxGroundLoaded.Controls.Add(this.lbxGroundLoaded);
+            this.gbxGroundLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbxGroundLoaded.Location = new System.Drawing.Point(0, 0);
+            this.gbxGroundLoaded.Name = "gbxGroundLoaded";
+            this.gbxGroundLoaded.Size = new System.Drawing.Size(155, 296);
+            this.gbxGroundLoaded.TabIndex = 0;
+            this.gbxGroundLoaded.TabStop = false;
+            this.gbxGroundLoaded.Text = "Loaded Ground";
             // 
-            // lbxObjectsLoaded
+            // lbxGroundLoaded
             // 
-            this.lbxObjectsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxObjectsLoaded.FormattingEnabled = true;
-            this.lbxObjectsLoaded.Location = new System.Drawing.Point(3, 16);
-            this.lbxObjectsLoaded.Name = "lbxObjectsLoaded";
-            this.lbxObjectsLoaded.Size = new System.Drawing.Size(149, 277);
-            this.lbxObjectsLoaded.TabIndex = 0;
+            this.lbxGroundLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxGroundLoaded.FormattingEnabled = true;
+            this.lbxGroundLoaded.Location = new System.Drawing.Point(3, 16);
+            this.lbxGroundLoaded.Name = "lbxGroundLoaded";
+            this.lbxGroundLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lbxGroundLoaded.Size = new System.Drawing.Size(149, 277);
+            this.lbxGroundLoaded.TabIndex = 0;
             // 
             // splitContainer4
             // 
@@ -362,81 +363,82 @@
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.btnObjectsLoad);
-            this.splitContainer4.Panel1.Controls.Add(this.btnObjectsUnload);
-            this.splitContainer4.Panel1.Controls.Add(this.btnObjectsDown);
-            this.splitContainer4.Panel1.Controls.Add(this.btnObjectsUp);
+            this.splitContainer4.Panel1.Controls.Add(this.btnGroundLoad);
+            this.splitContainer4.Panel1.Controls.Add(this.btnGroundUnload);
+            this.splitContainer4.Panel1.Controls.Add(this.btnGroundDown);
+            this.splitContainer4.Panel1.Controls.Add(this.btnGroundUp);
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.gbxObjectsUnloaded);
+            this.splitContainer4.Panel2.Controls.Add(this.gbxGroundUnloaded);
             this.splitContainer4.Size = new System.Drawing.Size(223, 296);
             this.splitContainer4.SplitterDistance = 60;
             this.splitContainer4.TabIndex = 0;
             // 
-            // btnObjectsLoad
+            // btnGroundLoad
             // 
-            this.btnObjectsLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.btnGroundLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsLoad.Location = new System.Drawing.Point(3, 71);
-            this.btnObjectsLoad.Name = "btnObjectsLoad";
-            this.btnObjectsLoad.Size = new System.Drawing.Size(54, 23);
-            this.btnObjectsLoad.TabIndex = 3;
-            this.btnObjectsLoad.Text = "Load";
-            this.btnObjectsLoad.UseVisualStyleBackColor = true;
+            this.btnGroundLoad.Location = new System.Drawing.Point(3, 71);
+            this.btnGroundLoad.Name = "btnGroundLoad";
+            this.btnGroundLoad.Size = new System.Drawing.Size(54, 23);
+            this.btnGroundLoad.TabIndex = 3;
+            this.btnGroundLoad.Text = "Load";
+            this.btnGroundLoad.UseVisualStyleBackColor = true;
             // 
-            // btnObjectsUnload
+            // btnGroundUnload
             // 
-            this.btnObjectsUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnGroundUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsUnload.Location = new System.Drawing.Point(3, 204);
-            this.btnObjectsUnload.Name = "btnObjectsUnload";
-            this.btnObjectsUnload.Size = new System.Drawing.Size(54, 23);
-            this.btnObjectsUnload.TabIndex = 2;
-            this.btnObjectsUnload.Text = "Unload";
-            this.btnObjectsUnload.UseVisualStyleBackColor = true;
+            this.btnGroundUnload.Location = new System.Drawing.Point(3, 204);
+            this.btnGroundUnload.Name = "btnGroundUnload";
+            this.btnGroundUnload.Size = new System.Drawing.Size(54, 23);
+            this.btnGroundUnload.TabIndex = 2;
+            this.btnGroundUnload.Text = "Unload";
+            this.btnGroundUnload.UseVisualStyleBackColor = true;
             // 
-            // btnObjectsDown
+            // btnGroundDown
             // 
-            this.btnObjectsDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnGroundDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsDown.Location = new System.Drawing.Point(3, 243);
-            this.btnObjectsDown.Name = "btnObjectsDown";
-            this.btnObjectsDown.Size = new System.Drawing.Size(54, 23);
-            this.btnObjectsDown.TabIndex = 1;
-            this.btnObjectsDown.Text = "Down";
-            this.btnObjectsDown.UseVisualStyleBackColor = true;
+            this.btnGroundDown.Location = new System.Drawing.Point(3, 243);
+            this.btnGroundDown.Name = "btnGroundDown";
+            this.btnGroundDown.Size = new System.Drawing.Size(54, 23);
+            this.btnGroundDown.TabIndex = 1;
+            this.btnGroundDown.Text = "Down";
+            this.btnGroundDown.UseVisualStyleBackColor = true;
             // 
-            // btnObjectsUp
+            // btnGroundUp
             // 
-            this.btnObjectsUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.btnGroundUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObjectsUp.Location = new System.Drawing.Point(3, 32);
-            this.btnObjectsUp.Name = "btnObjectsUp";
-            this.btnObjectsUp.Size = new System.Drawing.Size(54, 23);
-            this.btnObjectsUp.TabIndex = 0;
-            this.btnObjectsUp.Text = "Up";
-            this.btnObjectsUp.UseVisualStyleBackColor = true;
+            this.btnGroundUp.Location = new System.Drawing.Point(3, 32);
+            this.btnGroundUp.Name = "btnGroundUp";
+            this.btnGroundUp.Size = new System.Drawing.Size(54, 23);
+            this.btnGroundUp.TabIndex = 0;
+            this.btnGroundUp.Text = "Up";
+            this.btnGroundUp.UseVisualStyleBackColor = true;
             // 
-            // gbxObjectsUnloaded
+            // gbxGroundUnloaded
             // 
-            this.gbxObjectsUnloaded.Controls.Add(this.lbxObjectsUnloaded);
-            this.gbxObjectsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbxObjectsUnloaded.Location = new System.Drawing.Point(0, 0);
-            this.gbxObjectsUnloaded.Name = "gbxObjectsUnloaded";
-            this.gbxObjectsUnloaded.Size = new System.Drawing.Size(159, 296);
-            this.gbxObjectsUnloaded.TabIndex = 2;
-            this.gbxObjectsUnloaded.TabStop = false;
-            this.gbxObjectsUnloaded.Text = "Unloaded Objects";
+            this.gbxGroundUnloaded.Controls.Add(this.lbxGroundUnloaded);
+            this.gbxGroundUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbxGroundUnloaded.Location = new System.Drawing.Point(0, 0);
+            this.gbxGroundUnloaded.Name = "gbxGroundUnloaded";
+            this.gbxGroundUnloaded.Size = new System.Drawing.Size(159, 296);
+            this.gbxGroundUnloaded.TabIndex = 2;
+            this.gbxGroundUnloaded.TabStop = false;
+            this.gbxGroundUnloaded.Text = "Unloaded Ground";
             // 
-            // lbxObjectsUnloaded
+            // lbxGroundUnloaded
             // 
-            this.lbxObjectsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxObjectsUnloaded.FormattingEnabled = true;
-            this.lbxObjectsUnloaded.Location = new System.Drawing.Point(3, 16);
-            this.lbxObjectsUnloaded.Name = "lbxObjectsUnloaded";
-            this.lbxObjectsUnloaded.Size = new System.Drawing.Size(153, 277);
-            this.lbxObjectsUnloaded.TabIndex = 0;
+            this.lbxGroundUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxGroundUnloaded.FormattingEnabled = true;
+            this.lbxGroundUnloaded.Location = new System.Drawing.Point(3, 16);
+            this.lbxGroundUnloaded.Name = "lbxGroundUnloaded";
+            this.lbxGroundUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lbxGroundUnloaded.Size = new System.Drawing.Size(153, 277);
+            this.lbxGroundUnloaded.TabIndex = 0;
             // 
             // tpgMaps
             // 
@@ -671,15 +673,15 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
             this.gbxAircraftUnloaded.ResumeLayout(false);
-            this.tpgObjects.ResumeLayout(false);
+            this.tpgGround.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
-            this.gbxObjectsLoaded.ResumeLayout(false);
+            this.gbxGroundLoaded.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.ResumeLayout(false);
-            this.gbxObjectsUnloaded.ResumeLayout(false);
+            this.gbxGroundUnloaded.ResumeLayout(false);
             this.tpgMaps.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
@@ -706,7 +708,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tpgAircraft;
-        private System.Windows.Forms.TabPage tpgObjects;
+        private System.Windows.Forms.TabPage tpgGround;
         private System.Windows.Forms.TabPage tpgSettings;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox gbxAircraftLoaded;
@@ -719,15 +721,15 @@
         private System.Windows.Forms.GroupBox gbxAircraftUnloaded;
         private System.Windows.Forms.ListBox lbxAircraftUnloaded;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.GroupBox gbxObjectsLoaded;
-        private System.Windows.Forms.ListBox lbxObjectsLoaded;
+        private System.Windows.Forms.GroupBox gbxGroundLoaded;
+        private System.Windows.Forms.ListBox lbxGroundLoaded;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.Button btnObjectsLoad;
-        private System.Windows.Forms.Button btnObjectsUnload;
-        private System.Windows.Forms.Button btnObjectsDown;
-        private System.Windows.Forms.Button btnObjectsUp;
-        private System.Windows.Forms.GroupBox gbxObjectsUnloaded;
-        private System.Windows.Forms.ListBox lbxObjectsUnloaded;
+        private System.Windows.Forms.Button btnGroundLoad;
+        private System.Windows.Forms.Button btnGroundUnload;
+        private System.Windows.Forms.Button btnGroundDown;
+        private System.Windows.Forms.Button btnGroundUp;
+        private System.Windows.Forms.GroupBox gbxGroundUnloaded;
+        private System.Windows.Forms.ListBox lbxGroundUnloaded;
         private System.Windows.Forms.TabPage tpgMaps;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.GroupBox gbxMapsLoaded;

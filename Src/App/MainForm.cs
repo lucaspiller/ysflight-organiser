@@ -26,7 +26,7 @@ namespace Ysfo.App
 
                 // enable tabs
                 tpgAircraft.Enabled = true;
-                tpgObjects.Enabled = true;
+                tpgGround.Enabled = true;
                 tpgMaps.Enabled = true;
 
                 // reset bindings
@@ -34,12 +34,17 @@ namespace Ysfo.App
                 lbxAircraftLoaded.ClearSelected();
                 lbxAircraftUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedAircraft");
                 lbxAircraftUnloaded.ClearSelected();
+
+                lbxGroundLoaded.DataSource = new BindingSource(_ysfo, "LoadedGround");
+                lbxGroundLoaded.ClearSelected();
+                lbxGroundUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedGround");
+                lbxGroundUnloaded.ClearSelected();
             }
             catch (YsfoWrapper.YsfoPathInvalidException)
             {
                 // change tabs
                 tpgAircraft.Enabled = false;
-                tpgObjects.Enabled = false;
+                tpgGround.Enabled = false;
                 tpgMaps.Enabled = false;
                 tabControl.SelectedTab = tpgSettings;
 
