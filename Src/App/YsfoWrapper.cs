@@ -69,6 +69,14 @@ namespace Ysfo.App
 
         public void Dispose()
         {
+            // save
+            LoadedAircraft.Save();
+            UnloadedAircraft.Save();
+            LoadedGround.Save();
+            UnloadedGround.Save();
+            LoadedScenery.Save();
+            UnloadedScenery.Save();
+
             // cleanup
             _ysfo.Dispose();
             WriteAppConfig();
