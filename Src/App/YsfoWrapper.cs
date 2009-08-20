@@ -10,15 +10,16 @@ namespace Ysfo.App
 {
     public class YsfoWrapper : IDisposable, INotifyPropertyChanged
     {
-        private String _path;
+        private Core.Ysfo _ysfo;
+        
         public String Path {
             get
             {
-                return _path;    
+                return _ysfo.Path;
             }
             set
             {
-                _path = value;
+                _ysfo.Path = value;
                 if (PropertyChanged != null)
                 {
                     PropertyChanged(this, new PropertyChangedEventArgs("Path"));
@@ -28,11 +29,23 @@ namespace Ysfo.App
 
         public YsfoWrapper()
         {
+            _ysfo = new Core.Ysfo();
+
             Path = ConfigurationManager.AppSettings["YsPath"] ?? "";
+        }
+
+        public void Setup()
+        {
+            if (!_ysfo.IsPathValid())
+            {
+                throw new YsfoPathInvalidException();
+            }
         }
 
         public void Dispose()
         {
+            // cleanup
+            _ysfo.Dispose();
             WriteAppConfig();
         }
 
@@ -53,5 +66,19 @@ namespace Ysfo.App
 
         // events
         public event PropertyChangedEventHandler PropertyChanged;
+
+        // exceptions
+        public class YsfoPathInvalidException : Exception
+        {
+            public YsfoPathInvalidException() : base()
+            {
+                
+            }
+
+            public YsfoPathInvalidException(String message) : base(message)
+            {
+
+            }
+        }
     }
 }

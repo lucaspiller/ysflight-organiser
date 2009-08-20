@@ -18,12 +18,6 @@ namespace Ysfo.App
             InitializeComponent();
         }
 
-        private void mitExit_Click(object sender, EventArgs e)
-        {
-            // close form
-            Close();
-        }
-
         #region Settings
 
         private void btnSettingsBrowse_Click(object sender, EventArgs e)
@@ -41,7 +35,14 @@ namespace Ysfo.App
             }
         }
 
+        private void btnSettingsSave_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         #endregion
+
+        #region FormEvents
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -50,11 +51,48 @@ namespace Ysfo.App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // initialize
+            // initialise
             _ysfo = new YsfoWrapper();
 
             // settings
             tbxSettingsPath.DataBindings.Add("Text", _ysfo, "Path");
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void mitExit_Click(object sender, EventArgs e)
+        {
+            // close form
+            Close();
+        }
+
+        #endregion
+
+        private void LoadData()
+        {
+            try
+            {
+                _ysfo.Setup();
+
+                // enable tabs
+                tpgAircraft.Enabled = true;
+                tpgObjects.Enabled = true;
+                tpgMaps.Enabled = true;
+            }
+            catch (YsfoWrapper.YsfoPathInvalidException)
+            {
+                // change tabs
+                tpgAircraft.Enabled = false;
+                tpgObjects.Enabled = false;
+                tpgMaps.Enabled = false;
+                tabControl.SelectedTab = tpgSettings;
+
+                MessageBox.Show("The path to your YsFlight directory is invalid!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
     }
 }

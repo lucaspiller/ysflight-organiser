@@ -68,12 +68,12 @@
             this.gbxMapsUnloaded = new System.Windows.Forms.GroupBox();
             this.lbxMapsUnloaded = new System.Windows.Forms.ListBox();
             this.tpgSettings = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxSettingsPath = new System.Windows.Forms.TextBox();
             this.btnSettingsBrowse = new System.Windows.Forms.Button();
             this.btnSettingsSave = new System.Windows.Forms.Button();
             this.diaSettingsBrowseYsPath = new System.Windows.Forms.FolderBrowserDialog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -569,6 +569,20 @@
             this.tpgSettings.Text = "Settings";
             this.tpgSettings.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.tbxSettingsPath);
+            this.groupBox1.Controls.Add(this.btnSettingsBrowse);
+            this.groupBox1.Location = new System.Drawing.Point(8, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(368, 60);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "YsFlight Settings";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -607,26 +621,13 @@
             this.btnSettingsSave.TabIndex = 3;
             this.btnSettingsSave.Text = "Save";
             this.btnSettingsSave.UseVisualStyleBackColor = true;
+            this.btnSettingsSave.Click += new System.EventHandler(this.btnSettingsSave_Click);
             // 
             // diaSettingsBrowseYsPath
             // 
             this.diaSettingsBrowseYsPath.Description = "Select the root directory of your YsFlight installation.";
             this.diaSettingsBrowseYsPath.RootFolder = System.Environment.SpecialFolder.MyComputer;
             this.diaSettingsBrowseYsPath.ShowNewFolderButton = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tbxSettingsPath);
-            this.groupBox1.Controls.Add(this.btnSettingsBrowse);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(368, 60);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "YsFlight Settings";
             // 
             // MainForm
             // 
@@ -641,6 +642,7 @@
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
