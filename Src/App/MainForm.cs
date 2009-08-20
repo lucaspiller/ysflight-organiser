@@ -150,6 +150,8 @@ namespace Ysfo.App
 
         private void btnAircraftLoad_Click(object sender, EventArgs e)
         {
+            BeginAircraftTransaction();
+
             ICollection<Ysfo.Core.AircraftAddon> items = lbxAircraftUnloaded.SelectedItems.Cast<Ysfo.Core.AircraftAddon>().ToList();
 
             // move
@@ -160,6 +162,8 @@ namespace Ysfo.App
                     _ysfo.LoadedAircraft.Add(a);
                 }
             });
+
+            EndAircraftTransaction();
 
             // clear selection
             lbxAircraftUnloaded.ClearSelected();
@@ -174,6 +178,8 @@ namespace Ysfo.App
 
         private void btnAircraftUnload_Click(object sender, EventArgs e)
         {
+            BeginAircraftTransaction();
+
             ICollection<Ysfo.Core.AircraftAddon> items = lbxAircraftLoaded.SelectedItems.Cast<Ysfo.Core.AircraftAddon>().ToList();
 
             // move
@@ -185,6 +191,8 @@ namespace Ysfo.App
                 }
             });
 
+            EndAircraftTransaction();
+
             // clear selection
             lbxAircraftUnloaded.ClearSelected();
             lbxAircraftLoaded.ClearSelected();
@@ -194,6 +202,22 @@ namespace Ysfo.App
             {
                 lbxAircraftUnloaded.SetSelected(i, true);
             }
+        }
+
+        private void BeginAircraftTransaction()
+        {
+            // begin transaction
+            _ysfo.UnloadedAircraft.RaiseListChangedEvents = false;
+            _ysfo.LoadedAircraft.RaiseListChangedEvents = false;
+        }
+
+        private void EndAircraftTransaction()
+        {
+            // end transaction
+            _ysfo.UnloadedAircraft.RaiseListChangedEvents = true;
+            _ysfo.LoadedAircraft.RaiseListChangedEvents = true;
+            _ysfo.UnloadedAircraft.ResetBindings();
+            _ysfo.LoadedAircraft.ResetBindings();
         }
 
         #endregion
