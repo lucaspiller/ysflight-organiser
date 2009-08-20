@@ -526,6 +526,7 @@
             this.btnSceneryLoad.TabIndex = 3;
             this.btnSceneryLoad.Text = "Load";
             this.btnSceneryLoad.UseVisualStyleBackColor = true;
+            this.btnSceneryLoad.Click += new System.EventHandler(this.btnSceneryLoad_Click);
             // 
             // btnSceneryUnload
             // 
@@ -537,6 +538,7 @@
             this.btnSceneryUnload.TabIndex = 2;
             this.btnSceneryUnload.Text = "Unload";
             this.btnSceneryUnload.UseVisualStyleBackColor = true;
+            this.btnSceneryUnload.Click += new System.EventHandler(this.btnSceneryUnload_Click);
             // 
             // btnSceneryDown
             // 

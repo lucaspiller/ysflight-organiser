@@ -591,6 +591,78 @@ namespace Ysfo.App
             }
         }
 
+        private void btnSceneryLoad_Click(object sender, EventArgs e)
+        {
+            BeginSceneryTransaction();
+
+            ICollection<Ysfo.Core.SceneryAddon> items = lbxSceneryUnloaded.SelectedItems.Cast<Ysfo.Core.SceneryAddon>().ToList();
+
+            // move
+            items.ForEach(a =>
+            {
+                if (_ysfo.UnloadedScenery.Remove(a))
+                {
+                    _ysfo.LoadedScenery.Add(a);
+                }
+            });
+
+            EndSceneryTransaction();
+
+            // clear selection
+            lbxSceneryUnloaded.ClearSelected();
+            lbxSceneryLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxSceneryLoaded.Items.Count - 1; i > (lbxSceneryLoaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxSceneryLoaded.SetSelected(i, true);
+            }
+        }
+
+        private void btnSceneryUnload_Click(object sender, EventArgs e)
+        {
+            BeginSceneryTransaction();
+
+            ICollection<Ysfo.Core.SceneryAddon> items = lbxSceneryLoaded.SelectedItems.Cast<Ysfo.Core.SceneryAddon>().ToList();
+
+            // move
+            items.ForEach(a =>
+            {
+                if (_ysfo.LoadedScenery.Remove(a))
+                {
+                    _ysfo.UnloadedScenery.Add(a);
+                }
+            });
+
+            EndSceneryTransaction();
+
+            // clear selection
+            lbxSceneryUnloaded.ClearSelected();
+            lbxSceneryLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxSceneryUnloaded.Items.Count - 1; i > (lbxSceneryUnloaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxSceneryUnloaded.SetSelected(i, true);
+            }
+        }
+
+        private void BeginSceneryTransaction()
+        {
+            // begin transaction
+            _ysfo.UnloadedScenery.RaiseListChangedEvents = false;
+            _ysfo.LoadedScenery.RaiseListChangedEvents = false;
+        }
+
+        private void EndSceneryTransaction()
+        {
+            // end transaction
+            _ysfo.UnloadedScenery.RaiseListChangedEvents = true;
+            _ysfo.LoadedScenery.RaiseListChangedEvents = true;
+            _ysfo.UnloadedScenery.ResetBindings();
+            _ysfo.LoadedScenery.ResetBindings();
+        }
+
         #endregion
 
         #region Settings
