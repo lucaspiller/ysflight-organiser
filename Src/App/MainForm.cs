@@ -25,6 +25,10 @@ namespace Ysfo.App
             if (lbxAircraftUnloaded.SelectedItem != null)
             {
                 lbxAircraftLoaded.ClearSelected();
+
+                // buttons
+                btnAircraftLoad.Enabled = true;
+                btnAircraftUnload.Enabled = false;
             }
         }
 
@@ -33,6 +37,10 @@ namespace Ysfo.App
             if (lbxAircraftLoaded.SelectedItem != null)
             {
                 lbxAircraftUnloaded.ClearSelected();
+
+                // buttons
+                btnAircraftLoad.Enabled = false;
+                btnAircraftUnload.Enabled = true;
             }
         }
 
