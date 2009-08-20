@@ -27,7 +27,7 @@ namespace Ysfo.App
                 // enable tabs
                 tpgAircraft.Enabled = true;
                 tpgGround.Enabled = true;
-                tpgMaps.Enabled = true;
+                tpgScenery.Enabled = true;
 
                 // reset bindings
                 lbxAircraftLoaded.DataSource = new BindingSource(_ysfo, "LoadedAircraft");
@@ -45,7 +45,7 @@ namespace Ysfo.App
                 // change tabs
                 tpgAircraft.Enabled = false;
                 tpgGround.Enabled = false;
-                tpgMaps.Enabled = false;
+                tpgScenery.Enabled = false;
                 tabControl.SelectedTab = tpgSettings;
 
                 MessageBox.Show("The path to your YsFlight directory is invalid!", "Error",

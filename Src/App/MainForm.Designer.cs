@@ -56,17 +56,17 @@
             this.btnGroundUp = new System.Windows.Forms.Button();
             this.gbxGroundUnloaded = new System.Windows.Forms.GroupBox();
             this.lbxGroundUnloaded = new System.Windows.Forms.ListBox();
-            this.tpgMaps = new System.Windows.Forms.TabPage();
+            this.tpgScenery = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.gbxMapsLoaded = new System.Windows.Forms.GroupBox();
-            this.lbxMapsLoaded = new System.Windows.Forms.ListBox();
+            this.gbxSceneryLoaded = new System.Windows.Forms.GroupBox();
+            this.lbxSceneryLoaded = new System.Windows.Forms.ListBox();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-            this.btnMapsLoad = new System.Windows.Forms.Button();
-            this.btnMapsUnload = new System.Windows.Forms.Button();
-            this.btnMapsDown = new System.Windows.Forms.Button();
-            this.btnMapsUp = new System.Windows.Forms.Button();
-            this.gbxMapsUnloaded = new System.Windows.Forms.GroupBox();
-            this.lbxMapsUnloaded = new System.Windows.Forms.ListBox();
+            this.btnSceneryLoad = new System.Windows.Forms.Button();
+            this.btnSceneryUnload = new System.Windows.Forms.Button();
+            this.btnSceneryDown = new System.Windows.Forms.Button();
+            this.btnSceneryUp = new System.Windows.Forms.Button();
+            this.gbxSceneryUnloaded = new System.Windows.Forms.GroupBox();
+            this.lbxSceneryUnloaded = new System.Windows.Forms.ListBox();
             this.tpgSettings = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -95,15 +95,15 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.gbxGroundUnloaded.SuspendLayout();
-            this.tpgMaps.SuspendLayout();
+            this.tpgScenery.SuspendLayout();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            this.gbxMapsLoaded.SuspendLayout();
+            this.gbxSceneryLoaded.SuspendLayout();
             this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
-            this.gbxMapsUnloaded.SuspendLayout();
+            this.gbxSceneryUnloaded.SuspendLayout();
             this.tpgSettings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -157,7 +157,7 @@
             this.tabControl.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl.Controls.Add(this.tpgAircraft);
             this.tabControl.Controls.Add(this.tpgGround);
-            this.tabControl.Controls.Add(this.tpgMaps);
+            this.tabControl.Controls.Add(this.tpgScenery);
             this.tabControl.Controls.Add(this.tpgSettings);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 24);
@@ -446,15 +446,15 @@
             this.lbxGroundUnloaded.TabIndex = 0;
             this.lbxGroundUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxGroundUnloaded_SelectedIndexChanged);
             // 
-            // tpgMaps
+            // tpgScenery
             // 
-            this.tpgMaps.Controls.Add(this.splitContainer5);
-            this.tpgMaps.Location = new System.Drawing.Point(4, 25);
-            this.tpgMaps.Name = "tpgMaps";
-            this.tpgMaps.Size = new System.Drawing.Size(382, 296);
-            this.tpgMaps.TabIndex = 4;
-            this.tpgMaps.Text = "Maps";
-            this.tpgMaps.UseVisualStyleBackColor = true;
+            this.tpgScenery.Controls.Add(this.splitContainer5);
+            this.tpgScenery.Location = new System.Drawing.Point(4, 25);
+            this.tpgScenery.Name = "tpgScenery";
+            this.tpgScenery.Size = new System.Drawing.Size(382, 296);
+            this.tpgScenery.TabIndex = 4;
+            this.tpgScenery.Text = "Maps";
+            this.tpgScenery.UseVisualStyleBackColor = true;
             // 
             // splitContainer5
             // 
@@ -464,7 +464,7 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.gbxMapsLoaded);
+            this.splitContainer5.Panel1.Controls.Add(this.gbxSceneryLoaded);
             // 
             // splitContainer5.Panel2
             // 
@@ -473,25 +473,25 @@
             this.splitContainer5.SplitterDistance = 155;
             this.splitContainer5.TabIndex = 4;
             // 
-            // gbxMapsLoaded
+            // gbxSceneryLoaded
             // 
-            this.gbxMapsLoaded.Controls.Add(this.lbxMapsLoaded);
-            this.gbxMapsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbxMapsLoaded.Location = new System.Drawing.Point(0, 0);
-            this.gbxMapsLoaded.Name = "gbxMapsLoaded";
-            this.gbxMapsLoaded.Size = new System.Drawing.Size(155, 296);
-            this.gbxMapsLoaded.TabIndex = 0;
-            this.gbxMapsLoaded.TabStop = false;
-            this.gbxMapsLoaded.Text = "Loaded Maps";
+            this.gbxSceneryLoaded.Controls.Add(this.lbxSceneryLoaded);
+            this.gbxSceneryLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbxSceneryLoaded.Location = new System.Drawing.Point(0, 0);
+            this.gbxSceneryLoaded.Name = "gbxSceneryLoaded";
+            this.gbxSceneryLoaded.Size = new System.Drawing.Size(155, 296);
+            this.gbxSceneryLoaded.TabIndex = 0;
+            this.gbxSceneryLoaded.TabStop = false;
+            this.gbxSceneryLoaded.Text = "Loaded Maps";
             // 
-            // lbxMapsLoaded
+            // lbxSceneryLoaded
             // 
-            this.lbxMapsLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxMapsLoaded.FormattingEnabled = true;
-            this.lbxMapsLoaded.Location = new System.Drawing.Point(3, 16);
-            this.lbxMapsLoaded.Name = "lbxMapsLoaded";
-            this.lbxMapsLoaded.Size = new System.Drawing.Size(149, 277);
-            this.lbxMapsLoaded.TabIndex = 0;
+            this.lbxSceneryLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxSceneryLoaded.FormattingEnabled = true;
+            this.lbxSceneryLoaded.Location = new System.Drawing.Point(3, 16);
+            this.lbxSceneryLoaded.Name = "lbxSceneryLoaded";
+            this.lbxSceneryLoaded.Size = new System.Drawing.Size(149, 277);
+            this.lbxSceneryLoaded.TabIndex = 0;
             // 
             // splitContainer6
             // 
@@ -502,81 +502,81 @@
             // 
             // splitContainer6.Panel1
             // 
-            this.splitContainer6.Panel1.Controls.Add(this.btnMapsLoad);
-            this.splitContainer6.Panel1.Controls.Add(this.btnMapsUnload);
-            this.splitContainer6.Panel1.Controls.Add(this.btnMapsDown);
-            this.splitContainer6.Panel1.Controls.Add(this.btnMapsUp);
+            this.splitContainer6.Panel1.Controls.Add(this.btnSceneryLoad);
+            this.splitContainer6.Panel1.Controls.Add(this.btnSceneryUnload);
+            this.splitContainer6.Panel1.Controls.Add(this.btnSceneryDown);
+            this.splitContainer6.Panel1.Controls.Add(this.btnSceneryUp);
             // 
             // splitContainer6.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.gbxMapsUnloaded);
+            this.splitContainer6.Panel2.Controls.Add(this.gbxSceneryUnloaded);
             this.splitContainer6.Size = new System.Drawing.Size(223, 296);
             this.splitContainer6.SplitterDistance = 60;
             this.splitContainer6.TabIndex = 0;
             // 
-            // btnMapsLoad
+            // btnSceneryLoad
             // 
-            this.btnMapsLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.btnSceneryLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsLoad.Location = new System.Drawing.Point(3, 71);
-            this.btnMapsLoad.Name = "btnMapsLoad";
-            this.btnMapsLoad.Size = new System.Drawing.Size(54, 23);
-            this.btnMapsLoad.TabIndex = 3;
-            this.btnMapsLoad.Text = "Load";
-            this.btnMapsLoad.UseVisualStyleBackColor = true;
+            this.btnSceneryLoad.Location = new System.Drawing.Point(3, 71);
+            this.btnSceneryLoad.Name = "btnSceneryLoad";
+            this.btnSceneryLoad.Size = new System.Drawing.Size(54, 23);
+            this.btnSceneryLoad.TabIndex = 3;
+            this.btnSceneryLoad.Text = "Load";
+            this.btnSceneryLoad.UseVisualStyleBackColor = true;
             // 
-            // btnMapsUnload
+            // btnSceneryUnload
             // 
-            this.btnMapsUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnSceneryUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsUnload.Location = new System.Drawing.Point(3, 204);
-            this.btnMapsUnload.Name = "btnMapsUnload";
-            this.btnMapsUnload.Size = new System.Drawing.Size(54, 23);
-            this.btnMapsUnload.TabIndex = 2;
-            this.btnMapsUnload.Text = "Unload";
-            this.btnMapsUnload.UseVisualStyleBackColor = true;
+            this.btnSceneryUnload.Location = new System.Drawing.Point(3, 204);
+            this.btnSceneryUnload.Name = "btnSceneryUnload";
+            this.btnSceneryUnload.Size = new System.Drawing.Size(54, 23);
+            this.btnSceneryUnload.TabIndex = 2;
+            this.btnSceneryUnload.Text = "Unload";
+            this.btnSceneryUnload.UseVisualStyleBackColor = true;
             // 
-            // btnMapsDown
+            // btnSceneryDown
             // 
-            this.btnMapsDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnSceneryDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsDown.Location = new System.Drawing.Point(3, 243);
-            this.btnMapsDown.Name = "btnMapsDown";
-            this.btnMapsDown.Size = new System.Drawing.Size(54, 23);
-            this.btnMapsDown.TabIndex = 1;
-            this.btnMapsDown.Text = "Down";
-            this.btnMapsDown.UseVisualStyleBackColor = true;
+            this.btnSceneryDown.Location = new System.Drawing.Point(3, 243);
+            this.btnSceneryDown.Name = "btnSceneryDown";
+            this.btnSceneryDown.Size = new System.Drawing.Size(54, 23);
+            this.btnSceneryDown.TabIndex = 1;
+            this.btnSceneryDown.Text = "Down";
+            this.btnSceneryDown.UseVisualStyleBackColor = true;
             // 
-            // btnMapsUp
+            // btnSceneryUp
             // 
-            this.btnMapsUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.btnSceneryUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMapsUp.Location = new System.Drawing.Point(3, 32);
-            this.btnMapsUp.Name = "btnMapsUp";
-            this.btnMapsUp.Size = new System.Drawing.Size(54, 23);
-            this.btnMapsUp.TabIndex = 0;
-            this.btnMapsUp.Text = "Up";
-            this.btnMapsUp.UseVisualStyleBackColor = true;
+            this.btnSceneryUp.Location = new System.Drawing.Point(3, 32);
+            this.btnSceneryUp.Name = "btnSceneryUp";
+            this.btnSceneryUp.Size = new System.Drawing.Size(54, 23);
+            this.btnSceneryUp.TabIndex = 0;
+            this.btnSceneryUp.Text = "Up";
+            this.btnSceneryUp.UseVisualStyleBackColor = true;
             // 
-            // gbxMapsUnloaded
+            // gbxSceneryUnloaded
             // 
-            this.gbxMapsUnloaded.Controls.Add(this.lbxMapsUnloaded);
-            this.gbxMapsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbxMapsUnloaded.Location = new System.Drawing.Point(0, 0);
-            this.gbxMapsUnloaded.Name = "gbxMapsUnloaded";
-            this.gbxMapsUnloaded.Size = new System.Drawing.Size(159, 296);
-            this.gbxMapsUnloaded.TabIndex = 2;
-            this.gbxMapsUnloaded.TabStop = false;
-            this.gbxMapsUnloaded.Text = "Unloaded Maps";
+            this.gbxSceneryUnloaded.Controls.Add(this.lbxSceneryUnloaded);
+            this.gbxSceneryUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbxSceneryUnloaded.Location = new System.Drawing.Point(0, 0);
+            this.gbxSceneryUnloaded.Name = "gbxSceneryUnloaded";
+            this.gbxSceneryUnloaded.Size = new System.Drawing.Size(159, 296);
+            this.gbxSceneryUnloaded.TabIndex = 2;
+            this.gbxSceneryUnloaded.TabStop = false;
+            this.gbxSceneryUnloaded.Text = "Unloaded Maps";
             // 
-            // lbxMapsUnloaded
+            // lbxSceneryUnloaded
             // 
-            this.lbxMapsUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxMapsUnloaded.FormattingEnabled = true;
-            this.lbxMapsUnloaded.Location = new System.Drawing.Point(3, 16);
-            this.lbxMapsUnloaded.Name = "lbxMapsUnloaded";
-            this.lbxMapsUnloaded.Size = new System.Drawing.Size(153, 277);
-            this.lbxMapsUnloaded.TabIndex = 0;
+            this.lbxSceneryUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxSceneryUnloaded.FormattingEnabled = true;
+            this.lbxSceneryUnloaded.Location = new System.Drawing.Point(3, 16);
+            this.lbxSceneryUnloaded.Name = "lbxSceneryUnloaded";
+            this.lbxSceneryUnloaded.Size = new System.Drawing.Size(153, 277);
+            this.lbxSceneryUnloaded.TabIndex = 0;
             // 
             // tpgSettings
             // 
@@ -688,15 +688,15 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.ResumeLayout(false);
             this.gbxGroundUnloaded.ResumeLayout(false);
-            this.tpgMaps.ResumeLayout(false);
+            this.tpgScenery.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             this.splitContainer5.ResumeLayout(false);
-            this.gbxMapsLoaded.ResumeLayout(false);
+            this.gbxSceneryLoaded.ResumeLayout(false);
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
             this.splitContainer6.ResumeLayout(false);
-            this.gbxMapsUnloaded.ResumeLayout(false);
+            this.gbxSceneryUnloaded.ResumeLayout(false);
             this.tpgSettings.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -736,17 +736,17 @@
         private System.Windows.Forms.Button btnGroundUp;
         private System.Windows.Forms.GroupBox gbxGroundUnloaded;
         private System.Windows.Forms.ListBox lbxGroundUnloaded;
-        private System.Windows.Forms.TabPage tpgMaps;
+        private System.Windows.Forms.TabPage tpgScenery;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.GroupBox gbxMapsLoaded;
-        private System.Windows.Forms.ListBox lbxMapsLoaded;
+        private System.Windows.Forms.GroupBox gbxSceneryLoaded;
+        private System.Windows.Forms.ListBox lbxSceneryLoaded;
         private System.Windows.Forms.SplitContainer splitContainer6;
-        private System.Windows.Forms.Button btnMapsLoad;
-        private System.Windows.Forms.Button btnMapsUnload;
-        private System.Windows.Forms.Button btnMapsDown;
-        private System.Windows.Forms.Button btnMapsUp;
-        private System.Windows.Forms.GroupBox gbxMapsUnloaded;
-        private System.Windows.Forms.ListBox lbxMapsUnloaded;
+        private System.Windows.Forms.Button btnSceneryLoad;
+        private System.Windows.Forms.Button btnSceneryUnload;
+        private System.Windows.Forms.Button btnSceneryDown;
+        private System.Windows.Forms.Button btnSceneryUp;
+        private System.Windows.Forms.GroupBox gbxSceneryUnloaded;
+        private System.Windows.Forms.ListBox lbxSceneryUnloaded;
         private System.Windows.Forms.Button btnSettingsSave;
         private System.Windows.Forms.Button btnSettingsBrowse;
         private System.Windows.Forms.TextBox tbxSettingsPath;
