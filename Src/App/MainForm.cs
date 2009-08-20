@@ -309,6 +309,79 @@ namespace Ysfo.App
             }
         }
 
+        private void btnGroundLoad_Click(object sender, EventArgs e)
+        {
+            BeginGroundTransaction();
+
+            ICollection<Ysfo.Core.GroundAddon> items = lbxGroundUnloaded.SelectedItems.Cast<Ysfo.Core.GroundAddon>().ToList();
+
+            // move
+            items.ForEach(a =>
+            {
+                if (_ysfo.UnloadedGround.Remove(a))
+                {
+                    _ysfo.LoadedGround.Add(a);
+                }
+            });
+
+            EndGroundTransaction();
+
+            // clear selection
+            lbxGroundUnloaded.ClearSelected();
+            lbxGroundLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxGroundLoaded.Items.Count - 1; i > (lbxGroundLoaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxGroundLoaded.SetSelected(i, true);
+            }
+        }
+
+        private void btnGroundUnload_Click(object sender, EventArgs e)
+        {
+            BeginGroundTransaction();
+
+            ICollection<Ysfo.Core.GroundAddon> items = lbxGroundLoaded.SelectedItems.Cast<Ysfo.Core.GroundAddon>().ToList();
+
+            // move
+            items.ForEach(a =>
+            {
+                if (_ysfo.LoadedGround.Remove(a))
+                {
+                    _ysfo.UnloadedGround.Add(a);
+                }
+            });
+
+            EndGroundTransaction();
+
+            // clear selection
+            lbxGroundUnloaded.ClearSelected();
+            lbxGroundLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxGroundUnloaded.Items.Count - 1; i > (lbxGroundUnloaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxGroundUnloaded.SetSelected(i, true);
+            }
+        }
+
+        private void BeginGroundTransaction()
+        {
+            // begin transaction
+            _ysfo.UnloadedGround.RaiseListChangedEvents = false;
+            _ysfo.LoadedGround.RaiseListChangedEvents = false;
+        }
+
+        private void EndGroundTransaction()
+        {
+            // end transaction
+            _ysfo.UnloadedGround.RaiseListChangedEvents = true;
+            _ysfo.LoadedGround.RaiseListChangedEvents = true;
+            _ysfo.UnloadedGround.ResetBindings();
+            _ysfo.LoadedGround.ResetBindings();
+        }
+
+
         #endregion
 
         #region Settings

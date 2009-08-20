@@ -386,6 +386,7 @@
             this.btnGroundLoad.TabIndex = 3;
             this.btnGroundLoad.Text = "Load";
             this.btnGroundLoad.UseVisualStyleBackColor = true;
+            this.btnGroundLoad.Click += new System.EventHandler(this.btnGroundLoad_Click);
             // 
             // btnGroundUnload
             // 
@@ -397,6 +398,7 @@
             this.btnGroundUnload.TabIndex = 2;
             this.btnGroundUnload.Text = "Unload";
             this.btnGroundUnload.UseVisualStyleBackColor = true;
+            this.btnGroundUnload.Click += new System.EventHandler(this.btnGroundUnload_Click);
             // 
             // btnGroundDown
             // 
