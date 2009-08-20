@@ -313,7 +313,7 @@
             this.tpgGround.Name = "tpgGround";
             this.tpgGround.Size = new System.Drawing.Size(382, 296);
             this.tpgGround.TabIndex = 1;
-            this.tpgGround.Text = "Ground";
+            this.tpgGround.Text = "Objects";
             this.tpgGround.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
@@ -342,7 +342,7 @@
             this.gbxGroundLoaded.Size = new System.Drawing.Size(155, 296);
             this.gbxGroundLoaded.TabIndex = 0;
             this.gbxGroundLoaded.TabStop = false;
-            this.gbxGroundLoaded.Text = "Loaded Ground";
+            this.gbxGroundLoaded.Text = "Loaded Objects";
             // 
             // lbxGroundLoaded
             // 
@@ -433,7 +433,7 @@
             this.gbxGroundUnloaded.Size = new System.Drawing.Size(159, 296);
             this.gbxGroundUnloaded.TabIndex = 2;
             this.gbxGroundUnloaded.TabStop = false;
-            this.gbxGroundUnloaded.Text = "Unloaded Ground";
+            this.gbxGroundUnloaded.Text = "Unloaded Objects";
             // 
             // lbxGroundUnloaded
             // 
