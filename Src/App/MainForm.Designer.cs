@@ -490,6 +490,7 @@
             this.lbxSceneryLoaded.FormattingEnabled = true;
             this.lbxSceneryLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxSceneryLoaded.Name = "lbxSceneryLoaded";
+            this.lbxSceneryLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxSceneryLoaded.Size = new System.Drawing.Size(149, 277);
             this.lbxSceneryLoaded.TabIndex = 0;
             // 
@@ -575,6 +576,7 @@
             this.lbxSceneryUnloaded.FormattingEnabled = true;
             this.lbxSceneryUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxSceneryUnloaded.Name = "lbxSceneryUnloaded";
+            this.lbxSceneryUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxSceneryUnloaded.Size = new System.Drawing.Size(153, 277);
             this.lbxSceneryUnloaded.TabIndex = 0;
             // 

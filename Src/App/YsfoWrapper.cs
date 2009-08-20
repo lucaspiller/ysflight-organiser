@@ -31,6 +31,9 @@ namespace Ysfo.App
         public GroundCollection LoadedGround { get; protected set; }
         public GroundCollection UnloadedGround { get; protected set; }
 
+        public SceneryCollection LoadedScenery { get; protected set; }
+        public SceneryCollection UnloadedScenery { get; protected set; }
+
         public YsfoWrapper()
         {
             _ysfo = new Core.Ysfo();
@@ -49,13 +52,19 @@ namespace Ysfo.App
             LoadedAircraft = _ysfo.GetAircraftCollection();
 
             String aircraftPath = System.IO.Path.Combine("aircraft", "unloaded_aircraft.lst");
-            UnloadedAircraft = _ysfo.GetAircraftCollection();
+            UnloadedAircraft = _ysfo.GetAircraftCollection(aircraftPath);
 
             // ground
             LoadedGround = _ysfo.GetGroundCollection();
 
             String groundPath = System.IO.Path.Combine("ground", "unloaded_ground.lst");
             UnloadedGround = _ysfo.GetGroundCollection(groundPath);
+
+            // scenery
+            LoadedScenery = _ysfo.GetSceneryCollection();
+
+            String sceneryPath = System.IO.Path.Combine("scenery", "unloaded_scenery.lst");
+            UnloadedScenery = _ysfo.GetSceneryCollection(sceneryPath);
         }
 
         public void Dispose()

@@ -39,6 +39,11 @@ namespace Ysfo.App
                 lbxGroundLoaded.ClearSelected();
                 lbxGroundUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedGround");
                 lbxGroundUnloaded.ClearSelected();
+
+                lbxSceneryLoaded.DataSource = new BindingSource(_ysfo, "LoadedScenery");
+                lbxSceneryLoaded.ClearSelected();
+                lbxSceneryUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedScenery");
+                lbxSceneryUnloaded.ClearSelected();
             }
             catch (YsfoWrapper.YsfoPathInvalidException)
             {
