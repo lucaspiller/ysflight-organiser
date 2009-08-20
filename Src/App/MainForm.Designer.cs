@@ -206,6 +206,7 @@
             this.lbxAircraftLoaded.FormattingEnabled = true;
             this.lbxAircraftLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftLoaded.Name = "lbxAircraftLoaded";
+            this.lbxAircraftLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxAircraftLoaded.Size = new System.Drawing.Size(150, 277);
             this.lbxAircraftLoaded.TabIndex = 0;
             this.lbxAircraftLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftLoaded_SelectedIndexChanged);
@@ -296,6 +297,7 @@
             this.lbxAircraftUnloaded.FormattingEnabled = true;
             this.lbxAircraftUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftUnloaded.Name = "lbxAircraftUnloaded";
+            this.lbxAircraftUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbxAircraftUnloaded.Size = new System.Drawing.Size(154, 277);
             this.lbxAircraftUnloaded.TabIndex = 0;
             this.lbxAircraftUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftUnloaded_SelectedIndexChanged);

@@ -14,9 +14,9 @@ namespace Ysfo.App
             Down
         };
 
-        public static bool MoveItem<T>(this BindingList<T> list, T item, MoveDirection direction)
+        // moves an object in a list, specified by index
+        public static bool MoveItem<T>(this BindingList<T> list, int index, MoveDirection direction)
         {
-            int index = list.IndexOf(item);
             if (index == -1)
             {
                 // item not found
@@ -51,11 +51,30 @@ namespace Ysfo.App
             }
 
             // swap items
+            T tmp = list[index];
             list[index] = list[otherIndex];
-            list[otherIndex] = item;
+            list[otherIndex] = tmp;
 
             // success
             return true;
+        }
+
+        // moves an item in a list, specified by object type
+        public static bool MoveItem<T>(this BindingList<T> list, T item, MoveDirection direction)
+        {
+            int index = list.IndexOf(item);
+
+            // move
+            return list.MoveItem(index, direction);
+        }
+
+        // adds ForEach to IEnumerable
+        public static void ForEach<T>(this IEnumerable<T> collection, Action<T> action)
+        {
+            foreach (T item in collection)
+            {
+                action(item);
+            }
         }
     }
 }

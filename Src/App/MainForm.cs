@@ -76,86 +76,124 @@ namespace Ysfo.App
 
         private void btnAircraftUp_Click(object sender, EventArgs e)
         {
-            // loaded
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
-
-            if (aircraft != null)
+            if (lbxAircraftLoaded.SelectedItems.Count > 0)
             {
-                if (_ysfo.LoadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Up))
+                // loaded
+                for (int i = 1; i < lbxAircraftLoaded.Items.Count; i++)
                 {
-                    lbxAircraftLoaded.SelectedIndex -= 1;
+                    // if selected
+                    if (lbxAircraftLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedAircraft.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxAircraftLoaded.SetSelected(i - 1, true);
+                        lbxAircraftLoaded.SetSelected(i, false);
+                    }
                 }
             }
 
-            // unloaded
-            aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
-
-            if (aircraft != null)
+            if (lbxAircraftUnloaded.SelectedItems.Count > 0)
             {
-                if (_ysfo.UnloadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Up))
+                // unloaded
+                for (int i = 1; i < lbxAircraftUnloaded.Items.Count; i++)
                 {
-                    lbxAircraftUnloaded.SelectedIndex -= 1;
+                    // if selected
+                    if (lbxAircraftUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedAircraft.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxAircraftUnloaded.SetSelected(i - 1, true);
+                        lbxAircraftUnloaded.SetSelected(i, false);
+                    }
                 }
             }
         }
 
         private void btnAircraftDown_Click(object sender, EventArgs e)
         {
-            // loaded
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
-
-            if (aircraft != null)
+            if (lbxAircraftLoaded.SelectedItems.Count > 0)
             {
-                if (_ysfo.LoadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Down))
+                // loaded
+                for (int i = lbxAircraftLoaded.Items.Count - 1; i > 1;  i--)
                 {
-                    lbxAircraftLoaded.SelectedIndex += 1;
+                    // if selected
+                    if (lbxAircraftLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedAircraft.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxAircraftLoaded.SetSelected(i + 1, true);
+                        lbxAircraftLoaded.SetSelected(i, false);
+                    }
                 }
             }
 
-            // unloaded
-            aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
-
-            if (aircraft != null)
+            if (lbxAircraftUnloaded.SelectedItems.Count > 0)
             {
-                if (_ysfo.UnloadedAircraft.MoveItem(aircraft, Extensions.MoveDirection.Down))
+                // unloaded
+                for (int i = lbxAircraftUnloaded.Items.Count - 2; i >= 0; i--)
                 {
-                    lbxAircraftUnloaded.SelectedIndex += 1;
+                    // if selected
+                    if (lbxAircraftUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedAircraft.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxAircraftUnloaded.SetSelected(i + 1, true);
+                        lbxAircraftUnloaded.SetSelected(i, false);
+                    }
                 }
             }
         }
 
         private void btnAircraftLoad_Click(object sender, EventArgs e)
         {
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftUnloaded.SelectedItem;
+            ICollection<Ysfo.Core.AircraftAddon> items = lbxAircraftUnloaded.SelectedItems.Cast<Ysfo.Core.AircraftAddon>().ToList();
 
-            if (aircraft == null)
-                return;
-
-            // swap items
-            if (_ysfo.UnloadedAircraft.Remove(aircraft))
+            // move
+            items.ForEach(a =>
             {
-                _ysfo.LoadedAircraft.Add(aircraft);
-            }
+                if (_ysfo.UnloadedAircraft.Remove(a))
+                {
+                    _ysfo.LoadedAircraft.Add(a);
+                }
+            });
 
             // clear selection
+            lbxAircraftUnloaded.ClearSelected();
             lbxAircraftLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxAircraftLoaded.Items.Count - 1; i > (lbxAircraftLoaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxAircraftLoaded.SetSelected(i, true);
+            }
         }
 
         private void btnAircraftUnload_Click(object sender, EventArgs e)
         {
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxAircraftLoaded.SelectedItem;
+            ICollection<Ysfo.Core.AircraftAddon> items = lbxAircraftLoaded.SelectedItems.Cast<Ysfo.Core.AircraftAddon>().ToList();
 
-            if (aircraft == null)
-                return;
-
-            // swap items
-            if (_ysfo.LoadedAircraft.Remove(aircraft))
+            // move
+            items.ForEach(a =>
             {
-                _ysfo.UnloadedAircraft.Add(aircraft);
-            }
+                if (_ysfo.LoadedAircraft.Remove(a))
+                {
+                    _ysfo.UnloadedAircraft.Add(a);
+                }
+            });
 
             // clear selection
             lbxAircraftUnloaded.ClearSelected();
+            lbxAircraftLoaded.ClearSelected();
+
+            // set items as selected
+            for (int i = lbxAircraftUnloaded.Items.Count - 1; i > (lbxAircraftUnloaded.Items.Count - 1) - items.Count; i--)
+            {
+                lbxAircraftUnloaded.SetSelected(i, true);
+            }
         }
 
         #endregion
