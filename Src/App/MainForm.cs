@@ -18,6 +18,36 @@ namespace Ysfo.App
             InitializeComponent();
         }
 
+        private void LoadData()
+        {
+            try
+            {
+                _ysfo.Setup();
+
+                // enable tabs
+                tpgAircraft.Enabled = true;
+                tpgObjects.Enabled = true;
+                tpgMaps.Enabled = true;
+
+                // reset bindings
+                lbxAircraftLoaded.DataSource = new BindingSource(_ysfo, "LoadedAircraft");
+                lbxAircraftLoaded.ClearSelected();
+                lbxAircraftUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedAircraft");
+                lbxAircraftUnloaded.ClearSelected();
+            }
+            catch (YsfoWrapper.YsfoPathInvalidException)
+            {
+                // change tabs
+                tpgAircraft.Enabled = false;
+                tpgObjects.Enabled = false;
+                tpgMaps.Enabled = false;
+                tabControl.SelectedTab = tpgSettings;
+
+                MessageBox.Show("The path to your YsFlight directory is invalid!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
         #region Aircraft
 
         private void lbxAircraftUnloaded_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,35 +178,5 @@ namespace Ysfo.App
         }
 
         #endregion
-
-        private void LoadData()
-        {
-            try
-            {
-                _ysfo.Setup();
-
-                // enable tabs
-                tpgAircraft.Enabled = true;
-                tpgObjects.Enabled = true;
-                tpgMaps.Enabled = true;
-
-                // reset bindings
-                lbxAircraftLoaded.DataSource = new BindingSource(_ysfo, "LoadedAircraft");
-                lbxAircraftLoaded.ClearSelected();
-                lbxAircraftUnloaded.DataSource = new BindingSource(_ysfo, "UnloadedAircraft");
-                lbxAircraftUnloaded.ClearSelected();
-            }
-            catch (YsfoWrapper.YsfoPathInvalidException)
-            {
-                // change tabs
-                tpgAircraft.Enabled = false;
-                tpgObjects.Enabled = false;
-                tpgMaps.Enabled = false;
-                tabControl.SelectedTab = tpgSettings;
-
-                MessageBox.Show("The path to your YsFlight directory is invalid!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-        }
     }
 }

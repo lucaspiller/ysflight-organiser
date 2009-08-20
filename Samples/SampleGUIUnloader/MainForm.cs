@@ -69,10 +69,11 @@ namespace SampleGUIUnloader
 
         private void btnUnloadAddon_Click(object sender, EventArgs e)
         {
-            if (lbxLoaded.SelectedItem == null)
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxLoaded.SelectedItem;
+
+            if (aircraft == null)
                 return;
 
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon) lbxLoaded.SelectedItem;
             ysfo.UnloadAircraft(aircraft);
 
             lbxUnloaded.ClearSelected();
@@ -80,10 +81,11 @@ namespace SampleGUIUnloader
 
         private void btnLoadAddon_Click(object sender, EventArgs e)
         {
-            if (lbxUnloaded.SelectedItem == null)
-                return;
+            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon)lbxUnloaded.SelectedItem;
 
-            Ysfo.Core.AircraftAddon aircraft = (Ysfo.Core.AircraftAddon) lbxUnloaded.SelectedItem;
+            if (aircraft == null)
+                return;
+            
             ysfo.LoadAircraft(aircraft);
 
             lbxLoaded.ClearSelected();
