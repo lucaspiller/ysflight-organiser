@@ -517,6 +517,80 @@ namespace Ysfo.App
             }
         }
 
+        private void btnSceneryUp_Click(object sender, EventArgs e)
+        {
+            if (lbxSceneryLoaded.SelectedItems.Count > 0)
+            {
+                // loaded
+                for (int i = 1; i < lbxSceneryLoaded.Items.Count; i++)
+                {
+                    // if selected
+                    if (lbxSceneryLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedScenery.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxSceneryLoaded.SetSelected(i - 1, true);
+                        lbxSceneryLoaded.SetSelected(i, false);
+                    }
+                }
+            }
+
+            if (lbxSceneryUnloaded.SelectedItems.Count > 0)
+            {
+                // unloaded
+                for (int i = 1; i < lbxSceneryUnloaded.Items.Count; i++)
+                {
+                    // if selected
+                    if (lbxSceneryUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedScenery.MoveItem(i, Extensions.MoveDirection.Up);
+
+                        // update selection
+                        lbxSceneryUnloaded.SetSelected(i - 1, true);
+                        lbxSceneryUnloaded.SetSelected(i, false);
+                    }
+                }
+            }
+        }
+
+        private void btnSceneryDown_Click(object sender, EventArgs e)
+        {
+            if (lbxSceneryLoaded.SelectedItems.Count > 0)
+            {
+                // loaded
+                for (int i = lbxSceneryLoaded.Items.Count - 1; i > 1; i--)
+                {
+                    // if selected
+                    if (lbxSceneryLoaded.GetSelected(i))
+                    {
+                        _ysfo.LoadedScenery.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxSceneryLoaded.SetSelected(i + 1, true);
+                        lbxSceneryLoaded.SetSelected(i, false);
+                    }
+                }
+            }
+
+            if (lbxSceneryUnloaded.SelectedItems.Count > 0)
+            {
+                // unloaded
+                for (int i = lbxSceneryUnloaded.Items.Count - 2; i >= 0; i--)
+                {
+                    // if selected
+                    if (lbxSceneryUnloaded.GetSelected(i))
+                    {
+                        _ysfo.UnloadedScenery.MoveItem(i, Extensions.MoveDirection.Down);
+
+                        // update selection
+                        lbxSceneryUnloaded.SetSelected(i + 1, true);
+                        lbxSceneryUnloaded.SetSelected(i, false);
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region Settings

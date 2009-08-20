@@ -548,6 +548,7 @@
             this.btnSceneryDown.TabIndex = 1;
             this.btnSceneryDown.Text = "Down";
             this.btnSceneryDown.UseVisualStyleBackColor = true;
+            this.btnSceneryDown.Click += new System.EventHandler(this.btnSceneryDown_Click);
             // 
             // btnSceneryUp
             // 
@@ -559,6 +560,7 @@
             this.btnSceneryUp.TabIndex = 0;
             this.btnSceneryUp.Text = "Up";
             this.btnSceneryUp.UseVisualStyleBackColor = true;
+            this.btnSceneryUp.Click += new System.EventHandler(this.btnSceneryUp_Click);
             // 
             // gbxSceneryUnloaded
             // 
