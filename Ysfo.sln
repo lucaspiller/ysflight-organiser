@@ -24,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A3CD0C8F-E42A-4C51-91A6-BFEEBABDCE36}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.markdown = LICENSE.markdown
+		README.markdown = README.markdown
 	EndProjectSection
 EndProject
 Global

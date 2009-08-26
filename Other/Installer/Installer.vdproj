@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_4AD3444308B44BBCA82EE33C71656FCF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_602E0DDC2EC644C2A07BD311035436AF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_85461DEB1539E0CE2D0DCB38AC2DA120"
         "OwnerKey" = "8:_FA8B45A6F217462D96742D4DF6EAF790"
         "MsmSig" = "8:_UNDEFINED"
@@ -55,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -121,6 +141,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4AD3444308B44BBCA82EE33C71656FCF"
+            {
+            "SourcePath" = "8:..\\..\\LICENSE.markdown"
+            "TargetName" = "8:LICENSE.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_4CF3F8B7761C40D1B048BAE316C78104"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_602E0DDC2EC644C2A07BD311035436AF"
+            {
+            "SourcePath" = "8:..\\..\\README.markdown"
+            "TargetName" = "8:README.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_4CF3F8B7761C40D1B048BAE316C78104"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_85461DEB1539E0CE2D0DCB38AC2DA120"
             {
             "AssemblyRegister" = "3:1"
@@ -219,14 +279,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:YsFlight Organiser"
-        "ProductCode" = "8:{AB383776-263B-46EE-AB44-56E6BBE0B9E6}"
-        "PackageCode" = "8:{2A8F81D1-331B-480D-8F75-02E2AC854079}"
+        "ProductCode" = "8:{C38C5F07-8564-4E14-9705-9C797DAFF99B}"
+        "PackageCode" = "8:{08C182AA-D82D-4365-9597-8D20A0C82157}"
         "UpgradeCode" = "8:{410804FB-CEEB-466A-8E1C-2258B3FABA3C}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:0.1.0"
         "Manufacturer" = "8:Luca Spiller"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -339,6 +399,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4E078775BD7F4461B45BBB3CD8254022"
+            {
+            "Name" = "8:Readme"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_602E0DDC2EC644C2A07BD311035436AF"
+            "Folder" = "8:_58770DD08EFA4C5EAF3816119FAA99CB"
+            "WorkingFolder" = "8:_4CF3F8B7761C40D1B048BAE316C78104"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_946FA3F931A3481BA1377CDE433A5324"
+            {
+            "Name" = "8:License"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_4AD3444308B44BBCA82EE33C71656FCF"
+            "Folder" = "8:_58770DD08EFA4C5EAF3816119FAA99CB"
+            "WorkingFolder" = "8:_4CF3F8B7761C40D1B048BAE316C78104"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FB17213668AD44569188D52F0A5C0322"
             {
             "Name" = "8:YsFlight Organiser"
