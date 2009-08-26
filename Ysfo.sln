@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{23108114
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Other\Installer\Installer.vdproj", "{7A5C9E9E-5643-4E92-9DA2-01526DFF9BBE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{A3CD0C8F-E42A-4C51-91A6-BFEEBABDCE36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A3CD0C8F-E42A-4C51-91A6-BFEEBABDCE36}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.markdown = LICENSE.markdown
 	EndProjectSection

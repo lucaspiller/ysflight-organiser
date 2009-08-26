@@ -69,13 +69,16 @@ namespace Ysfo.App
 
         public void Dispose()
         {
-            // save
-            LoadedAircraft.Save();
-            UnloadedAircraft.Save();
-            LoadedGround.Save();
-            UnloadedGround.Save();
-            LoadedScenery.Save();
-            UnloadedScenery.Save();
+            if (_ysfo.IsPathValid())
+            {
+                // save
+                if (LoadedAircraft != null) LoadedAircraft.Save();
+                if (UnloadedAircraft != null) UnloadedAircraft.Save();
+                if (LoadedGround != null) LoadedGround.Save();
+                if (UnloadedGround != null) UnloadedGround.Save();
+                if (LoadedScenery != null) LoadedScenery.Save();
+                if (UnloadedScenery != null) UnloadedScenery.Save();
+            }
 
             // cleanup
             _ysfo.Dispose();
