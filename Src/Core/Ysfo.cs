@@ -37,7 +37,7 @@ namespace Ysfo.Core
             }
 
             String windowsYsFlight = "fsmain.exe";
-            String linuxYsFlight = "fsmain";
+            String linuxYsFlight = "ysflight";
 
             // check ysflight exectutable
             if (!File.Exists(System.IO.Path.Combine(Path, windowsYsFlight)) && !File.Exists(System.IO.Path.Combine(Path, linuxYsFlight)))
