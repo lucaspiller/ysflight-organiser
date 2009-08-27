@@ -47,7 +47,7 @@ namespace Ysfo.App
             }
             else
             {
-                throw new ArgumentException("Invalid MoveDirection.");
+                throw new ArgumentOutOfRangeException("Invalid MoveDirection.");
             }
 
             // swap items

@@ -13,21 +13,21 @@ namespace Ysfo.Tests.Core.Loaders
         const String _validLstPath = "aircraft.lst";
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void LoadThrowsExceptionIfYsPathIsNull()
         {
             LstLoader.Load<Ysfo.Core.AircraftAddon>(null, null);
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void LoadThrowsExceptionIfLstPathIsNull()
         {
             LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, null);
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(DirectoryNotFoundException))]
         public void LoadThrowsExceptionIfYsPathIsInvalid()
         {
             String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
@@ -61,21 +61,21 @@ namespace Ysfo.Tests.Core.Loaders
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void SaveThrowsExceptionIfYsPathIsNull()
         {
             LstLoader.Save<Ysfo.Core.AircraftAddon>(null, null, null);
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void SaveThrowsExceptionIfLstPathIsNull()
         {
             LstLoader.Save<Ysfo.Core.AircraftAddon>(_validYsPath, null, null);
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(DirectoryNotFoundException))]
         public void SaveThrowsExceptionIfYsPathIsInvalid()
         {
             String invalidYsPath = Path.Combine(_validYsPath, "invaliddir");

@@ -59,6 +59,7 @@
     <Compile Include="Collections\GroundCollectionFixture.cs" />
     <Compile Include="Loaders\LstLoaderFixture.cs" />
     <Compile Include="Collections\SceneryCollectionFixture.cs" />
+    <Compile Include="Loaders\PathHelperFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YsfoFixture.cs" />
   </ItemGroup>
