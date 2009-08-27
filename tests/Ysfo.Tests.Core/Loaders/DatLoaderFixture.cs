@@ -1,6 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.IO;
 using NUnit.Framework;
 using Ysfo.Core.Loaders;
 
@@ -10,82 +9,101 @@ namespace Ysfo.Tests.Core.Loaders
     class DatLoaderFixture
     {
         readonly String _validYsPath = AppDomain.CurrentDomain.BaseDirectory;
+        const String _validLstEntry = "aircraft.dat aircraft.dnm";
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void LoadThrowsExceptionIfYsPathIsNull()
+        {
+            var loader = new DatLoader(null, null);
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void LoadThrowsExceptionIfLstPathIsNull()
+        {
+            var loader = new DatLoader(_validYsPath, null);
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        [ExpectedException(typeof(DirectoryNotFoundException))]
+        public void LoadThrowsExceptionIfYsPathIsInvalid()
+        {
+            String invalidYsPath = Path.Combine(_validYsPath, "invaliddir");
+
+            var loader = new DatLoader(invalidYsPath, _validLstEntry);
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        public void LoadDoesNotThrowExceptionIfYsPathAndLstPathAreValid()
+        {
+            var loader = new DatLoader(_validYsPath, _validLstEntry);
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void LoadThrowsAnExceptionIfNoRegexIsSet()
+        {
+            new DatLoader(_validYsPath, _validLstEntry).Load();
+        }
 
         [Test]
         public void ItShouldLoadTheAddonName()
         {
-            String identify = null;
+            var loader = new DatLoader(_validYsPath, _validLstEntry);
+            var identifyRegex = loader.AddRegex("IDENTIFY \"(.*)\"");
 
-            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
-                              {
-                                  { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } }
-                              };
+            // load
+            loader.Load();
 
-            DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
-
-            Assert.AreEqual("TEST_AIRCRAFT", identify);
+            Assert.AreEqual("TEST_AIRCRAFT", loader.GetValue(identifyRegex));
         }
 
         [Test]
         public void ItShouldLoadOtherAddonParameters()
         {
-            String identify = null;
-            String test = null;
+            var loader = new DatLoader(_validYsPath, _validLstEntry);
+            var identifyRegex = loader.AddRegex("IDENTIFY \"(.*)\"");
+            var testRegex = loader.AddRegex("TEST (.*)");
 
-            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
-                              {
-                                  { new Regex("IDENTIFY \"(.*)\""), delegate(String value) { identify = value; } },
-                                  { new Regex("TEST (.*)"), delegate(String value) { test = value; } }
-                              };
+            // load
+            loader.Load();
 
-            DatLoader.Load(_validYsPath, "aircraft.dat", regexes);
-
-            Assert.AreEqual("TEST_AIRCRAFT", identify);
-            Assert.AreEqual("TRUE", test);
-        }
-
-        [Test, ExpectedException(typeof(ArgumentException))]
-        public void ItShouldThrowAnExceptionIfTheLstEntryIsNull()
-        {
-            DatLoader.Load(_validYsPath, null, null);
-        }
-
-        [Test, ExpectedException(typeof(ArgumentException))]
-        public void ItShouldThrowAnExceptionIfTheLstEntryIsInvalid()
-        {
-            DatLoader.Load(_validYsPath, "invalid.lst", null);
-        }
-
-        [Test, ExpectedException(typeof(ArgumentException))]
-        public void ItShouldThrowAnExceptionIfTheBaseDirIsNull()
-        {
-            DatLoader.Load(null, "aircraft.dat", null);
-        }
-
-        [Test, ExpectedException(typeof(ArgumentException))]
-        public void ItShouldThrowAnExceptionIfTheBaseDirIsInvalid()
-        {
-            String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
-
-            DatLoader.Load(invalidYsPath, "aircraft.dat", null);
+            Assert.AreEqual("TEST_AIRCRAFT", loader.GetValue(identifyRegex));
+            Assert.AreEqual("TRUE", loader.GetValue(testRegex));
         }
 
         [Test]
         public void Extractor_ItShouldReturnDatFileFromLstEntry()
         {
-            const string lstEntry = "aircraft/aircraft.dat aircraft/aircraft.dnm";
+            String datPart = Path.Combine("aircraft", "aircraft.dat");
+            String dnmPart = Path.Combine("aircraft", "aircraft.dnm");
 
-            String result = DatLoader.GetDatFileFromLstEntry(lstEntry);
+            String result = DatLoader.GetDatFileFromLstEntry(datPart + " " + dnmPart);
 
-            Assert.AreEqual("aircraft/aircraft.dat", result);
+            Assert.AreEqual(datPart, result);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
         public void Extractor_ItShouldThrowAnExceptionWhenADatFileCannotBeFound()
         {
-            const string lstEntry = "aircraft/aircraft.dnm";
+            const string lstEntry = "aircraft\\aircraft.dnm";
 
             DatLoader.GetDatFileFromLstEntry(lstEntry);
+        }
+
+        [Test, ExpectedException(typeof(ArgumentNullException))]
+        public void Extractor_ItShouldThrowAnExceptionWhenLstEntryIsNull()
+        {
+            DatLoader.GetDatFileFromLstEntry(null);
         }
     }
 }

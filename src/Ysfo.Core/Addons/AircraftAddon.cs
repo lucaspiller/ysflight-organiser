@@ -27,13 +27,19 @@ namespace Ysfo.Core
         /// <param name="ysPath">The path to the base directory of YsFlight.</param>
         public override void Load(String ysPath)
         {
-            var regexes = new Dictionary<Regex, DatLoader.StringSetDelegate>
+            using (var loader = new DatLoader(ysPath, LstEntry))
             {
-                {new Regex("IDENTIFY \"(.*)\""), delegate(String value) { Name = value; }},
-                {new Regex("CATEGORY (.*)"), delegate(String value) { Category = value; }}
-            };
+                // add regex
+                Regex nameRegex = loader.AddRegex("IDENTIFY \"(.*)\"");
+                Regex categoryRegex = loader.AddRegex("CATEGORY (.*)");
 
-            DatLoader.Load(ysPath, LstEntry, regexes);
+                // load
+                loader.Load();
+
+                // set values
+                Name = loader.GetValue(nameRegex);
+                Category = loader.GetValue(categoryRegex);
+            }
         }
     }
 }
