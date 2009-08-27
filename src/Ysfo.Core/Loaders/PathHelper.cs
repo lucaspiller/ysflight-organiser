@@ -82,5 +82,37 @@ namespace Ysfo.Core.Loaders
                     throw new ArgumentException("Unknown DirectorySeparatorChar `" + directorySeparatorChar + "'.");
             }
         }
+
+        public const String WindowsExecutable = "fsmain.exe";
+        public const String LinuxExecutable = "ysflight";
+
+        /// <summary>
+        /// Checks whether <paramref name="ysPath"/> is a valid YsFlight directory.
+        /// </summary>
+        /// <param name="ysPath">The path to the YsFlight base directory.</param>
+        /// <returns><code>true</code> if <paramref name="ysPath"/> is valid.</returns>
+        public static Boolean IsPathValid(String ysPath)
+        {
+            // check path is not null
+            if (ysPath == null)
+            {
+                return false;
+            }
+
+            // check directory
+            if (!Directory.Exists(ysPath))
+            {
+                return false;
+            }
+
+            // check ysflight exectutable
+            if (!File.Exists(Path.Combine(ysPath, WindowsExecutable)) && !File.Exists(Path.Combine(ysPath, LinuxExecutable)))
+            {
+                return false;
+            }
+
+            // yay
+            return true;
+        }
     }
 }

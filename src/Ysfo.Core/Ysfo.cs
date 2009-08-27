@@ -19,34 +19,12 @@ namespace Ysfo.Core
         }
 
         /// <summary>
-        /// Checks whether Path is a valid ysflight directory.
+        /// Checks whether Path is a valid YsFlight directory.
         /// </summary>
-        /// <returns>true is Path is valid.</returns>
+        /// <returns><code>true</code> if Path is valid.</returns>
         public Boolean IsPathValid()
         {
-            // check path is not null
-            if (Path == null)
-            {
-                return false;
-            }
-
-            // check directory
-            if (!Directory.Exists(Path))
-            {
-                return false;
-            }
-
-            String windowsYsFlight = "fsmain.exe";
-            String linuxYsFlight = "ysflight";
-
-            // check ysflight exectutable
-            if (!File.Exists(System.IO.Path.Combine(Path, windowsYsFlight)) && !File.Exists(System.IO.Path.Combine(Path, linuxYsFlight)))
-            {
-                return false;
-            }
-
-            // yay
-            return true;
+            return Loaders.PathHelper.IsPathValid(Path);
         }
 
         /// <summary>

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 using Ysfo.Core.Loaders;
 
@@ -32,7 +29,7 @@ namespace Ysfo.Tests.Core.Loaders
         [ExpectedException(typeof(DirectoryNotFoundException))]
         public void GetFullPathThrowsExceptionIfYsPathIsInvalid()
         {
-            String invalidYsPath = System.IO.Path.Combine(_validYsPath, "invaliddir");
+            String invalidYsPath = Path.Combine(_validYsPath, "invaliddir");
 
             PathHelper.GetFullPath(invalidYsPath, _validLstPath);
         }
@@ -71,6 +68,45 @@ namespace Ysfo.Tests.Core.Loaders
             String result = PathHelper.ConvertLstEntryToNative("aircraft/aircraft.lst", '\\');
 
             Assert.AreEqual("aircraft\\aircraft.lst", result);
+        }
+
+        [Test]
+        public void IsPathValidReturnsFalseIfYsPathIsNull()
+        {
+            Boolean result = PathHelper.IsPathValid(null);
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void IsPathValidReturnsFalseIfYsFlightExecutableDoesntExist()
+        {
+            Boolean result = PathHelper.IsPathValid(_validYsPath);
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void IsPathValidReturnsTrueIfValid()
+        {
+            String ysExecutable = Path.Combine(_validYsPath, PathHelper.WindowsExecutable);
+
+            // create file
+            File.Create(ysExecutable).Close();
+            Assert.IsTrue(File.Exists(ysExecutable), "Temporary executable not created!");
+
+            Boolean result = PathHelper.IsPathValid(_validYsPath);
+
+            try
+            {
+                Assert.IsTrue(result);
+            }
+            finally
+            {
+                // cleanup
+                File.Delete(ysExecutable);
+                Assert.IsFalse(File.Exists(ysExecutable), "Temporary executable not removed!");
+            }
         }
     }
 }
