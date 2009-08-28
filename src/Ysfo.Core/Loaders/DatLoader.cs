@@ -102,6 +102,12 @@ namespace Ysfo.Core.Loaders
             // get dat file path
             datFile = PathHelper.GetFullPath(_ysPath, datFile);
 
+            // check file exists
+            if (!File.Exists(datFile))
+            {
+                throw new ArgumentException("Dat file `" + datFile + "' does not exist.");
+            }
+
             // open file
             using (var file = File.OpenText(datFile))
             {

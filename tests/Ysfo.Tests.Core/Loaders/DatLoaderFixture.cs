@@ -22,7 +22,7 @@ namespace Ysfo.Tests.Core.Loaders
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void LoadThrowsExceptionIfLstPathIsNull()
+        public void LoadThrowsExceptionIfLstEntryIsNull()
         {
             var loader = new DatLoader(_validYsPath, null);
             loader.AddRegex("IDENTIFY \"(.*)\"");
@@ -41,7 +41,25 @@ namespace Ysfo.Tests.Core.Loaders
         }
 
         [Test]
-        public void LoadDoesNotThrowExceptionIfYsPathAndLstPathAreValid()
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfLstEntryIsInvalid()
+        {
+            var loader = new DatLoader(_validYsPath, "INVALID");
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void LoadThrowsExceptionIfLstEntryRefersToNonExistantFile()
+        {
+            var loader = new DatLoader(_validYsPath, "INVALID.DAT");
+            loader.AddRegex("IDENTIFY \"(.*)\"");
+            loader.Load();
+        }
+
+        [Test]
+        public void LoadDoesNotThrowExceptionIfYsPathAndLstEntryAreValid()
         {
             var loader = new DatLoader(_validYsPath, _validLstEntry);
             loader.AddRegex("IDENTIFY \"(.*)\"");
