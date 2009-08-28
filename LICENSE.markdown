@@ -4,9 +4,15 @@ This work is licensed under the Creative Commons
 Attribution-Noncommercial-Share Alike 2.0 UK: England & Wales License.
 
 To view a copy of this license, visit
-<http://creativecommons.org/licenses/by-nc-sa/2.0/uk/> or send a letter to
-Creative Commons, 171 Second Street, Suite 300,
-San Francisco, California, 94105, USA.
+<http://creativecommons.org/licenses/by-nc-sa/2.0/uk/> or send a letter to:
+  
+> Creative Commons,  
+> 171 Second Street,  
+> Suite 300,  
+> San Francisco,  
+> California,  
+> 94105,  
+> USA.
 
 The licensee is Luca Spiller, who can be contacted by emailing
 <luca@stackednotion.com>.
