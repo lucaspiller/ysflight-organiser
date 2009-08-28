@@ -27,6 +27,14 @@ namespace Ysfo.Tests.Core.Addons
         }
 
         [Test]
+        [ExpectedException(typeof(Ysfo.Core.Addons.InvalidLstEntryException))]
+        public void LoadMustThrowExceptionWhenLstEntryIsInvalid()
+        {
+            var addon = new Ysfo.Core.AircraftAddon { LstEntry = "invalid" };
+            addon.Load(_validYsPath);
+        }
+
+        [Test]
         public void CategoryPrettyMustReturnCategoryInTitleCase()
         {
             var addon = new Ysfo.Core.AircraftAddon { LstEntry = "aircraft.dat" };

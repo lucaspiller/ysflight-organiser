@@ -16,5 +16,13 @@ namespace Ysfo.Tests.Core.Addons
 
             Assert.AreEqual("TEST_SCENERY", addon.Name);
         }
+
+        [Test]
+        [ExpectedException(typeof(Ysfo.Core.Addons.InvalidLstEntryException))]
+        public void LoadMustThrowExceptionWhenLstEntryIsInvalid()
+        {
+            var addon = new Ysfo.Core.SceneryAddon { LstEntry = "invalid" };
+            addon.Load(_validYsPath);
+        }
     }
 }

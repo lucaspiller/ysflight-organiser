@@ -15,18 +15,27 @@ namespace Ysfo.Core
         /// Loads the details of ground object from disk, by parsing the .dat file referred to in the LstEntry.
         /// </summary>
         /// <param name="ysPath">The path to the base directory of YsFlight.</param>
+        /// <exception cref="InvalidLstEntryException">The lst entry for this addon is invalid.</exception>
         public override void Load(String ysPath)
         {
-            using (var loader = new DatLoader(ysPath, LstEntry))
+            try
             {
-                // add regex
-                Regex nameRegex = loader.AddRegex("IDENTIFY (.*)");
+                using (var loader = new DatLoader(ysPath, LstEntry))
+                {
+                    // add regex
+                    Regex nameRegex = loader.AddRegex("IDENTIFY (.*)");
 
-                // load
-                loader.Load();
+                    // load
+                    loader.Load();
 
-                // set values
-                Name = loader.GetValue(nameRegex);
+                    // set values
+                    Name = loader.GetValue(nameRegex);
+                }
+            }
+            catch(ArgumentException innerException)
+            {
+                // invalid lst entry
+                throw new InvalidLstEntryException(null, innerException);
             }
         }
     }

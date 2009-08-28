@@ -49,6 +49,7 @@
     <Compile Include="Addons\Addon.cs" />
     <Compile Include="Addons\AircraftAddon.cs" />
     <Compile Include="Addons\GroundAddon.cs" />
+    <Compile Include="Addons\InvalidLstEntryException.cs" />
     <Compile Include="Addons\SceneryAddon.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Collections\AddonCollection.cs" />

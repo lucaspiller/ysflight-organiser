@@ -25,20 +25,29 @@ namespace Ysfo.Core
         /// Load the details of the aircraft from disk, by parsing the .dat file referred to in the LstEntry.
         /// </summary>
         /// <param name="ysPath">The path to the base directory of YsFlight.</param>
+        /// <exception cref="InvalidLstEntryException">The lst entry for this addon is invalid.</exception>
         public override void Load(String ysPath)
         {
-            using (var loader = new DatLoader(ysPath, LstEntry))
+            try
             {
-                // add regex
-                Regex nameRegex = loader.AddRegex("IDENTIFY \"(.*)\"");
-                Regex categoryRegex = loader.AddRegex("CATEGORY (.*)");
+                using (var loader = new DatLoader(ysPath, LstEntry))
+                {
+                    // add regex
+                    Regex nameRegex = loader.AddRegex("IDENTIFY \"(.*)\"");
+                    Regex categoryRegex = loader.AddRegex("CATEGORY (.*)");
 
-                // load
-                loader.Load();
+                    // load
+                    loader.Load();
 
-                // set values
-                Name = loader.GetValue(nameRegex);
-                Category = loader.GetValue(categoryRegex);
+                    // set values
+                    Name = loader.GetValue(nameRegex);
+                    Category = loader.GetValue(categoryRegex);
+                }
+            }
+            catch(ArgumentException innerException)
+            {
+                // invalid lst entry
+                throw new InvalidLstEntryException(null, innerException);
             }
         }
     }

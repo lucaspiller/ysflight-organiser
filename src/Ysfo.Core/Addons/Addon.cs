@@ -25,6 +25,7 @@ namespace Ysfo.Core.Addons
         /// Loads the details of the object from disk.
         /// </summary>
         /// <param name="ysPath">The path to the base directory of YsFlight.</param>
+        /// <exception cref="InvalidLstEntryException">The lst entry for this addon is invalid.</exception>
         public abstract void Load(String ysPath);
 
         public override string ToString()
