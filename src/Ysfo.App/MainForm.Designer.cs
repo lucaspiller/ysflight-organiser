@@ -68,19 +68,19 @@
             this.gbxSceneryUnloaded = new System.Windows.Forms.GroupBox();
             this.lbxSceneryUnloaded = new System.Windows.Forms.ListBox();
             this.tpgSettings = new System.Windows.Forms.TabPage();
+            this.gbxSettingsStats = new System.Windows.Forms.GroupBox();
+            this.lblSettingsSceneryCount = new System.Windows.Forms.Label();
+            this.lblSettingsGroundCount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSettingsAircraftCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbxYsPath = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxSettingsPath = new System.Windows.Forms.TextBox();
             this.btnSettingsBrowse = new System.Windows.Forms.Button();
             this.btnSettingsSave = new System.Windows.Forms.Button();
             this.diaSettingsBrowseYsPath = new System.Windows.Forms.FolderBrowserDialog();
-            this.gbxSettingsStats = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSettingsAircraftCount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSettingsGroundCount = new System.Windows.Forms.Label();
-            this.lblSettingsSceneryCount = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -112,8 +112,8 @@
             this.splitContainer6.SuspendLayout();
             this.gbxSceneryUnloaded.SuspendLayout();
             this.tpgSettings.SuspendLayout();
-            this.gbxYsPath.SuspendLayout();
             this.gbxSettingsStats.SuspendLayout();
+            this.gbxYsPath.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -181,7 +181,7 @@
             this.tpgAircraft.Controls.Add(this.splitContainer1);
             this.tpgAircraft.Location = new System.Drawing.Point(4, 25);
             this.tpgAircraft.Name = "tpgAircraft";
-            this.tpgAircraft.Size = new System.Drawing.Size(382, 296);
+            this.tpgAircraft.Size = new System.Drawing.Size(382, 292);
             this.tpgAircraft.TabIndex = 0;
             this.tpgAircraft.Text = "Aircraft";
             this.tpgAircraft.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer1.Size = new System.Drawing.Size(382, 292);
             this.splitContainer1.SplitterDistance = 155;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -209,20 +209,22 @@
             this.gbxAircraftLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxAircraftLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxAircraftLoaded.Name = "gbxAircraftLoaded";
-            this.gbxAircraftLoaded.Size = new System.Drawing.Size(155, 296);
+            this.gbxAircraftLoaded.Size = new System.Drawing.Size(155, 292);
             this.gbxAircraftLoaded.TabIndex = 0;
             this.gbxAircraftLoaded.TabStop = false;
             this.gbxAircraftLoaded.Text = "Loaded Aircraft";
             // 
             // lbxAircraftLoaded
             // 
+            this.lbxAircraftLoaded.DisplayMember = "NamePretty";
             this.lbxAircraftLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxAircraftLoaded.FormattingEnabled = true;
             this.lbxAircraftLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftLoaded.Name = "lbxAircraftLoaded";
             this.lbxAircraftLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxAircraftLoaded.Size = new System.Drawing.Size(149, 277);
+            this.lbxAircraftLoaded.Size = new System.Drawing.Size(149, 264);
             this.lbxAircraftLoaded.TabIndex = 0;
+            this.lbxAircraftLoaded.ValueMember = "NamePretty";
             this.lbxAircraftLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftLoaded_SelectedIndexChanged);
             // 
             // splitContainer2
@@ -242,7 +244,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbxAircraftUnloaded);
-            this.splitContainer2.Size = new System.Drawing.Size(223, 296);
+            this.splitContainer2.Size = new System.Drawing.Size(223, 292);
             this.splitContainer2.SplitterDistance = 60;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -262,7 +264,7 @@
             // 
             this.btnAircraftUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAircraftUnload.Location = new System.Drawing.Point(3, 204);
+            this.btnAircraftUnload.Location = new System.Drawing.Point(3, 200);
             this.btnAircraftUnload.Name = "btnAircraftUnload";
             this.btnAircraftUnload.Size = new System.Drawing.Size(54, 23);
             this.btnAircraftUnload.TabIndex = 2;
@@ -274,7 +276,7 @@
             // 
             this.btnAircraftDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAircraftDown.Location = new System.Drawing.Point(3, 243);
+            this.btnAircraftDown.Location = new System.Drawing.Point(3, 239);
             this.btnAircraftDown.Name = "btnAircraftDown";
             this.btnAircraftDown.Size = new System.Drawing.Size(54, 23);
             this.btnAircraftDown.TabIndex = 1;
@@ -300,20 +302,22 @@
             this.gbxAircraftUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxAircraftUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxAircraftUnloaded.Name = "gbxAircraftUnloaded";
-            this.gbxAircraftUnloaded.Size = new System.Drawing.Size(159, 296);
+            this.gbxAircraftUnloaded.Size = new System.Drawing.Size(159, 292);
             this.gbxAircraftUnloaded.TabIndex = 2;
             this.gbxAircraftUnloaded.TabStop = false;
             this.gbxAircraftUnloaded.Text = "Unloaded Aircraft";
             // 
             // lbxAircraftUnloaded
             // 
+            this.lbxAircraftUnloaded.DisplayMember = "NamePretty";
             this.lbxAircraftUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxAircraftUnloaded.FormattingEnabled = true;
             this.lbxAircraftUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraftUnloaded.Name = "lbxAircraftUnloaded";
             this.lbxAircraftUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxAircraftUnloaded.Size = new System.Drawing.Size(153, 277);
+            this.lbxAircraftUnloaded.Size = new System.Drawing.Size(153, 264);
             this.lbxAircraftUnloaded.TabIndex = 0;
+            this.lbxAircraftUnloaded.ValueMember = "NamePretty";
             this.lbxAircraftUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxAircraftUnloaded_SelectedIndexChanged);
             // 
             // tpgGround
@@ -321,7 +325,7 @@
             this.tpgGround.Controls.Add(this.splitContainer3);
             this.tpgGround.Location = new System.Drawing.Point(4, 25);
             this.tpgGround.Name = "tpgGround";
-            this.tpgGround.Size = new System.Drawing.Size(382, 296);
+            this.tpgGround.Size = new System.Drawing.Size(382, 292);
             this.tpgGround.TabIndex = 1;
             this.tpgGround.Text = "Objects";
             this.tpgGround.UseVisualStyleBackColor = true;
@@ -339,7 +343,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer3.Size = new System.Drawing.Size(382, 292);
             this.splitContainer3.SplitterDistance = 155;
             this.splitContainer3.TabIndex = 3;
             // 
@@ -349,20 +353,22 @@
             this.gbxGroundLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxGroundLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxGroundLoaded.Name = "gbxGroundLoaded";
-            this.gbxGroundLoaded.Size = new System.Drawing.Size(155, 296);
+            this.gbxGroundLoaded.Size = new System.Drawing.Size(155, 292);
             this.gbxGroundLoaded.TabIndex = 0;
             this.gbxGroundLoaded.TabStop = false;
             this.gbxGroundLoaded.Text = "Loaded Objects";
             // 
             // lbxGroundLoaded
             // 
+            this.lbxGroundLoaded.DisplayMember = "NamePretty";
             this.lbxGroundLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxGroundLoaded.FormattingEnabled = true;
             this.lbxGroundLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxGroundLoaded.Name = "lbxGroundLoaded";
             this.lbxGroundLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxGroundLoaded.Size = new System.Drawing.Size(149, 277);
+            this.lbxGroundLoaded.Size = new System.Drawing.Size(149, 264);
             this.lbxGroundLoaded.TabIndex = 0;
+            this.lbxGroundLoaded.ValueMember = "NamePretty";
             this.lbxGroundLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxGroundLoaded_SelectedIndexChanged);
             // 
             // splitContainer4
@@ -382,7 +388,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.gbxGroundUnloaded);
-            this.splitContainer4.Size = new System.Drawing.Size(223, 296);
+            this.splitContainer4.Size = new System.Drawing.Size(223, 292);
             this.splitContainer4.SplitterDistance = 60;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -402,7 +408,7 @@
             // 
             this.btnGroundUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroundUnload.Location = new System.Drawing.Point(3, 204);
+            this.btnGroundUnload.Location = new System.Drawing.Point(3, 200);
             this.btnGroundUnload.Name = "btnGroundUnload";
             this.btnGroundUnload.Size = new System.Drawing.Size(54, 23);
             this.btnGroundUnload.TabIndex = 2;
@@ -414,7 +420,7 @@
             // 
             this.btnGroundDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroundDown.Location = new System.Drawing.Point(3, 243);
+            this.btnGroundDown.Location = new System.Drawing.Point(3, 239);
             this.btnGroundDown.Name = "btnGroundDown";
             this.btnGroundDown.Size = new System.Drawing.Size(54, 23);
             this.btnGroundDown.TabIndex = 1;
@@ -440,20 +446,22 @@
             this.gbxGroundUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxGroundUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxGroundUnloaded.Name = "gbxGroundUnloaded";
-            this.gbxGroundUnloaded.Size = new System.Drawing.Size(159, 296);
+            this.gbxGroundUnloaded.Size = new System.Drawing.Size(159, 292);
             this.gbxGroundUnloaded.TabIndex = 2;
             this.gbxGroundUnloaded.TabStop = false;
             this.gbxGroundUnloaded.Text = "Unloaded Objects";
             // 
             // lbxGroundUnloaded
             // 
+            this.lbxGroundUnloaded.DisplayMember = "NamePretty";
             this.lbxGroundUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxGroundUnloaded.FormattingEnabled = true;
             this.lbxGroundUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxGroundUnloaded.Name = "lbxGroundUnloaded";
             this.lbxGroundUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxGroundUnloaded.Size = new System.Drawing.Size(153, 277);
+            this.lbxGroundUnloaded.Size = new System.Drawing.Size(153, 264);
             this.lbxGroundUnloaded.TabIndex = 0;
+            this.lbxGroundUnloaded.ValueMember = "NamePretty";
             this.lbxGroundUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxGroundUnloaded_SelectedIndexChanged);
             // 
             // tpgScenery
@@ -461,7 +469,7 @@
             this.tpgScenery.Controls.Add(this.splitContainer5);
             this.tpgScenery.Location = new System.Drawing.Point(4, 25);
             this.tpgScenery.Name = "tpgScenery";
-            this.tpgScenery.Size = new System.Drawing.Size(382, 296);
+            this.tpgScenery.Size = new System.Drawing.Size(382, 292);
             this.tpgScenery.TabIndex = 4;
             this.tpgScenery.Text = "Maps";
             this.tpgScenery.UseVisualStyleBackColor = true;
@@ -479,7 +487,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(382, 296);
+            this.splitContainer5.Size = new System.Drawing.Size(382, 292);
             this.splitContainer5.SplitterDistance = 155;
             this.splitContainer5.TabIndex = 4;
             // 
@@ -489,20 +497,22 @@
             this.gbxSceneryLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxSceneryLoaded.Location = new System.Drawing.Point(0, 0);
             this.gbxSceneryLoaded.Name = "gbxSceneryLoaded";
-            this.gbxSceneryLoaded.Size = new System.Drawing.Size(155, 296);
+            this.gbxSceneryLoaded.Size = new System.Drawing.Size(155, 292);
             this.gbxSceneryLoaded.TabIndex = 0;
             this.gbxSceneryLoaded.TabStop = false;
             this.gbxSceneryLoaded.Text = "Loaded Maps";
             // 
             // lbxSceneryLoaded
             // 
+            this.lbxSceneryLoaded.DisplayMember = "NamePretty";
             this.lbxSceneryLoaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxSceneryLoaded.FormattingEnabled = true;
             this.lbxSceneryLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxSceneryLoaded.Name = "lbxSceneryLoaded";
             this.lbxSceneryLoaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxSceneryLoaded.Size = new System.Drawing.Size(149, 277);
+            this.lbxSceneryLoaded.Size = new System.Drawing.Size(149, 264);
             this.lbxSceneryLoaded.TabIndex = 0;
+            this.lbxSceneryLoaded.ValueMember = "NamePretty";
             this.lbxSceneryLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxSceneryLoaded_SelectedIndexChanged);
             // 
             // splitContainer6
@@ -522,7 +532,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.gbxSceneryUnloaded);
-            this.splitContainer6.Size = new System.Drawing.Size(223, 296);
+            this.splitContainer6.Size = new System.Drawing.Size(223, 292);
             this.splitContainer6.SplitterDistance = 60;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -542,7 +552,7 @@
             // 
             this.btnSceneryUnload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSceneryUnload.Location = new System.Drawing.Point(3, 204);
+            this.btnSceneryUnload.Location = new System.Drawing.Point(3, 200);
             this.btnSceneryUnload.Name = "btnSceneryUnload";
             this.btnSceneryUnload.Size = new System.Drawing.Size(54, 23);
             this.btnSceneryUnload.TabIndex = 2;
@@ -554,7 +564,7 @@
             // 
             this.btnSceneryDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSceneryDown.Location = new System.Drawing.Point(3, 243);
+            this.btnSceneryDown.Location = new System.Drawing.Point(3, 239);
             this.btnSceneryDown.Name = "btnSceneryDown";
             this.btnSceneryDown.Size = new System.Drawing.Size(54, 23);
             this.btnSceneryDown.TabIndex = 1;
@@ -580,20 +590,22 @@
             this.gbxSceneryUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxSceneryUnloaded.Location = new System.Drawing.Point(0, 0);
             this.gbxSceneryUnloaded.Name = "gbxSceneryUnloaded";
-            this.gbxSceneryUnloaded.Size = new System.Drawing.Size(159, 296);
+            this.gbxSceneryUnloaded.Size = new System.Drawing.Size(159, 292);
             this.gbxSceneryUnloaded.TabIndex = 2;
             this.gbxSceneryUnloaded.TabStop = false;
             this.gbxSceneryUnloaded.Text = "Unloaded Maps";
             // 
             // lbxSceneryUnloaded
             // 
+            this.lbxSceneryUnloaded.DisplayMember = "NamePretty";
             this.lbxSceneryUnloaded.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxSceneryUnloaded.FormattingEnabled = true;
             this.lbxSceneryUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxSceneryUnloaded.Name = "lbxSceneryUnloaded";
             this.lbxSceneryUnloaded.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbxSceneryUnloaded.Size = new System.Drawing.Size(153, 277);
+            this.lbxSceneryUnloaded.Size = new System.Drawing.Size(153, 264);
             this.lbxSceneryUnloaded.TabIndex = 0;
+            this.lbxSceneryUnloaded.ValueMember = "NamePretty";
             this.lbxSceneryUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxSceneryUnloaded_SelectedIndexChanged);
             // 
             // tpgSettings
@@ -603,11 +615,82 @@
             this.tpgSettings.Controls.Add(this.btnSettingsSave);
             this.tpgSettings.Location = new System.Drawing.Point(4, 25);
             this.tpgSettings.Name = "tpgSettings";
-            this.tpgSettings.Size = new System.Drawing.Size(382, 296);
+            this.tpgSettings.Size = new System.Drawing.Size(382, 292);
             this.tpgSettings.TabIndex = 3;
             this.tpgSettings.Text = "Settings";
             this.tpgSettings.UseVisualStyleBackColor = true;
             this.tpgSettings.Enter += new System.EventHandler(this.tpgSettings_Enter);
+            // 
+            // gbxSettingsStats
+            // 
+            this.gbxSettingsStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsSceneryCount);
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsGroundCount);
+            this.gbxSettingsStats.Controls.Add(this.label4);
+            this.gbxSettingsStats.Controls.Add(this.label3);
+            this.gbxSettingsStats.Controls.Add(this.lblSettingsAircraftCount);
+            this.gbxSettingsStats.Controls.Add(this.label2);
+            this.gbxSettingsStats.Location = new System.Drawing.Point(8, 73);
+            this.gbxSettingsStats.Name = "gbxSettingsStats";
+            this.gbxSettingsStats.Size = new System.Drawing.Size(368, 90);
+            this.gbxSettingsStats.TabIndex = 5;
+            this.gbxSettingsStats.TabStop = false;
+            this.gbxSettingsStats.Text = "Statistics";
+            // 
+            // lblSettingsSceneryCount
+            // 
+            this.lblSettingsSceneryCount.Location = new System.Drawing.Point(84, 56);
+            this.lblSettingsSceneryCount.Name = "lblSettingsSceneryCount";
+            this.lblSettingsSceneryCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsSceneryCount.TabIndex = 5;
+            this.lblSettingsSceneryCount.Text = "0";
+            this.lblSettingsSceneryCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSettingsGroundCount
+            // 
+            this.lblSettingsGroundCount.Location = new System.Drawing.Point(84, 36);
+            this.lblSettingsGroundCount.Name = "lblSettingsGroundCount";
+            this.lblSettingsGroundCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsGroundCount.TabIndex = 4;
+            this.lblSettingsGroundCount.Text = "0";
+            this.lblSettingsGroundCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(8, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Maps:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(8, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Objects:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSettingsAircraftCount
+            // 
+            this.lblSettingsAircraftCount.Location = new System.Drawing.Point(84, 16);
+            this.lblSettingsAircraftCount.Name = "lblSettingsAircraftCount";
+            this.lblSettingsAircraftCount.Size = new System.Drawing.Size(50, 20);
+            this.lblSettingsAircraftCount.TabIndex = 1;
+            this.lblSettingsAircraftCount.Text = "0";
+            this.lblSettingsAircraftCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(8, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Aircraft:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbxYsPath
             // 
@@ -669,77 +752,6 @@
             this.diaSettingsBrowseYsPath.RootFolder = System.Environment.SpecialFolder.MyComputer;
             this.diaSettingsBrowseYsPath.ShowNewFolderButton = false;
             // 
-            // gbxSettingsStats
-            // 
-            this.gbxSettingsStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbxSettingsStats.Controls.Add(this.lblSettingsSceneryCount);
-            this.gbxSettingsStats.Controls.Add(this.lblSettingsGroundCount);
-            this.gbxSettingsStats.Controls.Add(this.label4);
-            this.gbxSettingsStats.Controls.Add(this.label3);
-            this.gbxSettingsStats.Controls.Add(this.lblSettingsAircraftCount);
-            this.gbxSettingsStats.Controls.Add(this.label2);
-            this.gbxSettingsStats.Location = new System.Drawing.Point(8, 73);
-            this.gbxSettingsStats.Name = "gbxSettingsStats";
-            this.gbxSettingsStats.Size = new System.Drawing.Size(368, 90);
-            this.gbxSettingsStats.TabIndex = 5;
-            this.gbxSettingsStats.TabStop = false;
-            this.gbxSettingsStats.Text = "Statistics";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(8, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Aircraft:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSettingsAircraftCount
-            // 
-            this.lblSettingsAircraftCount.Location = new System.Drawing.Point(84, 16);
-            this.lblSettingsAircraftCount.Name = "lblSettingsAircraftCount";
-            this.lblSettingsAircraftCount.Size = new System.Drawing.Size(50, 20);
-            this.lblSettingsAircraftCount.TabIndex = 1;
-            this.lblSettingsAircraftCount.Text = "0";
-            this.lblSettingsAircraftCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(8, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Objects:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(8, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Maps:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSettingsGroundCount
-            // 
-            this.lblSettingsGroundCount.Location = new System.Drawing.Point(84, 36);
-            this.lblSettingsGroundCount.Name = "lblSettingsGroundCount";
-            this.lblSettingsGroundCount.Size = new System.Drawing.Size(50, 20);
-            this.lblSettingsGroundCount.TabIndex = 4;
-            this.lblSettingsGroundCount.Text = "0";
-            this.lblSettingsGroundCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSettingsSceneryCount
-            // 
-            this.lblSettingsSceneryCount.Location = new System.Drawing.Point(84, 56);
-            this.lblSettingsSceneryCount.Name = "lblSettingsSceneryCount";
-            this.lblSettingsSceneryCount.Size = new System.Drawing.Size(50, 20);
-            this.lblSettingsSceneryCount.TabIndex = 5;
-            this.lblSettingsSceneryCount.Text = "0";
-            this.lblSettingsSceneryCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,9 +800,9 @@
             this.splitContainer6.ResumeLayout(false);
             this.gbxSceneryUnloaded.ResumeLayout(false);
             this.tpgSettings.ResumeLayout(false);
+            this.gbxSettingsStats.ResumeLayout(false);
             this.gbxYsPath.ResumeLayout(false);
             this.gbxYsPath.PerformLayout();
-            this.gbxSettingsStats.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

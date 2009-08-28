@@ -98,12 +98,14 @@
             // 
             // lbxAircraft
             // 
+            this.lbxAircraft.DisplayMember = "NamePretty";
             this.lbxAircraft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxAircraft.FormattingEnabled = true;
             this.lbxAircraft.Location = new System.Drawing.Point(3, 16);
             this.lbxAircraft.Name = "lbxAircraft";
             this.lbxAircraft.Size = new System.Drawing.Size(183, 199);
             this.lbxAircraft.TabIndex = 0;
+            this.lbxAircraft.ValueMember = "NamePretty";
             this.lbxAircraft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAircraft_MouseDoubleClick);
             // 
             // gbxGround
@@ -119,12 +121,14 @@
             // 
             // lbxGround
             // 
+            this.lbxGround.DisplayMember = "NamePretty";
             this.lbxGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxGround.FormattingEnabled = true;
             this.lbxGround.Location = new System.Drawing.Point(3, 16);
             this.lbxGround.Name = "lbxGround";
             this.lbxGround.Size = new System.Drawing.Size(181, 199);
             this.lbxGround.TabIndex = 0;
+            this.lbxGround.ValueMember = "NamePretty";
             // 
             // gbxScenery
             // 
@@ -139,12 +143,14 @@
             // 
             // lbxScenery
             // 
+            this.lbxScenery.DisplayMember = "NamePretty";
             this.lbxScenery.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxScenery.FormattingEnabled = true;
             this.lbxScenery.Location = new System.Drawing.Point(3, 16);
             this.lbxScenery.Name = "lbxScenery";
             this.lbxScenery.Size = new System.Drawing.Size(178, 199);
             this.lbxScenery.TabIndex = 0;
+            this.lbxScenery.ValueMember = "NamePretty";
             // 
             // splitContainer1
             // 

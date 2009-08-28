@@ -33,13 +33,13 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbxLoaded = new System.Windows.Forms.GroupBox();
+            this.btnUp = new System.Windows.Forms.Button();
             this.btnUnloadAddon = new System.Windows.Forms.Button();
             this.lbxLoaded = new System.Windows.Forms.ListBox();
             this.gbxUnloaded = new System.Windows.Forms.GroupBox();
+            this.btnDown = new System.Windows.Forms.Button();
             this.btnLoadAddon = new System.Windows.Forms.Button();
             this.lbxUnloaded = new System.Windows.Forms.ListBox();
-            this.btnUp = new System.Windows.Forms.Button();
-            this.btnDown = new System.Windows.Forms.Button();
             this.gbxPath.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +114,17 @@
             this.gbxLoaded.TabStop = false;
             this.gbxLoaded.Text = "Loaded Aircraft";
             // 
+            // btnUp
+            // 
+            this.btnUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUp.Location = new System.Drawing.Point(8, 208);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(44, 23);
+            this.btnUp.TabIndex = 4;
+            this.btnUp.Text = "Up";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
             // btnUnloadAddon
             // 
             this.btnUnloadAddon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -130,11 +141,13 @@
             this.lbxLoaded.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxLoaded.DisplayMember = "NamePretty";
             this.lbxLoaded.FormattingEnabled = true;
             this.lbxLoaded.Location = new System.Drawing.Point(3, 16);
             this.lbxLoaded.Name = "lbxLoaded";
             this.lbxLoaded.Size = new System.Drawing.Size(181, 186);
             this.lbxLoaded.TabIndex = 0;
+            this.lbxLoaded.ValueMember = "NamePretty";
             this.lbxLoaded.SelectedIndexChanged += new System.EventHandler(this.lbxLoaded_SelectedIndexChanged);
             // 
             // gbxUnloaded
@@ -149,6 +162,17 @@
             this.gbxUnloaded.TabIndex = 3;
             this.gbxUnloaded.TabStop = false;
             this.gbxUnloaded.Text = "Unloaded Aircraft";
+            // 
+            // btnDown
+            // 
+            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDown.Location = new System.Drawing.Point(134, 208);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(44, 23);
+            this.btnDown.TabIndex = 5;
+            this.btnDown.Text = "Down";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnLoadAddon
             // 
@@ -166,34 +190,14 @@
             this.lbxUnloaded.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxUnloaded.DisplayMember = "NamePretty";
             this.lbxUnloaded.FormattingEnabled = true;
             this.lbxUnloaded.Location = new System.Drawing.Point(3, 16);
             this.lbxUnloaded.Name = "lbxUnloaded";
             this.lbxUnloaded.Size = new System.Drawing.Size(178, 186);
             this.lbxUnloaded.TabIndex = 0;
+            this.lbxUnloaded.ValueMember = "NamePretty";
             this.lbxUnloaded.SelectedIndexChanged += new System.EventHandler(this.lbxUnloaded_SelectedIndexChanged);
-            // 
-            // btnUp
-            // 
-            this.btnUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUp.Location = new System.Drawing.Point(8, 208);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(44, 23);
-            this.btnUp.TabIndex = 4;
-            this.btnUp.Text = "Up";
-            this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
-            // btnDown
-            // 
-            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDown.Location = new System.Drawing.Point(134, 208);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(44, 23);
-            this.btnDown.TabIndex = 5;
-            this.btnDown.Text = "Down";
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // MainForm
             // 
