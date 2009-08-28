@@ -50,7 +50,17 @@ namespace Ysfo.Core.Loaders
 
                     // load aircraft
                     T addon = new T {LstEntry = line};
-                    addon.Load(ysPath);
+
+                    try
+                    {
+                        // load addon
+                        addon.Load(ysPath);
+                    }
+                    catch (InvalidLstEntryException)
+                    {
+                        // invalid lst entry
+                        // TODO: Notify of this somehow
+                    }
 
                     addons.Add(addon);
                 });

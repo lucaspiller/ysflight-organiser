@@ -78,6 +78,12 @@
     <None Include="ground.lst">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="invalid_line.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="invalid_nonexistant.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="scenery.lst">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

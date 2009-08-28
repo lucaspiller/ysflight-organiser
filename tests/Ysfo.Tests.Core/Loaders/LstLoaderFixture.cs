@@ -50,6 +50,22 @@ namespace Ysfo.Tests.Core.Loaders
         }
 
         [Test]
+        public void LoadMustReturnOneAircraftForEachValidLineInLstFileEvenWhenLstEntryContainsNonExistantFile()
+        {
+            var aircraft = LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, "invalid_nonexistant.lst");
+
+            Assert.AreEqual(1, aircraft.Count);
+        }
+
+        [Test]
+        public void LoadMustReturnOneAircraftForEachValidLineInLstFileEvenWhenLstEntryIsInvalid()
+        {
+            var aircraft = LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, "invalid_line.lst");
+
+            Assert.AreEqual(1, aircraft.Count);
+        }
+
+        [Test]
         public void LoadMustReturnValidAircraft()
         {
             var aircraft = LstLoader.Load<Ysfo.Core.AircraftAddon>(_validYsPath, _validLstPath);
