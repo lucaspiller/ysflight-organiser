@@ -14,10 +14,5 @@ namespace Ysfo.Tests.Core.Addons
         {
             Name = name;
         }
-
-        public String GetPrettyName()
-        {
-            return PrettyName();
-        }
     }
 }

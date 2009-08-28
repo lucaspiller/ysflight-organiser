@@ -14,7 +14,7 @@ namespace Ysfo.Core.Addons
         /// <summary>
         /// The Name of the object, formatted in title case.
         /// </summary>
-        public String NamePretty { get { return Name.ToTitleCase(); } }
+        public String NamePretty { get { return Name.ToTitleCase() ?? "-- Invalid --"; } }
 
         /// <summary>
         /// The entry for the object in the .lst file.
@@ -27,15 +27,5 @@ namespace Ysfo.Core.Addons
         /// <param name="ysPath">The path to the base directory of YsFlight.</param>
         /// <exception cref="InvalidLstEntryException">The lst entry for this addon is invalid.</exception>
         public abstract void Load(String ysPath);
-
-        public override string ToString()
-        {
-            return PrettyName();
-        }
-
-        protected String PrettyName()
-        {
-            return Name.ToTitleCase() ?? "-- Addon --";
-        }
     }
 }
