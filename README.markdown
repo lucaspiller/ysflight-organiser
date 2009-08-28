@@ -39,4 +39,4 @@ The tool and library are open source, so feel free to contribute or use the code
 
 ## License
 
-See [LICENSE.markdown](LICENSE.markdown).
+See LICENSE.markdown.

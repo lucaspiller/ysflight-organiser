@@ -14,10 +14,12 @@ The licensee is Luca Spiller, who can be contacted by emailing
 # What does this mean?
 
 In simple terms, you are free:
+
 * to copy, distribute, display, and perform the work
 * to make derivative works
 
 Under the following conditions:
+
 * Attribution. You must give the original author credit.
 * Non-Commercial. You may not use this work for commercial purposes.
 * Share Alike. If you alter, transform, or build upon this work, you may
