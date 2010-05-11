@@ -13,6 +13,7 @@
   Loaders.PathHelper class contains GetFullPath, ConvertToNative and IsPathValid
   methods.
 * Refactor DatLoader class.
+* Detects the latest version of YSFlight on Windows correctly.
 
 ## 0.1.0 (2009-08-26)
 

@@ -87,9 +87,55 @@ namespace Ysfo.Tests.Core.Loaders
         }
 
         [Test]
-        public void IsPathValidReturnsTrueIfValid()
+        public void IsPathValidReturnsTrueIfValidOnWindowsWithFsMainDX()
         {
-            String ysExecutable = Path.Combine(_validYsPath, PathHelper.WindowsExecutable);
+            String ysExecutable = Path.Combine(_validYsPath, PathHelper.WindowsDXExecutable);
+
+            // create file
+            File.Create(ysExecutable).Close();
+            Assert.IsTrue(File.Exists(ysExecutable), "Temporary executable not created!");
+
+            Boolean result = PathHelper.IsPathValid(_validYsPath);
+
+            try
+            {
+                Assert.IsTrue(result);
+            }
+            finally
+            {
+                // cleanup
+                File.Delete(ysExecutable);
+                Assert.IsFalse(File.Exists(ysExecutable), "Temporary executable not removed!");
+            }
+        }
+
+        [Test]
+        public void IsPathValidReturnsTrueIfValidOnWindowsWithFsMainO()
+        {
+            String ysExecutable = Path.Combine(_validYsPath, PathHelper.WindowsOExecutable);
+
+            // create file
+            File.Create(ysExecutable).Close();
+            Assert.IsTrue(File.Exists(ysExecutable), "Temporary executable not created!");
+
+            Boolean result = PathHelper.IsPathValid(_validYsPath);
+
+            try
+            {
+                Assert.IsTrue(result);
+            }
+            finally
+            {
+                // cleanup
+                File.Delete(ysExecutable);
+                Assert.IsFalse(File.Exists(ysExecutable), "Temporary executable not removed!");
+            }
+        }
+
+        [Test]
+        public void IsPathValidReturnsTrueIfValidOnLinux()
+        {
+            String ysExecutable = Path.Combine(_validYsPath, PathHelper.LinuxExecutable);
 
             // create file
             File.Create(ysExecutable).Close();

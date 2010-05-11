@@ -83,7 +83,8 @@ namespace Ysfo.Core.Loaders
             }
         }
 
-        public const String WindowsExecutable = "fsmain.exe";
+        public const String WindowsDXExecutable = "fsmaindx.exe";
+        public const String WindowsOExecutable = "fsmaino.exe";
         public const String LinuxExecutable = "ysflight";
 
         /// <summary>
@@ -104,15 +105,26 @@ namespace Ysfo.Core.Loaders
             {
                 return false;
             }
-
-            // check ysflight exectutable
-            if (!File.Exists(Path.Combine(ysPath, WindowsExecutable)) && !File.Exists(Path.Combine(ysPath, LinuxExecutable)))
+            
+            // Windows
+            if (File.Exists(Path.Combine(ysPath, WindowsDXExecutable)))
             {
-                return false;
+                return true;
             }
 
-            // yay
-            return true;
+            if (File.Exists(Path.Combine(ysPath, WindowsOExecutable)))
+            {
+                return true;
+            }
+
+            // Linux
+            if (File.Exists(Path.Combine(ysPath, LinuxExecutable)))
+            {
+                return true;
+            }
+
+            // ow :(
+            return false;
         }
     }
 }
