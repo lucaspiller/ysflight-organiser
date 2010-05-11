@@ -154,5 +154,30 @@ namespace Ysfo.Tests.Core.Loaders
                 Assert.IsFalse(File.Exists(ysExecutable), "Temporary executable not removed!");
             }
         }
+
+        [Test]
+        public void IsPathValidReturnsTrueIfValidOnMac()
+        {
+            String ysExecutable = Path.Combine(_validYsPath, PathHelper.MacExecutable);
+
+            // create file
+            Directory.CreateDirectory(Path.Combine(_validYsPath, "Contents"));
+            Directory.CreateDirectory(Path.Combine(Path.Combine(_validYsPath, "Contents"), "MacOS"));
+            File.Create(ysExecutable).Close();
+            Assert.IsTrue(File.Exists(ysExecutable), "Temporary executable not created!");
+
+            Boolean result = PathHelper.IsPathValid(_validYsPath);
+
+            try
+            {
+                Assert.IsTrue(result);
+            }
+            finally
+            {
+                // cleanup
+                File.Delete(ysExecutable);
+                Assert.IsFalse(File.Exists(ysExecutable), "Temporary executable not removed!");
+            }
+        }
     }
 }

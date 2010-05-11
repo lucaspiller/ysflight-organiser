@@ -14,6 +14,8 @@
   methods.
 * Refactor DatLoader class.
 * Detects the latest version of YSFlight on Windows correctly.
+* Preliminary support for Mac. The YSFlight Path needs to be the path of the
+YSFlight app, e.g. /Applications/YsFlight.app.
 
 ## 0.1.0 (2009-08-26)
 

@@ -86,6 +86,7 @@ namespace Ysfo.Core.Loaders
         public const String WindowsDXExecutable = "fsmaindx.exe";
         public const String WindowsOExecutable = "fsmaino.exe";
         public const String LinuxExecutable = "ysflight";
+        public const String MacExecutable = "Contents/MacOS/ysflight";
 
         /// <summary>
         /// Checks whether <paramref name="ysPath"/> is a valid YsFlight directory.
@@ -119,6 +120,12 @@ namespace Ysfo.Core.Loaders
 
             // Linux
             if (File.Exists(Path.Combine(ysPath, LinuxExecutable)))
+            {
+                return true;
+            }
+
+            // Mac
+            if (File.Exists(Path.Combine(ysPath, MacExecutable)))
             {
                 return true;
             }
