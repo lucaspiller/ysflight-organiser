@@ -1,0 +1,15 @@
+DNM Extract - Split a .dnm into the .srfs contained inside it
+Copyright (C) 2005, 2008 Luca Spiller
+
+== Files ==
+dnme.c - The C source code
+README - This file
+
+== Usage ==
+dnme <myfile.dnm>
+--> <myfile.dnm> gets extracted to the .srfs containted within it
+
+== Changes ==
+
+v2: 2008, forgot to initialize a variable (oops!)
+v1: 2005, original version
