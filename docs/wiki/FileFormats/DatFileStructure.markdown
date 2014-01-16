@@ -600,7 +600,7 @@ For each entry there is an identifier for the command and a number of parameters
 			MXIPTSSA
 		</td>
 		<td>
-			Maximum input SSA (unknown).
+			Maximum input Side Slip Angle (yaw angle).
 		</td>
 		<td>
 			Degrees, followed by deg.
@@ -1045,7 +1045,7 @@ For each entry there is an identifier for the command and a number of parameters
 			HTRADIUS
 		</td>
 		<td>
-			The radius of the sphere used to determine whether a weapon has hit the plane.
+			The radius of the sphere used to determine whether a weapon has hit the plane. Also defines camera distance.
 		</td>
 		<td>
 			Radius as a length unit.
